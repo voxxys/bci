@@ -10,6 +10,8 @@ function params = train_spec(this, buf_data, buf_states, params, train_params)
 [states, sample_idx_states] = buf_states.get_data();
 assert(all(sample_idx_data == sample_idx_states) == 1);
 
+nsamples = size(data,2);
+
 % Positions of all samples that belong to the one of given classes
 pos_vec = find((states == train_params.state1) | (states == train_params.state2));
 
@@ -23,19 +25,22 @@ states = states(pos_vec);
 % [C,err,P,logp,coeff] = classify(data', data', states, 'linear');
 % fprintf('LDA error: %f\n', err);
 
-data_1 = data(states == train_params.state1);
-data_2 = data(states == train_params.state2);
+data_1 = data(:,states == train_params.state1);
+data_2 = data(:,states == train_params.state2);
 
-disp('data1');
-disp(size(data1));
+y_1 = data_1';
+y_2 = data_2';
 
-disp('data2');
-disp(size(data2));
+C_1 = y_1' * y_1 / size(y_1',2);
+C_2 = y_2' * y_2 / size(y_2',2);
 
-assert(0 == 1);
+Cm = zeros(size(C_1,1),size(C_1,2),2);
 
+Cm(:,:,1) = C_1;
+Cm(:,:,2) = C_2;
 
-params.params_spec.cov_mat = coeff;
+params.params_spec.cov_mat = Cm;
+
 params.params_spec.state_labels = [train_params.state1, train_params.state2];
 
 % Visualize prediction
@@ -62,9 +67,39 @@ if size(data,1) == 2
 
 end
 
-% Check sign
-D = sum(bsxfun(@times, data, params.params_spec.LDA_coeffs(1,2).linear)) + params.params_spec.LDA_coeffs(1,2).const;
-states_pred = (D < 0) + 1;
+
+data_out = zeros(2, nsamples);
+
+
+nprev = 10000;
+
+
+cm_1 = C_1;
+cm_2 = C_2;
+
+idx_min = 0;
+
+for n = 1:size(data_out,2)
+    dat_chunk = data(:,(max(1,n - nprev)):n);
+
+    data_cm = dat_chunk * dat_chunk' / size(dat_chunk,2);
+    rd_1 = abs(RiemDist(data_cm,cm_1)); 
+    rd_2 = abs(RiemDist(data_cm,cm_2));
+    
+    if(rd_1 == min(rd_1,rd_2))
+        idx_min = 1;
+    else
+        idx_min = 2;
+    end
+
+%     [riem_min, idx_min] = min(rd_1,rd_2);
+    
+    data_out(1,n) = rd_1/rd_2;
+    data_out(2,n) = params.params_spec.state_labels(idx_min);
+end
+
+
+states_pred = data_out(2,:);
 pred_ok = mean(states == states_pred);
 
 log_write('>>>>> Sign test: correct = %f\n', pred_ok);

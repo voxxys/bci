@@ -16,6 +16,7 @@ data_out = zeros(nchan, nsamples + nprev);
 K = ones(1,nprev+1);
 
 % Apply averaging kernel
+
 for n = 1 : nchan
     data_out(n,:) = conv(data_in(n,:), K);
 end

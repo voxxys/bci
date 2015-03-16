@@ -166,24 +166,26 @@ stage_desc.params.params_base.timewin_prev = 2;      % sec
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
 % Prediction with LDA
-stage_desc = struct();
-stage_desc.stage_name = 'LDA';
-stage_desc.obj_type = 't_statepred_LDA';
-stage_desc.params.inp_descs(1).inp_stage_name = 'WINPOW'; 
-stage_desc.trainer_type = 't_trainer_LDA';
-stage_desc.train_params.state1 = 1;
-stage_desc.train_params.state2 = 2;
-protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
-
-% Prediction with Rieman distance
 % stage_desc = struct();
-% stage_desc.stage_name = 'RIEMDIST';
-% stage_desc.obj_type = 't_statepred_rieman';
+% stage_desc.stage_name = 'LDA';
+% stage_desc.obj_type = 't_statepred_LDA';
 % stage_desc.params.inp_descs(1).inp_stage_name = 'WINPOW'; 
-% stage_desc.trainer_type = 't_trainer_rieman';
+% stage_desc.trainer_type = 't_trainer_LDA';
 % stage_desc.train_params.state1 = 1;
 % stage_desc.train_params.state2 = 2;
 % protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+
+% Prediction with Rieman distance
+stage_desc = struct();
+stage_desc.stage_name = 'RIEMDIST';
+stage_desc.obj_type = 't_statepred_rieman';
+stage_desc.params.inp_descs(1).inp_stage_name = 'WINPOW'; 
+stage_desc.params.nsamples_prev = 10;
+% stage_desc.params.params_spec.cov_mat;
+stage_desc.trainer_type = 't_trainer_rieman';
+stage_desc.train_params.state1 = 1;
+stage_desc.train_params.state2 = 2;
+protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
 % Save protocol
 save(fpath_protocol, 'protocol');

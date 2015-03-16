@@ -21,7 +21,6 @@ data_cur = data;
 
 chan_names = buf_data.chan_names;
 
-disp(chan_names);
 % chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
 %     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
 
@@ -54,8 +53,6 @@ end
 
 data_cur = data_cur(mask_channels,:);
 
-disp(size(data_cur));
-
 % Remove outliers
 Xmean = mean(data_cur(:));
 Xstd = std(data_cur(:));
@@ -73,14 +70,9 @@ states_cur = states(idx);
 
 data_st_left = data_cur(:,states_cur == 1);
 
-disp(size(mask_left));
-disp(size(data_st_left));
-
 data_left = data(mask_left,:);
 
 data_right = data(mask_right,:);
-
-disp(size(data_left));
 
 Fs = buf_data.srate;
 
@@ -92,15 +84,10 @@ y = data_cur';
 y_left = data_left';
 y_right = data_right';
 
-disp('y_left');
-disp(size(y_left));
-
-
 xdft = fft(y,NFFT)/L;
 
 xdft_left = fft(y_left,NFFT)/L;
 xdft_right = fft(y_right,NFFT)/L;
-
 
 f = Fs/2*linspace(0,1,NFFT/2+1);
 % 

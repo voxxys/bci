@@ -7,7 +7,7 @@ close all;
 % Parameters
 
 % Path to the working folder
-dirpath_work = 'D:\BCI\EXP_DATA\EXP_LSL32_new';
+dirpath_work = 'D:\bci\EXP_DATA\EXP_LSL32_new';
 
 % Path to the base expsetup file
 fname_expsetup_base = 'expsetup_base_LSL32_first.mat';
