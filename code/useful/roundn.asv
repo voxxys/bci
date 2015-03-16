@@ -1,0 +1,6 @@
+function y = roundn(x, prec)
+
+y = x * 10^prec;
+
+end
+

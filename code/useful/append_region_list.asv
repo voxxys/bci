@@ -1,0 +1,78 @@
+function regions_out = fix_region_list(regions, data_sz)
+% Merge intersecting regions and cutoff regions going out of data boundaries
+% USAGE: regions_out = append_region_list(regions, rgn_new, data_sz)
+% INPUT
+% regions -- list of regions (num_regions x 2)
+% data_sz -- size of dataset in samples (to cutoff outlier regions)
+% Note: regions(n,2) == -1 means that a region goes till the end of dataset
+% -1 will be replaced by data_
+% OUTPUT
+% regions_out -- correct list of regions
+
+
+% Find regions that go till the end of dataset
+idx = find(regions(:,2) == -1);
+regions(idx,2) = data_sz;
+
+            
+% Boundaries of current region
+boundbegin = rgn_new(1);
+boundend = rgn_new(2);
+
+% rgn_new(2) == -1 means a region till the end of dataset
+if rgn_new(2) == -1
+    boundend = data_sz;
+end
+
+if ~isempty(regions)
+
+    % If first boundary is inside a region -- move it to the beginning of this region
+    begin_rgn_id = find((boundbegin >= regions(:,1)) & (boundbegin <= regions(:,2)));
+    if length(begin_rgn_id) == 1
+        log_write('>>>>> WARNING: left boundary of new region (%i) is inside an old region -- will be merged\n', boundbegin);
+        boundbegin = regions(begin_rgn_id, 1);
+    elseif length(begin_rgn_id) > 1
+        log_write('>>>>> ERROR: more than 1 region containing left boundary (%i) -- terminate\n', boundbegin)
+        assert(0==1);
+    end
+
+    % If last boundary is inside a region -- move it to the end of this region
+    end_rgn_id = find((boundend >= regions(:,1)) & (boundend <= regions(:,2)));
+    if length(end_rgn_id) == 1
+        log_write('>>>>> WARNING: right boundary of new region (%i) is inside an old region -- will be merged\n', boundend);
+        boundend = regions(end_rgn_id, 2);
+    elseif length(end_rgn_id) > 1
+        log_write('>>>>> ERROR: more than 1 region containing right boundary (%i) -- terminate\n', boundend)
+        assert(0==1);
+    end
+
+    % Discard all regions inside new boundaries
+    inner_rgn_idx = find((regions(:,1) >= boundbegin) & (regions(:,2) <= boundend));
+    if ~isempty(inner_rgn_idx)
+        log_write('>>>>> WARNING: some old regions found inside a new region -- will be discarded\n');;
+    end
+    non_inner_rgn_idx = find(arrayfun(@(x)all(x~=inner_rgn_idx), [1 : size(regions,1)]));
+    regions = regions(non_inner_rgn_idx,:);
+
+end
+
+% Check if region is inside a dataset
+need_discard = 0;
+if boundbegin > data_sz
+    log_write('>>>>> WARNING: left boundary of region (%i) is outside a dataset -- will be discarded\n', boundbegin);
+    need_discard = 1;
+end
+if boundend > data_sz
+    log_write('>>>>> WARNING: right boundary of region (%i) is outside a dataset -- will be trunacted\n', boundend);
+    boundend = data_sz;
+end
+
+% Create region with current boundaries
+if ~need_discard
+    regions(end+1,:) = [boundbegin boundend];
+end
+
+regions_out = regions;
+
+end
+

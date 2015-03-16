@@ -1,0 +1,29 @@
+function [fnames_lst, dirpath_in] = list_files(dirpath_in)
+% Return list of files with given extension from a given folder
+% If folder not specified -- open dialog
+
+if ~exist('dirpath_in', 'var')
+
+    % If input folder not set - open dialog
+    [fnames_lst, dirpath_in] = uigetfile( '*.set', 'Select EEGLAB file(s)', 'MultiSelect', 'on' );
+    if ( sum(strcmp(fnames_lst,'')) && strcmp(dirpath_in,'') )
+        disp( 'No dataset selected, operations cancelled' );
+        return;
+    end
+    
+    
+    if ~iscell(fnames_lst)
+        fnames_lst = {fnames_lst};
+    end
+    
+else
+    
+    fnames_lst = dir(fullfile(dirpath_in, '*.set'));
+    fnames_lst = {fnames_lst.name};
+    
+end
+
+
+
+end
+
