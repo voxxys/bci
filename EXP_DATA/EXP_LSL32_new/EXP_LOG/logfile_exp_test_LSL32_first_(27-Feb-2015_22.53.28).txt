@@ -1,0 +1,80 @@
+
+
+========== 27-Feb-2015_22.53.28 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[IIR_HIPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_HIPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_HIPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_HIPASS  =================
+
+OBJECT
+	Name: IIR_HIPASS_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 10000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SIGNAL_SOURCE.buf_eeg
+	Sampling rate: 10000
+	Type: linear
+	Length: 24000000 samples
+	Channels: 
+		1 C3
+		2 C4
+		3 Cz
+		4 FPz
+		5 POz
+		6 CPz
+		7 O1
+		8 O2
+
+INPUT [1]
+	Sampling_rate: 10000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 C3	(1)
+		2 C4	(2)
+		3 Cz	(3)
+		4 FPz	(4)
+		5 POz	(5)
+		6 CPz	(6)
+		7 O1	(7)
+		8 O2	(8)
+
+OUTPUT CHANNELS: 
+	1 C3
+	2 C4
+	3 Cz
+	4 FPz
+	5 POz
+	6 CPz
+	7 O1
+	8 O2
+
+BUF_OUT
+	Name: IIR_HIPASS.buf
+	Sampling rate: 10000
+	Type: linear
+	Length: 24000000 samples
+	Channels: 
+		1 C3
+		2 C4
+		3 Cz
+		4 FPz
+		5 POz
+		6 CPz
+		7 O1
+		8 O2
+
+[IIR_NOTCH] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_NOTCH] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_NOTCH] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels

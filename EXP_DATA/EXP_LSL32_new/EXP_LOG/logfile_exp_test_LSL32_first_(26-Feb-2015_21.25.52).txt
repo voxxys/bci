@@ -1,0 +1,9 @@
+
+
+========== 26-Feb-2015_21.25.52 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[IIR_HIPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_HIPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_HIPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels

@@ -1,0 +1,17 @@
+
+
+========== 06-Mar-2015_00.26.43 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+>>>>>  TRAIN STAGE:  EOGREJ
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+[EOGREJ.TRAINER.SIGPROC_STAGE_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+[EOGREJ.TRAINER.STATEPROC_STAGE_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels

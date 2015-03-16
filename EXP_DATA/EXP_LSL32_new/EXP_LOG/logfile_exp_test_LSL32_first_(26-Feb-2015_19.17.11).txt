@@ -1,0 +1,9 @@
+
+
+========== 26-Feb-2015_19.17.11 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+>>>> ERROR: cannot load dataset 'D:\BCI\EXP_DATA\short_32chan_2.set' (( Error using eeg_getdatact (line 195)
+file D:\BCI\EXP_DATA\short_32chan_2.fdt not found. If you have renamed/moved
+the .set file, you must also rename/move the associated data file. ))

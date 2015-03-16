@@ -1,0 +1,1157 @@
+
+
+========== 26-Feb-2015_22.20.44 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[IIR_NOTCH] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_NOTCH] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_NOTCH] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_NOTCH  =================
+
+OBJECT
+	Name: IIR_NOTCH_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SIGNAL_SOURCE.buf_eeg
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 Fp1
+		2 Fz
+		3 F3
+		4 F7
+		5 FT9
+		6 FC5
+		7 FC1
+		8 C3
+		9 T7
+		10 TP9
+		11 CP5
+		12 CP1
+		13 Pz
+		14 P3
+		15 P7
+		16 O1
+		17 Oz
+		18 O2
+		19 P4
+		20 P8
+		21 TP10
+		22 CP6
+		23 CP2
+		24 Cz
+		25 C4
+		26 T8
+		27 FT10
+		28 FC6
+		29 FC2
+		30 F4
+		31 F8
+		32 Fp2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fz	(2)
+		3 F3	(3)
+		4 F7	(4)
+		5 FT9	(5)
+		6 FC5	(6)
+		7 FC1	(7)
+		8 C3	(8)
+		9 T7	(9)
+		10 TP9	(10)
+		11 CP5	(11)
+		12 CP1	(12)
+		13 Pz	(13)
+		14 P3	(14)
+		15 P7	(15)
+		16 O1	(16)
+		17 Oz	(17)
+		18 O2	(18)
+		19 P4	(19)
+		20 P8	(20)
+		21 TP10	(21)
+		22 CP6	(22)
+		23 CP2	(23)
+		24 Cz	(24)
+		25 C4	(25)
+		26 T8	(26)
+		27 FT10	(27)
+		28 FC6	(28)
+		29 FC2	(29)
+		30 F4	(30)
+		31 F8	(31)
+		32 Fp2	(32)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fz
+	3 F3
+	4 F7
+	5 FT9
+	6 FC5
+	7 FC1
+	8 C3
+	9 T7
+	10 TP9
+	11 CP5
+	12 CP1
+	13 Pz
+	14 P3
+	15 P7
+	16 O1
+	17 Oz
+	18 O2
+	19 P4
+	20 P8
+	21 TP10
+	22 CP6
+	23 CP2
+	24 Cz
+	25 C4
+	26 T8
+	27 FT10
+	28 FC6
+	29 FC2
+	30 F4
+	31 F8
+	32 Fp2
+
+BUF_OUT
+	Name: IIR_NOTCH.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 Fp1
+		2 Fz
+		3 F3
+		4 F7
+		5 FT9
+		6 FC5
+		7 FC1
+		8 C3
+		9 T7
+		10 TP9
+		11 CP5
+		12 CP1
+		13 Pz
+		14 P3
+		15 P7
+		16 O1
+		17 Oz
+		18 O2
+		19 P4
+		20 P8
+		21 TP10
+		22 CP6
+		23 CP2
+		24 Cz
+		25 C4
+		26 T8
+		27 FT10
+		28 FC6
+		29 FC2
+		30 F4
+		31 F8
+		32 Fp2
+
+[IIR] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR  =================
+
+OBJECT
+	Name: IIR_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_NOTCH.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 Fp1
+		2 Fz
+		3 F3
+		4 F7
+		5 FT9
+		6 FC5
+		7 FC1
+		8 C3
+		9 T7
+		10 TP9
+		11 CP5
+		12 CP1
+		13 Pz
+		14 P3
+		15 P7
+		16 O1
+		17 Oz
+		18 O2
+		19 P4
+		20 P8
+		21 TP10
+		22 CP6
+		23 CP2
+		24 Cz
+		25 C4
+		26 T8
+		27 FT10
+		28 FC6
+		29 FC2
+		30 F4
+		31 F8
+		32 Fp2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fz	(2)
+		3 F3	(3)
+		4 F7	(4)
+		5 FT9	(5)
+		6 FC5	(6)
+		7 FC1	(7)
+		8 C3	(8)
+		9 T7	(9)
+		10 TP9	(10)
+		11 CP5	(11)
+		12 CP1	(12)
+		13 Pz	(13)
+		14 P3	(14)
+		15 P7	(15)
+		16 O1	(16)
+		17 Oz	(17)
+		18 O2	(18)
+		19 P4	(19)
+		20 P8	(20)
+		21 TP10	(21)
+		22 CP6	(22)
+		23 CP2	(23)
+		24 Cz	(24)
+		25 C4	(25)
+		26 T8	(26)
+		27 FT10	(27)
+		28 FC6	(28)
+		29 FC2	(29)
+		30 F4	(30)
+		31 F8	(31)
+		32 Fp2	(32)
+
+OUTPUT CHANNELS: 
+	1 Fp1_(11-14)
+	2 Fz_(11-14)
+	3 F3_(11-14)
+	4 F7_(11-14)
+	5 FT9_(11-14)
+	6 FC5_(11-14)
+	7 FC1_(11-14)
+	8 C3_(11-14)
+	9 T7_(11-14)
+	10 TP9_(11-14)
+	11 CP5_(11-14)
+	12 CP1_(11-14)
+	13 Pz_(11-14)
+	14 P3_(11-14)
+	15 P7_(11-14)
+	16 O1_(11-14)
+	17 Oz_(11-14)
+	18 O2_(11-14)
+	19 P4_(11-14)
+	20 P8_(11-14)
+	21 TP10_(11-14)
+	22 CP6_(11-14)
+	23 CP2_(11-14)
+	24 Cz_(11-14)
+	25 C4_(11-14)
+	26 T8_(11-14)
+	27 FT10_(11-14)
+	28 FC6_(11-14)
+	29 FC2_(11-14)
+	30 F4_(11-14)
+	31 F8_(11-14)
+	32 Fp2_(11-14)
+	33 Fp1_(16-25)
+	34 Fz_(16-25)
+	35 F3_(16-25)
+	36 F7_(16-25)
+	37 FT9_(16-25)
+	38 FC5_(16-25)
+	39 FC1_(16-25)
+	40 C3_(16-25)
+	41 T7_(16-25)
+	42 TP9_(16-25)
+	43 CP5_(16-25)
+	44 CP1_(16-25)
+	45 Pz_(16-25)
+	46 P3_(16-25)
+	47 P7_(16-25)
+	48 O1_(16-25)
+	49 Oz_(16-25)
+	50 O2_(16-25)
+	51 P4_(16-25)
+	52 P8_(16-25)
+	53 TP10_(16-25)
+	54 CP6_(16-25)
+	55 CP2_(16-25)
+	56 Cz_(16-25)
+	57 C4_(16-25)
+	58 T8_(16-25)
+	59 FT10_(16-25)
+	60 FC6_(16-25)
+	61 FC2_(16-25)
+	62 F4_(16-25)
+	63 F8_(16-25)
+	64 Fp2_(16-25)
+
+BUF_OUT
+	Name: IIR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 Fp1_(11-14)
+		2 Fz_(11-14)
+		3 F3_(11-14)
+		4 F7_(11-14)
+		5 FT9_(11-14)
+		6 FC5_(11-14)
+		7 FC1_(11-14)
+		8 C3_(11-14)
+		9 T7_(11-14)
+		10 TP9_(11-14)
+		11 CP5_(11-14)
+		12 CP1_(11-14)
+		13 Pz_(11-14)
+		14 P3_(11-14)
+		15 P7_(11-14)
+		16 O1_(11-14)
+		17 Oz_(11-14)
+		18 O2_(11-14)
+		19 P4_(11-14)
+		20 P8_(11-14)
+		21 TP10_(11-14)
+		22 CP6_(11-14)
+		23 CP2_(11-14)
+		24 Cz_(11-14)
+		25 C4_(11-14)
+		26 T8_(11-14)
+		27 FT10_(11-14)
+		28 FC6_(11-14)
+		29 FC2_(11-14)
+		30 F4_(11-14)
+		31 F8_(11-14)
+		32 Fp2_(11-14)
+		33 Fp1_(16-25)
+		34 Fz_(16-25)
+		35 F3_(16-25)
+		36 F7_(16-25)
+		37 FT9_(16-25)
+		38 FC5_(16-25)
+		39 FC1_(16-25)
+		40 C3_(16-25)
+		41 T7_(16-25)
+		42 TP9_(16-25)
+		43 CP5_(16-25)
+		44 CP1_(16-25)
+		45 Pz_(16-25)
+		46 P3_(16-25)
+		47 P7_(16-25)
+		48 O1_(16-25)
+		49 Oz_(16-25)
+		50 O2_(16-25)
+		51 P4_(16-25)
+		52 P8_(16-25)
+		53 TP10_(16-25)
+		54 CP6_(16-25)
+		55 CP2_(16-25)
+		56 Cz_(16-25)
+		57 C4_(16-25)
+		58 T8_(16-25)
+		59 FT10_(16-25)
+		60 FC6_(16-25)
+		61 FC2_(16-25)
+		62 F4_(16-25)
+		63 F8_(16-25)
+		64 Fp2_(16-25)
+
+[SUBSAMPLE_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 Fp1_(11-14)
+		2 Fz_(11-14)
+		3 F3_(11-14)
+		4 F7_(11-14)
+		5 FT9_(11-14)
+		6 FC5_(11-14)
+		7 FC1_(11-14)
+		8 C3_(11-14)
+		9 T7_(11-14)
+		10 TP9_(11-14)
+		11 CP5_(11-14)
+		12 CP1_(11-14)
+		13 Pz_(11-14)
+		14 P3_(11-14)
+		15 P7_(11-14)
+		16 O1_(11-14)
+		17 Oz_(11-14)
+		18 O2_(11-14)
+		19 P4_(11-14)
+		20 P8_(11-14)
+		21 TP10_(11-14)
+		22 CP6_(11-14)
+		23 CP2_(11-14)
+		24 Cz_(11-14)
+		25 C4_(11-14)
+		26 T8_(11-14)
+		27 FT10_(11-14)
+		28 FC6_(11-14)
+		29 FC2_(11-14)
+		30 F4_(11-14)
+		31 F8_(11-14)
+		32 Fp2_(11-14)
+		33 Fp1_(16-25)
+		34 Fz_(16-25)
+		35 F3_(16-25)
+		36 F7_(16-25)
+		37 FT9_(16-25)
+		38 FC5_(16-25)
+		39 FC1_(16-25)
+		40 C3_(16-25)
+		41 T7_(16-25)
+		42 TP9_(16-25)
+		43 CP5_(16-25)
+		44 CP1_(16-25)
+		45 Pz_(16-25)
+		46 P3_(16-25)
+		47 P7_(16-25)
+		48 O1_(16-25)
+		49 Oz_(16-25)
+		50 O2_(16-25)
+		51 P4_(16-25)
+		52 P8_(16-25)
+		53 TP10_(16-25)
+		54 CP6_(16-25)
+		55 CP2_(16-25)
+		56 Cz_(16-25)
+		57 C4_(16-25)
+		58 T8_(16-25)
+		59 FT10_(16-25)
+		60 FC6_(16-25)
+		61 FC2_(16-25)
+		62 F4_(16-25)
+		63 F8_(16-25)
+		64 Fp2_(16-25)
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1_(11-14)	(1)
+		2 Fz_(11-14)	(2)
+		3 F3_(11-14)	(3)
+		4 F7_(11-14)	(4)
+		5 FT9_(11-14)	(5)
+		6 FC5_(11-14)	(6)
+		7 FC1_(11-14)	(7)
+		8 C3_(11-14)	(8)
+		9 T7_(11-14)	(9)
+		10 TP9_(11-14)	(10)
+		11 CP5_(11-14)	(11)
+		12 CP1_(11-14)	(12)
+		13 Pz_(11-14)	(13)
+		14 P3_(11-14)	(14)
+		15 P7_(11-14)	(15)
+		16 O1_(11-14)	(16)
+		17 Oz_(11-14)	(17)
+		18 O2_(11-14)	(18)
+		19 P4_(11-14)	(19)
+		20 P8_(11-14)	(20)
+		21 TP10_(11-14)	(21)
+		22 CP6_(11-14)	(22)
+		23 CP2_(11-14)	(23)
+		24 Cz_(11-14)	(24)
+		25 C4_(11-14)	(25)
+		26 T8_(11-14)	(26)
+		27 FT10_(11-14)	(27)
+		28 FC6_(11-14)	(28)
+		29 FC2_(11-14)	(29)
+		30 F4_(11-14)	(30)
+		31 F8_(11-14)	(31)
+		32 Fp2_(11-14)	(32)
+		33 Fp1_(16-25)	(33)
+		34 Fz_(16-25)	(34)
+		35 F3_(16-25)	(35)
+		36 F7_(16-25)	(36)
+		37 FT9_(16-25)	(37)
+		38 FC5_(16-25)	(38)
+		39 FC1_(16-25)	(39)
+		40 C3_(16-25)	(40)
+		41 T7_(16-25)	(41)
+		42 TP9_(16-25)	(42)
+		43 CP5_(16-25)	(43)
+		44 CP1_(16-25)	(44)
+		45 Pz_(16-25)	(45)
+		46 P3_(16-25)	(46)
+		47 P7_(16-25)	(47)
+		48 O1_(16-25)	(48)
+		49 Oz_(16-25)	(49)
+		50 O2_(16-25)	(50)
+		51 P4_(16-25)	(51)
+		52 P8_(16-25)	(52)
+		53 TP10_(16-25)	(53)
+		54 CP6_(16-25)	(54)
+		55 CP2_(16-25)	(55)
+		56 Cz_(16-25)	(56)
+		57 C4_(16-25)	(57)
+		58 T8_(16-25)	(58)
+		59 FT10_(16-25)	(59)
+		60 FC6_(16-25)	(60)
+		61 FC2_(16-25)	(61)
+		62 F4_(16-25)	(62)
+		63 F8_(16-25)	(63)
+		64 Fp2_(16-25)	(64)
+
+OUTPUT CHANNELS: 
+	1 Fp1_(11-14)
+	2 Fz_(11-14)
+	3 F3_(11-14)
+	4 F7_(11-14)
+	5 FT9_(11-14)
+	6 FC5_(11-14)
+	7 FC1_(11-14)
+	8 C3_(11-14)
+	9 T7_(11-14)
+	10 TP9_(11-14)
+	11 CP5_(11-14)
+	12 CP1_(11-14)
+	13 Pz_(11-14)
+	14 P3_(11-14)
+	15 P7_(11-14)
+	16 O1_(11-14)
+	17 Oz_(11-14)
+	18 O2_(11-14)
+	19 P4_(11-14)
+	20 P8_(11-14)
+	21 TP10_(11-14)
+	22 CP6_(11-14)
+	23 CP2_(11-14)
+	24 Cz_(11-14)
+	25 C4_(11-14)
+	26 T8_(11-14)
+	27 FT10_(11-14)
+	28 FC6_(11-14)
+	29 FC2_(11-14)
+	30 F4_(11-14)
+	31 F8_(11-14)
+	32 Fp2_(11-14)
+	33 Fp1_(16-25)
+	34 Fz_(16-25)
+	35 F3_(16-25)
+	36 F7_(16-25)
+	37 FT9_(16-25)
+	38 FC5_(16-25)
+	39 FC1_(16-25)
+	40 C3_(16-25)
+	41 T7_(16-25)
+	42 TP9_(16-25)
+	43 CP5_(16-25)
+	44 CP1_(16-25)
+	45 Pz_(16-25)
+	46 P3_(16-25)
+	47 P7_(16-25)
+	48 O1_(16-25)
+	49 Oz_(16-25)
+	50 O2_(16-25)
+	51 P4_(16-25)
+	52 P8_(16-25)
+	53 TP10_(16-25)
+	54 CP6_(16-25)
+	55 CP2_(16-25)
+	56 Cz_(16-25)
+	57 C4_(16-25)
+	58 T8_(16-25)
+	59 FT10_(16-25)
+	60 FC6_(16-25)
+	61 FC2_(16-25)
+	62 F4_(16-25)
+	63 F8_(16-25)
+	64 Fp2_(16-25)
+
+BUF_OUT
+	Name: SUBSAMPLE_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 Fp1_(11-14)
+		2 Fz_(11-14)
+		3 F3_(11-14)
+		4 F7_(11-14)
+		5 FT9_(11-14)
+		6 FC5_(11-14)
+		7 FC1_(11-14)
+		8 C3_(11-14)
+		9 T7_(11-14)
+		10 TP9_(11-14)
+		11 CP5_(11-14)
+		12 CP1_(11-14)
+		13 Pz_(11-14)
+		14 P3_(11-14)
+		15 P7_(11-14)
+		16 O1_(11-14)
+		17 Oz_(11-14)
+		18 O2_(11-14)
+		19 P4_(11-14)
+		20 P8_(11-14)
+		21 TP10_(11-14)
+		22 CP6_(11-14)
+		23 CP2_(11-14)
+		24 Cz_(11-14)
+		25 C4_(11-14)
+		26 T8_(11-14)
+		27 FT10_(11-14)
+		28 FC6_(11-14)
+		29 FC2_(11-14)
+		30 F4_(11-14)
+		31 F8_(11-14)
+		32 Fp2_(11-14)
+		33 Fp1_(16-25)
+		34 Fz_(16-25)
+		35 F3_(16-25)
+		36 F7_(16-25)
+		37 FT9_(16-25)
+		38 FC5_(16-25)
+		39 FC1_(16-25)
+		40 C3_(16-25)
+		41 T7_(16-25)
+		42 TP9_(16-25)
+		43 CP5_(16-25)
+		44 CP1_(16-25)
+		45 Pz_(16-25)
+		46 P3_(16-25)
+		47 P7_(16-25)
+		48 O1_(16-25)
+		49 Oz_(16-25)
+		50 O2_(16-25)
+		51 P4_(16-25)
+		52 P8_(16-25)
+		53 TP10_(16-25)
+		54 CP6_(16-25)
+		55 CP2_(16-25)
+		56 Cz_(16-25)
+		57 C4_(16-25)
+		58 T8_(16-25)
+		59 FT10_(16-25)
+		60 FC6_(16-25)
+		61 FC2_(16-25)
+		62 F4_(16-25)
+		63 F8_(16-25)
+		64 Fp2_(16-25)
+
+[WINPOW_VIS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_VIS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_VIS  =================
+
+OBJECT
+	Name: WINPOW_VIS_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 Fp1_(11-14)
+		2 Fz_(11-14)
+		3 F3_(11-14)
+		4 F7_(11-14)
+		5 FT9_(11-14)
+		6 FC5_(11-14)
+		7 FC1_(11-14)
+		8 C3_(11-14)
+		9 T7_(11-14)
+		10 TP9_(11-14)
+		11 CP5_(11-14)
+		12 CP1_(11-14)
+		13 Pz_(11-14)
+		14 P3_(11-14)
+		15 P7_(11-14)
+		16 O1_(11-14)
+		17 Oz_(11-14)
+		18 O2_(11-14)
+		19 P4_(11-14)
+		20 P8_(11-14)
+		21 TP10_(11-14)
+		22 CP6_(11-14)
+		23 CP2_(11-14)
+		24 Cz_(11-14)
+		25 C4_(11-14)
+		26 T8_(11-14)
+		27 FT10_(11-14)
+		28 FC6_(11-14)
+		29 FC2_(11-14)
+		30 F4_(11-14)
+		31 F8_(11-14)
+		32 Fp2_(11-14)
+		33 Fp1_(16-25)
+		34 Fz_(16-25)
+		35 F3_(16-25)
+		36 F7_(16-25)
+		37 FT9_(16-25)
+		38 FC5_(16-25)
+		39 FC1_(16-25)
+		40 C3_(16-25)
+		41 T7_(16-25)
+		42 TP9_(16-25)
+		43 CP5_(16-25)
+		44 CP1_(16-25)
+		45 Pz_(16-25)
+		46 P3_(16-25)
+		47 P7_(16-25)
+		48 O1_(16-25)
+		49 Oz_(16-25)
+		50 O2_(16-25)
+		51 P4_(16-25)
+		52 P8_(16-25)
+		53 TP10_(16-25)
+		54 CP6_(16-25)
+		55 CP2_(16-25)
+		56 Cz_(16-25)
+		57 C4_(16-25)
+		58 T8_(16-25)
+		59 FT10_(16-25)
+		60 FC6_(16-25)
+		61 FC2_(16-25)
+		62 F4_(16-25)
+		63 F8_(16-25)
+		64 Fp2_(16-25)
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 Fp1_(11-14)	(1)
+		2 Fz_(11-14)	(2)
+		3 F3_(11-14)	(3)
+		4 F7_(11-14)	(4)
+		5 FT9_(11-14)	(5)
+		6 FC5_(11-14)	(6)
+		7 FC1_(11-14)	(7)
+		8 C3_(11-14)	(8)
+		9 T7_(11-14)	(9)
+		10 TP9_(11-14)	(10)
+		11 CP5_(11-14)	(11)
+		12 CP1_(11-14)	(12)
+		13 Pz_(11-14)	(13)
+		14 P3_(11-14)	(14)
+		15 P7_(11-14)	(15)
+		16 O1_(11-14)	(16)
+		17 Oz_(11-14)	(17)
+		18 O2_(11-14)	(18)
+		19 P4_(11-14)	(19)
+		20 P8_(11-14)	(20)
+		21 TP10_(11-14)	(21)
+		22 CP6_(11-14)	(22)
+		23 CP2_(11-14)	(23)
+		24 Cz_(11-14)	(24)
+		25 C4_(11-14)	(25)
+		26 T8_(11-14)	(26)
+		27 FT10_(11-14)	(27)
+		28 FC6_(11-14)	(28)
+		29 FC2_(11-14)	(29)
+		30 F4_(11-14)	(30)
+		31 F8_(11-14)	(31)
+		32 Fp2_(11-14)	(32)
+		33 Fp1_(16-25)	(33)
+		34 Fz_(16-25)	(34)
+		35 F3_(16-25)	(35)
+		36 F7_(16-25)	(36)
+		37 FT9_(16-25)	(37)
+		38 FC5_(16-25)	(38)
+		39 FC1_(16-25)	(39)
+		40 C3_(16-25)	(40)
+		41 T7_(16-25)	(41)
+		42 TP9_(16-25)	(42)
+		43 CP5_(16-25)	(43)
+		44 CP1_(16-25)	(44)
+		45 Pz_(16-25)	(45)
+		46 P3_(16-25)	(46)
+		47 P7_(16-25)	(47)
+		48 O1_(16-25)	(48)
+		49 Oz_(16-25)	(49)
+		50 O2_(16-25)	(50)
+		51 P4_(16-25)	(51)
+		52 P8_(16-25)	(52)
+		53 TP10_(16-25)	(53)
+		54 CP6_(16-25)	(54)
+		55 CP2_(16-25)	(55)
+		56 Cz_(16-25)	(56)
+		57 C4_(16-25)	(57)
+		58 T8_(16-25)	(58)
+		59 FT10_(16-25)	(59)
+		60 FC6_(16-25)	(60)
+		61 FC2_(16-25)	(61)
+		62 F4_(16-25)	(62)
+		63 F8_(16-25)	(63)
+		64 Fp2_(16-25)	(64)
+
+OUTPUT CHANNELS: 
+	1 Fp1_(11-14)_avgpow
+	2 Fz_(11-14)_avgpow
+	3 F3_(11-14)_avgpow
+	4 F7_(11-14)_avgpow
+	5 FT9_(11-14)_avgpow
+	6 FC5_(11-14)_avgpow
+	7 FC1_(11-14)_avgpow
+	8 C3_(11-14)_avgpow
+	9 T7_(11-14)_avgpow
+	10 TP9_(11-14)_avgpow
+	11 CP5_(11-14)_avgpow
+	12 CP1_(11-14)_avgpow
+	13 Pz_(11-14)_avgpow
+	14 P3_(11-14)_avgpow
+	15 P7_(11-14)_avgpow
+	16 O1_(11-14)_avgpow
+	17 Oz_(11-14)_avgpow
+	18 O2_(11-14)_avgpow
+	19 P4_(11-14)_avgpow
+	20 P8_(11-14)_avgpow
+	21 TP10_(11-14)_avgpow
+	22 CP6_(11-14)_avgpow
+	23 CP2_(11-14)_avgpow
+	24 Cz_(11-14)_avgpow
+	25 C4_(11-14)_avgpow
+	26 T8_(11-14)_avgpow
+	27 FT10_(11-14)_avgpow
+	28 FC6_(11-14)_avgpow
+	29 FC2_(11-14)_avgpow
+	30 F4_(11-14)_avgpow
+	31 F8_(11-14)_avgpow
+	32 Fp2_(11-14)_avgpow
+	33 Fp1_(16-25)_avgpow
+	34 Fz_(16-25)_avgpow
+	35 F3_(16-25)_avgpow
+	36 F7_(16-25)_avgpow
+	37 FT9_(16-25)_avgpow
+	38 FC5_(16-25)_avgpow
+	39 FC1_(16-25)_avgpow
+	40 C3_(16-25)_avgpow
+	41 T7_(16-25)_avgpow
+	42 TP9_(16-25)_avgpow
+	43 CP5_(16-25)_avgpow
+	44 CP1_(16-25)_avgpow
+	45 Pz_(16-25)_avgpow
+	46 P3_(16-25)_avgpow
+	47 P7_(16-25)_avgpow
+	48 O1_(16-25)_avgpow
+	49 Oz_(16-25)_avgpow
+	50 O2_(16-25)_avgpow
+	51 P4_(16-25)_avgpow
+	52 P8_(16-25)_avgpow
+	53 TP10_(16-25)_avgpow
+	54 CP6_(16-25)_avgpow
+	55 CP2_(16-25)_avgpow
+	56 Cz_(16-25)_avgpow
+	57 C4_(16-25)_avgpow
+	58 T8_(16-25)_avgpow
+	59 FT10_(16-25)_avgpow
+	60 FC6_(16-25)_avgpow
+	61 FC2_(16-25)_avgpow
+	62 F4_(16-25)_avgpow
+	63 F8_(16-25)_avgpow
+	64 Fp2_(16-25)_avgpow
+
+BUF_OUT
+	Name: WINPOW_VIS.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 Fp1_(11-14)_avgpow
+		2 Fz_(11-14)_avgpow
+		3 F3_(11-14)_avgpow
+		4 F7_(11-14)_avgpow
+		5 FT9_(11-14)_avgpow
+		6 FC5_(11-14)_avgpow
+		7 FC1_(11-14)_avgpow
+		8 C3_(11-14)_avgpow
+		9 T7_(11-14)_avgpow
+		10 TP9_(11-14)_avgpow
+		11 CP5_(11-14)_avgpow
+		12 CP1_(11-14)_avgpow
+		13 Pz_(11-14)_avgpow
+		14 P3_(11-14)_avgpow
+		15 P7_(11-14)_avgpow
+		16 O1_(11-14)_avgpow
+		17 Oz_(11-14)_avgpow
+		18 O2_(11-14)_avgpow
+		19 P4_(11-14)_avgpow
+		20 P8_(11-14)_avgpow
+		21 TP10_(11-14)_avgpow
+		22 CP6_(11-14)_avgpow
+		23 CP2_(11-14)_avgpow
+		24 Cz_(11-14)_avgpow
+		25 C4_(11-14)_avgpow
+		26 T8_(11-14)_avgpow
+		27 FT10_(11-14)_avgpow
+		28 FC6_(11-14)_avgpow
+		29 FC2_(11-14)_avgpow
+		30 F4_(11-14)_avgpow
+		31 F8_(11-14)_avgpow
+		32 Fp2_(11-14)_avgpow
+		33 Fp1_(16-25)_avgpow
+		34 Fz_(16-25)_avgpow
+		35 F3_(16-25)_avgpow
+		36 F7_(16-25)_avgpow
+		37 FT9_(16-25)_avgpow
+		38 FC5_(16-25)_avgpow
+		39 FC1_(16-25)_avgpow
+		40 C3_(16-25)_avgpow
+		41 T7_(16-25)_avgpow
+		42 TP9_(16-25)_avgpow
+		43 CP5_(16-25)_avgpow
+		44 CP1_(16-25)_avgpow
+		45 Pz_(16-25)_avgpow
+		46 P3_(16-25)_avgpow
+		47 P7_(16-25)_avgpow
+		48 O1_(16-25)_avgpow
+		49 Oz_(16-25)_avgpow
+		50 O2_(16-25)_avgpow
+		51 P4_(16-25)_avgpow
+		52 P8_(16-25)_avgpow
+		53 TP10_(16-25)_avgpow
+		54 CP6_(16-25)_avgpow
+		55 CP2_(16-25)_avgpow
+		56 Cz_(16-25)_avgpow
+		57 C4_(16-25)_avgpow
+		58 T8_(16-25)_avgpow
+		59 FT10_(16-25)_avgpow
+		60 FC6_(16-25)_avgpow
+		61 FC2_(16-25)_avgpow
+		62 F4_(16-25)_avgpow
+		63 F8_(16-25)_avgpow
+		64 Fp2_(16-25)_avgpow
+
+[IIR_NOTCH_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_NOTCH  =================
+
+OBJECT
+	Name: IIR_NOTCH_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: STATE_GENERATOR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_NOTCH.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 STATE
+
+[IIR_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR  =================
+
+OBJECT
+	Name: IIR_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_NOTCH.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 144000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_VIS_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_VIS  =================
+
+OBJECT
+	Name: WINPOW_VIS_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_VIS.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 14400 samples
+	Channels: 
+		1 STATE
+

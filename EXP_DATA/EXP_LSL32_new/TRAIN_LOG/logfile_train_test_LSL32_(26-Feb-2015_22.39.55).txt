@@ -1,0 +1,232 @@
+
+
+========== 26-Feb-2015_22.39.55 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+>>>>>  TRAIN STAGE:  EOGREJ
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[EOGREJ.TRAINER.SIGPROC_STAGE] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+[EOGREJ.TRAINER.SIGPROC_STAGE_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[EOGREJ.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+[EOGREJ.TRAINER.STATEPROC_STAGE_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+[EOGREJ] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[EOGREJ] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+[EOGREJ_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  EOGREJ  =================
+
+OBJECT
+	Name: EOGREJ_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SIGNAL_SOURCE.buf_eeg
+	Sampling rate: 1000
+	Type: linear
+	Length: 11978 samples
+	Channels: 
+		1 Fp1
+		2 Fz
+		3 F3
+		4 F7
+		5 FT9
+		6 FC5
+		7 FC1
+		8 C3
+		9 T7
+		10 TP9
+		11 CP5
+		12 CP1
+		13 Pz
+		14 P3
+		15 P7
+		16 O1
+		17 Oz
+		18 O2
+		19 P4
+		20 P8
+		21 TP10
+		22 CP6
+		23 CP2
+		24 Cz
+		25 C4
+		26 T8
+		27 FT10
+		28 FC6
+		29 FC2
+		30 F4
+		31 F8
+		32 Fp2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(32)
+		3 F7	(4)
+		4 F3	(3)
+		5 Fz	(2)
+		6 F4	(30)
+		7 F8	(31)
+		8 FC5	(6)
+		9 FC1	(7)
+		10 FC2	(29)
+		11 FC6	(28)
+		12 T7	(9)
+		13 C3	(8)
+		14 Cz	(24)
+		15 C4	(25)
+		16 T8	(26)
+		17 TP9	(10)
+		18 CP5	(11)
+		19 CP1	(12)
+		20 CP2	(23)
+		21 CP6	(22)
+		22 TP10	(21)
+		23 P7	(15)
+		24 P3	(14)
+		25 Pz	(13)
+		26 P4	(19)
+		27 P8	(20)
+		28 FT9	(5)
+		29 O1	(16)
+		30 Oz	(17)
+		31 O2	(18)
+		32 FT10	(27)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 FC5
+	9 FC1
+	10 FC2
+	11 FC6
+	12 T7
+	13 C3
+	14 Cz
+	15 C4
+	16 T8
+	17 TP9
+	18 CP5
+	19 CP1
+	20 CP2
+	21 CP6
+	22 TP10
+	23 P7
+	24 P3
+	25 Pz
+	26 P4
+	27 P8
+	28 FT9
+	29 O1
+	30 Oz
+	31 O2
+	32 FT10
+
+BUF_OUT
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 11978 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 FC5
+		9 FC1
+		10 FC2
+		11 FC6
+		12 T7
+		13 C3
+		14 Cz
+		15 C4
+		16 T8
+		17 TP9
+		18 CP5
+		19 CP1
+		20 CP2
+		21 CP6
+		22 TP10
+		23 P7
+		24 P3
+		25 Pz
+		26 P4
+		27 P8
+		28 FT9
+		29 O1
+		30 Oz
+		31 O2
+		32 FT10
+
+[EOGREJ_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  EOGREJ  =================
+
+OBJECT
+	Name: EOGREJ_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: STATE_GENERATOR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 11978 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 11978 samples
+	Channels: 
+		1 STATE
+
+[IIR] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[IIR] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[IIR] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer

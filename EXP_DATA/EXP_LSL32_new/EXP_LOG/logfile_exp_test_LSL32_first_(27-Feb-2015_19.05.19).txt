@@ -1,0 +1,10 @@
+
+
+========== 27-Feb-2015_19.05.19 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: 
+
+[IIR_NOTCH] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_NOTCH] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_NOTCH] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[IIR_NOTCH_OBJ] t_sigproc_base::set_bufs() -> more than 1 channel with name '' found in the input buffer - ERROR
