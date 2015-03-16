@@ -162,6 +162,7 @@ for band_num = 1 : 2
     fmax = freq_bands{band_num}(2);
     stage_desc.params.inp_descs(band_num).inp_stage_name = sprintf('CSP_%i_%i', fmin, fmax);
 end
+
 stage_desc.params.params_base.timewin_prev = 2;      % sec
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 

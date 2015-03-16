@@ -56,13 +56,6 @@ end
 
 data_cur = data_cur(mask_channels,:);
 
-% for fft
-Fs = buf_data.srate;
-L = size(data,2);
-NFFT = 2^nextpow2(L);
-
-
-
 % Remove outliers
 Xmean = mean(data_cur(:));
 Xstd = std(data_cur(:));
@@ -74,10 +67,10 @@ data_cur = data_cur(:,idx);
 states_cur = states(idx);
 
 
-data_cur_1 = data_cur(mask_left,:);
+data_cur = data_cur(mask_channels,:);
 
-data_1 = data_cur_1(:,states_cur == 1);
-data_2 = data_cur_1(:,states_cur == 2);
+data_1 = data_cur(:,states_cur == 1);
+data_2 = data_cur(:,states_cur == 2);
 
 C_1 = data_1 * data_1' / size(data_1,2);
 C_2 = data_2 * data_2' / size(data_1,2);
@@ -86,21 +79,25 @@ C_2 = data_2 * data_2' / size(data_1,2);
 
 M_lr = V_lr;
 
-data_cur_lr = M_lr * data_cur_1;
+data_cur_lr = M_lr * data_cur;
 
-y_cur_lr = data_cur_lr';
-
-for i = 1:length(chosen_left)
-    figure();
-    freq_range = 1:0.01:30;
-    spectrogram(y_cur_lr(:,i),1000,500,freq_range,Fs,'yaxis');
-        xlim([0 300]);
-        Xlim = get(gca, 'xlim');
-        set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
-        set(gca, 'XTicklabel', 0:20:300);
-    figure();
-   
-end
+% for i = 1:length(chosen_left)
+%     figure();
+%     freq_range = 1:0.01:30;
+%     spectrogram(y_left(:,i),1000,500,freq_range,Fs,'yaxis');
+%         xlim([0 300]);
+%         Xlim = get(gca, 'xlim');
+%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+%         set(gca, 'XTicklabel', 0:20:300);
+%     figure();
+%     spectrogram(y_right(:,i),1000,500,freq_range,Fs,'yaxis');
+%         xlim([0 300]);
+%         Xlim = get(gca, 'xlim');
+%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+%         set(gca, 'XTicklabel', 0:20:300);
+% 
+%    
+% end
 
 
 
@@ -116,6 +113,10 @@ data_left = data_cur(mask_left,:);
 
 data_right = data_cur(mask_right,:);
 
+Fs = buf_data.srate;
+
+L = size(data,2);
+NFFT = 2^nextpow2(L);
 
 
 y = data_cur';
