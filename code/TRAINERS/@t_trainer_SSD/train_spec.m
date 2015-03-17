@@ -11,8 +11,7 @@ function params = train_spec(this, buf_data, buf_states, params, train_params)
 [states, sample_idx_states] = buf_states.get_data();
 assert(all(sample_idx_data == sample_idx_states) == 1);
 
-% 
-% 
+
 %     nsamples_in = length(sample_idx_data);
 %     disp(nsamples_in);
 %     assert(0==1);
@@ -88,18 +87,25 @@ M_lr = V_lr;
 
 data_cur_lr = M_lr * data_cur_1;
 
-y_cur_lr = data_cur_lr';
+y_cur_lr_1 = data_cur_lr(:,states_cur == 1)';
+y_cur_lr_2 = data_cur_lr(:,states_cur == 2)';
 
-for i = 1:length(chosen_left)
+for i = 1:2
+    
     figure();
     freq_range = 1:0.01:30;
-    spectrogram(y_cur_lr(:,i),1000,500,freq_range,Fs,'yaxis');
-        xlim([0 300]);
-        Xlim = get(gca, 'xlim');
-        set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
-        set(gca, 'XTicklabel', 0:20:300);
+    spectrogram(y_cur_lr_1(:,i),1000,500,freq_range,Fs,'yaxis');
+%         xlim([0 300]);
+%         Xlim = get(gca, 'xlim');
+%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+%         set(gca, 'XTicklabel', 0:20:300);
     figure();
-   
+    spectrogram(y_cur_lr_2(:,i),1000,500,freq_range,Fs,'yaxis');
+%         xlim([0 300]);
+%         Xlim = get(gca, 'xlim');
+%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+%         set(gca, 'XTicklabel', 0:20:300);
+    figure();
 end
 
 
@@ -178,6 +184,7 @@ res = 0.5;
 freqband = 6:res:14;
 d_1 = zeros(1,length(freqband));
 d_2 = zeros(1,length(freqband));
+d_3 = zeros(1,length(freqband));
 
 step_f = 1;
 
@@ -235,6 +242,8 @@ for id = 1:length(freqband);
     
     d_1(id) = d(end);
     d_2(id) = d(1);
+
+    d_3(id) = d(1)/d(end);
     
 end
     
@@ -242,6 +251,8 @@ figure();
 plot(freqband,d_1,'g');
 hold on;
 plot(freqband,d_2,'m');
+
+plot(freqband,d_3,'r');
 
 f_chosen = inputdlg('Choose the frequency');
 

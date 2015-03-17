@@ -94,7 +94,7 @@ for n = 1:size(data_out,2)
 
 %     [riem_min, idx_min] = min(rd_1,rd_2);
     
-    data_out(1,n) = rd_1/rd_2;
+    data_out(1,n) = rd_2/rd_1;
     data_out(2,n) = params.params_spec.state_labels(idx_min);
 end
 
