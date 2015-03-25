@@ -6,6 +6,7 @@ exp_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_12_03_2
 [states, sample_idx_states] = exp_data.states.get_data();
 assert(all(sample_idx_data == sample_idx_states) == 1);
 
+
 % buf_data -> exp_data.data  
 
 Fs = exp_data.data.srate;
