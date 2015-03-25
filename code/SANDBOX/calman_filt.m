@@ -1,3 +1,5 @@
+clear all
+%exp_data = load('C:\Work\BCI\bci-master\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_12_03_2.mat');
 exp_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_12_03_2.mat');
 
 [data, sample_idx_data] = exp_data.data.get_data();
@@ -12,131 +14,173 @@ NFFT = 2^nextpow2(L);
 
 
 data_cur = data;
+states_cur = states;
 
 Fc_low = 45;
 Fc_high = 0.5;
 
 %Wn =  Fc /(Fs/2)
 
-%[b_high, a_high] = butter(3, Fc_high/(Fs/2), 'high');
 [z_high,p_high,k_high] = butter(5, Fc_high/(Fs/2), 'high');
-[sos_high,g_high] = zp2sos(z_high,p_high,k_high);
-% fvtool(sos_high,'Analysis','freq');
-hd_high = dfilt.df2sos(sos_high,g_high);
+[b_high,a_high] = zp2tf(z_high,p_high,k_high);
+data_cur = filtfilt(b_high, a_high,data_cur')'; 
 
-data_cur = (filter(hd_high,data_cur'))'; 
-
-%[b_low, a_low] = butter(3, Fc_low/ (Fs/2), 'low');
 [z_low,p_low,k_low] = butter(5, Fc_low/(Fs/2), 'low');
-[sos_low,g_low] = zp2sos(z_low,p_low,k_low);
-% fvtool(sos_low,'Analysis','freq');
-hd_low = dfilt.df2sos(sos_low,g_low);
+[b_low,a_low] = zp2tf(z_low,p_low,k_low);
+data_cur = filtfilt(b_low, a_low,data_cur')'; 
 
-data_cur = (filter(hd_low,data_cur'))'; 
+% 
+% Xmean = mean(data_cur(:));
+% Xstd = std(data_cur(:));
+% mask = (abs(data_cur-Xmean) < 3 * Xstd);
+% mask = prod(double(mask),1);
+% idx = mask;
+% idx = logical(idx);
+% data_cur = data_cur(:,idx);
+% states_cur = states(idx);
+% 
+
+data_cur_save = data_cur;
+
+%%
+
+ind1 = find(states==1);
+ind2 = find(states==2);
+
+Cz1 = data_cur(:,ind1)*data_cur(:,ind1)'/length(ind1);
+Cz2 = data_cur(:,ind2)*data_cur(:,ind2)'/length(ind2);
+
+[Vz,Dz] = eig(Cz1 + 0.01*trace(Cz1)/size(Cz1,1)*eye(size(Cz1)),Cz2+ 0.01*trace(Cz2)/size(Cz2,1)*eye(size(Cz2,1)));
+iVz = inv(Vz)';
+W1 = Vz(:,1:3);
+G1 = iVz(:,1:3);
+
+[Vz,Dz] = eig(Cz2 + 0.01*trace(Cz2)/size(Cz2,1)*eye(size(Cz2)),Cz1+ 0.01*trace(Cz1)/size(Cz1,1)*eye(size(Cz1,1)));
+iVz = inv(Vz)';
+W2 = Vz(:,1:3);
+G2 = iVz(:,1:3);
+
+% measurement errors
+
+Rme_1 = (data_cur-G1*W1'* data_cur)*(data_cur-G1*W1'* data_cur)'/size(data_cur,2);
+Rme_2 = (data_cur-G2*W2'* data_cur)*(data_cur-G2*W2'* data_cur)'/size(data_cur,2);
 
 
-Xmean = mean(data_cur(:));
-Xstd = std(data_cur(:));
-mask = (abs(data_cur-Xmean) < 3 * Xstd);
-mask = prod(double(mask),1);
-idx = mask;
-idx = logical(idx);
-data_cur = data_cur(:,idx);
-states_cur = states(idx);
+%%
+
+AROrder = 5;
+Dim = 3;
+
+data_1 = data_cur(:,ind1);
+data_2 = data_cur(:,ind2);
+
+z_cur_1 = W1' * data_1;
+z_cur_2 = W2' * data_2;
+
+% specifying AR models
+
+for ord = 1:AROrder AL{ord} = logical(ones(Dim));end;
+
+z_cur_n_prev_1 = z_cur_1(:,1:AROrder);
+z_cur_n_fit_1 = z_cur_1(:,(AROrder+1):end);
+
+Spec_1 = vgxset('ARsolve',AL);
+[EstSpec_1,EstSE,logL,W] = vgxvarx(Spec_1,z_cur_n_fit_1',[],z_cur_n_prev_1');
 
 
+z_cur_n_prev_2 = z_cur_2(:,1:AROrder);
+z_cur_n_fit_2 = z_cur_2(:,(AROrder+1):end);
+
+Spec_2 = vgxset('ARsolve',AL);
+[EstSpec_2,EstSE,logL,W] = vgxvarx(Spec_2,z_cur_n_fit_2',[],z_cur_n_prev_2');
+
+%% finding Q_1, Q_2
+
+z_pred_q = zeros(size(z_cur_1));
+for t = (AROrder+1):size(z_cur_1,2)
+    z_prev_q = z_cur_1(:,(t-AROrder):(t-1));
+    [Forecast,ForecastCov] = vgxpred(EstSpec_1,1,[],z_prev_q');
+    z_pred_q(:,t) = Forecast';
+    t
+end
+%Q_1 = cov(z_pred_q(:,(AROrder+1):end),z_cur_1(:,(AROrder+1):end));
+
+Q_1 = z_pred_q(:,(AROrder+1):end) * z_cur_1(:,(AROrder+1):end)' / size(z_cur_1(:,(AROrder+1):end),2);
+
+
+z_pred_q = zeros(size(z_cur_2));
+for t = (AROrder+1):size(z_cur_2,2)
+    z_prev_q = z_cur_2(:,(t-AROrder):(t-1));
+    [Forecast,ForecastCov] = vgxpred(EstSpec_2,1,[],z_prev_q');
+    z_pred_q(:,t) = Forecast';
+    t
+end
+%Q_1 = cov(z_pred_q(:,(AROrder+1):end),z_cur_1(:,(AROrder+1):end));
+
+Q_2 = z_pred_q(:,(AROrder+1):end) * z_cur_2(:,(AROrder+1):end)' / size(z_cur_2(:,(AROrder+1):end),2);
+
+
+%%
 data_1 = data_cur(:,states_cur == 1);
 data_2 = data_cur(:,states_cur == 2);
 
-C_1 = data_1 * data_1' / size(data_1,2);
-C_2 = data_2 * data_2' / size(data_1,2);
-C_rest = data_cur * data_cur' / size(data_cur,2);
-
-[V_1 d_1] = eig(C_1,C_rest);
-Vinv_1 = inv(V_1');
-g_1 = [Vinv_1(1,:); Vinv_1(end,:)];
-
-[V_2 d_2] = eig(C_2,C_rest);
-Vinv_2 = inv(V_2');
-g_2 = [Vinv_2(1,:); Vinv_2(end,:)];
 
 
-R = 500;
-% A_1 = zeros(R,R,length((R+1):1000:size(data_1,2)));
-% A_2 = zeros(R,R,length((R+1):1000:size(data_2,2)));
+R = AROrder;
 
-% A_1 = zeros(R,R);
-% A_2 = zeros(R,R);
+% A1_P, A2_P
 
-% A_1(:,:,t-R) = pinv(x_lag_1)*x_t_1;
+x_t = z_cur_1(:,(R+1):end);
+x_lag = z_cur_1(:,R:(end-1));
 
-% for t = (R+1):1000:size(data_1,2)
-t = size(data_1,2);
-    x_t_1 = data_1(:,(t-R+1):t);
-    x_lag_1 = data_1(:,(t-R):(t-1));
-%     A_1(:,:,t-R) = pinv(x_lag_1)*x_t_1;
-    A_1 = pinv(x_lag_1)*x_t_1;
+A1_P = pinv(x_lag')*x_t';
 
-    Q_1 = cov(x_t_1 - x_lag_1*A_1);
-% end
+x_t = z_cur_1(:,(R+1):end);
+x_lag = z_cur_1(:,R:(end-1));
 
-% for t = (R+1):1000:size(data_2,2)
-t = size(data_2,2);
-    x_t_2 = data_2(:,(t-R+1):t);
-    x_lag_2 = data_2(:,(t-R):(t-1));
-%     A_2(:,:,t-R) = pinv(x_lag_2)*x_t_2;
-    A_2 = pinv(x_lag_1)*x_t_1;
-    
-    Q_2 = cov(x_t_2 - x_lag_2*A_2);
-% end
+A2_P = pinv(x_lag')*x_t';
 
-% A_1_mean = mean(A_1,3);
-% A_2_mean = mean(A_2,3);
-% 
-% RiemDist(A_1_mean,A_2_mean);
+dim = 3;
+z_pred_1 = zeros(dim,size(data_cur,2));
+z_pred_2 = zeros(dim,size(data_cur,2));
 
-%%
 P_1 = Q_1;
-C_1 = g_1;
-
 P_2 = Q_2;
-C_2 = g_2;
 
-data_pred_1 = zeros(size(g_1 * data_cur));
-data_pred_2 = zeros(size(g_1 * data_cur));
+% z_pred_init = zeros(dim,size(data_cur,2));
 
-for t = (R+1):size(data_cur,2)
+state_pred = zeros(1,size(data_cur,2));
+
+
+
+for t = (R+1):80000%size(data_cur,2)
+% t=R+1;
+    data_prev = data_cur(:,(t-R):(t-1));
     
-% % % % %     
-
-    data_chunk = data_cur(:,(t-R):t);
-
-    data_pred_1(:,t) = g_1 * (sum(A_1 * data_chunk',1))';
-
-    P_1 = A_1 * P_1 * A_1' + Q_1;
-
-    K_1 = P_1*C_1'/(C_1*P_1*C_1'); % + R_1
-
-    data_pred_1(:,t) = data_pred_1(:,t) + K * (g_1 * data_real(:,t) - data_pred_1(:,t));
+    z_prev_1 = W1' * data_prev;
+    z_prev_2 = W2' * data_prev;
     
-    P_1 =  (eye(size(data_cur,1))-K*C_1)*P_1;
-
-% % % % %     
+    [Forecast_1,ForecastCov] = vgxpred(EstSpec_1,1,[],z_prev_1');
+    [Forecast_2,ForecastCov] = vgxpred(EstSpec_2,1,[],z_prev_2');
     
-    data_pred_2(:,t) = g_2 * (sum(A_2 * data_chunk',1))';
-
-    P_2 = A_2 * P_2 * A_2' + Q_2;
-
-    K_2 = P_2*C_2'/(C_2*P_2*C_2'); % + R_1
-
-    data_pred_2(:,t) = data_pred_2(:,t) + K * (g_2 * data_real(:,t) - data_pred_2(:,t));
+    z_pred_1(:,t) = Forecast_1';
+    z_pred_2(:,t) = Forecast_2';
     
-    P_2 =  (eye(size(data_cur,1))-K*C_2)*P_2;
+%     z_pred_init(:,t) = Forecast';
     
+    P_1 = A1_P * P_1 * A1_P' + Q_1;
+    K_1 = P_1*G1'/((G1*P_1*G1')+ Rme_1); 
     
+    P_2 = A2_P * P_2 * A2_P' + Q_2; 
+    K_2 = P_2*G2'/((G2*P_2*G2')+ Rme_2); 
+    
+    z_pred_1(:,t) = z_pred_1(:,t) + K_1 * (data_cur(:,t) - G1*z_pred_1(:,t));
+    z_pred_2(:,t) = z_pred_2(:,t) + K_2 * (data_cur(:,t) - G2*z_pred_2(:,t));
+
+    t
+        
+    er_1 = sum((data_cur(:,t) - G1*z_pred_1(:,t)).^2); 
+    er_2 = sum((data_cur(:,t) - G2*z_pred_2(:,t)).^2);
+    
+    state_pred(t) = (er_2 < er_1) + 1;
 end
-
-
-
-
-

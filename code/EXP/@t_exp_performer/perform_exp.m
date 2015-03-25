@@ -115,34 +115,34 @@ for n = 1 : length(this.visualizers)
     end
 end
 
-LDA_stage = -1;
-
-
-for i = 1:length(this.sigproc_graph.stages)
-    if(strcmp(this.sigproc_graph.stages(i).stage_name,'LDA'))
-        LDA_stage = i;
-    end
-end
-
-log_write('LDA stage num = %f\n', LDA_stage);
-
-states_predicted = this.sigproc_graph.stages(LDA_stage).buf_out.data(1,:);
-states_true = this.stateproc_graph.stages(LDA_stage).buf_out.data;
-
-states_true = states_true(states_true ~= 0);
-states_predicted = states_predicted(states_true ~= 0);
-
-pred_ok = mean(states_true == states_predicted);
-
-
-
-confM = confusionmat(states_true,states_predicted);
-
-log_write('>>>>> Correct =  %f\n', pred_ok);
-log_write('>>>>> Confusion matrix: \n ')
-%log_write(confM);
-
-disp(confM);
+% % % LDA_stage = -1;
+% % % 
+% % % 
+% % % for i = 1:length(this.sigproc_graph.stages)
+% % %     if(strcmp(this.sigproc_graph.stages(i).stage_name,'LDA'))
+% % %         LDA_stage = i;
+% % %     end
+% % % end
+% % % 
+% % % log_write('LDA stage num = %f\n', LDA_stage);
+% % % 
+% % % states_predicted = this.sigproc_graph.stages(LDA_stage).buf_out.data(1,:);
+% % % states_true = this.stateproc_graph.stages(LDA_stage).buf_out.data;
+% % % 
+% % % states_true = states_true(states_true ~= 0);
+% % % states_predicted = states_predicted(states_true ~= 0);
+% % % 
+% % % pred_ok = mean(states_true == states_predicted);
+% % % 
+% % % 
+% % % 
+% % % confM = confusionmat(states_true,states_predicted);
+% % % 
+% % % log_write('>>>>> Correct =  %f\n', pred_ok);
+% % % log_write('>>>>> Confusion matrix: \n ')
+% % % %log_write(confM);
+% % % 
+% % % disp(confM);
 
 
 

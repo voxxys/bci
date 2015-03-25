@@ -33,15 +33,17 @@ data_cur = (filter(hd_high,data_cur'))';
 hd_low = dfilt.df2sos(sos_low,g_low);
 
 data_cur = (filter(hd_low,data_cur'))'; 
+% 
+% Xmean = mean(data_cur(:));
+% Xstd = std(data_cur(:));
+% mask = (abs(data_cur-Xmean) < 3 * Xstd);
+% mask = prod(double(mask),1);
+% idx = mask;
+% idx = logical(idx);
+% data_cur = data_cur(:,idx);
+% states_cur = states(idx);
 
-Xmean = mean(data_cur(:));
-Xstd = std(data_cur(:));
-mask = (abs(data_cur-Xmean) < 3 * Xstd);
-mask = prod(double(mask),1);
-idx = mask;
-idx = logical(idx);
-data_cur = data_cur(:,idx);
-states_cur = states(idx);
+states_cur = states;
 
 data_1 = data_cur(:,states_cur == 1);
 data_2 = data_cur(:,states_cur == 2);

@@ -13,11 +13,24 @@ function create_paradigm_LSL32_first(fpath_paradigm, fpath_chanlocs)
 %    'Cp3', 'Cpz', 'Cp4', 'P3', 'Pz', 'P4', 'O1', 'O2', 'C1', 'C2', 'C5', 'C6', 'Cp1', 'Fc5', 'Cp5', 'Cp2', 'Fc6', 'Cp6'};
 
 % BrainAmps
-chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+% 
+% chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
 
-chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+% new (no Pz)
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T3', 'C3', 'Cz', 'C4',...
+%     'T4', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'T5', 'P3', 'P4', 'T6',  'O1', 'Oz', 'O2'};
+% chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
+%     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'T5', 'P3', 'P4', 'T6', 'O1', 'Oz', 'O2'};
+
+%temp
+chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
+    'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
+
 
 % Path to some eeglab dataset with loaded channel locations
 %fpath_chanlocs = 'C:\WORK\BCI\EXP_NEW\dataset_short.set';
@@ -70,6 +83,7 @@ stage_desc.obj_type = 't_sigproc_iir';
 stage_desc.params.inp_descs(1).inp_stage_name = 'IIR_NOTCH';
 %stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
 %stage_desc.params.inp_descs(1).inp_stage_name = 'IIR_HIPASS';
+stage_desc.params.params_spec.naming_freq_bands = freq_bands;
 stage_desc.params.params_spec.freq_bands = freq_bands;
 stage_desc.params.params_spec.filt_order = 5;
 stage_desc.params.params_spec.need_append_channames = 1;

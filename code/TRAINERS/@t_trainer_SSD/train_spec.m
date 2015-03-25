@@ -23,37 +23,37 @@ chan_names = buf_data.chan_names;
 % chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
 %     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
 
-chosen = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+% chosen = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
 
 
 % chosen = {'FC5','FC1','FC2','FC6','T7','C3','C4','T8','TP9','CP5','CP1','CP2','CP6','TP10', 'P7','P3','P4','P8','O1', 'Oz', 'O2'};%'FT9','FT10'};
 %chosen = {'C3','C4','T8','TP9','CP5','CP1','CP2','CP6','TP10'}%,'P7','P3','P4','P8','FT9','FT10'};
 
-
-chosen_left = {'FC1','FC5','CP5','TP9','CP1','T7','C3','P7','P3','O1'};
-    
-chosen_right = {'FC2','FC6','CP6','TP10','CP2','T8','C4','P8','P4','O2'};
-
-mask_channels = zeros(1,length(chosen));
-for i = 1:length(chosen)
-    mask_channels(i) = find(strcmp(chan_names, chosen(i)));
-    
-end
-
-mask_left = zeros(1,length(chosen_left));
-for i = 1:length(chosen_left)
-    mask_left(i) = find(strcmp(chosen, chosen_left(i)));
-    
-end
-
-mask_right = zeros(1,length(chosen_right));
-for i = 1:length(chosen_right)
-    mask_right(i) = find(strcmp(chosen, chosen_right(i)));
-    
-end
-
-data_cur = data_cur(mask_channels,:);
+% 
+% chosen_left = {'FC1','FC5','CP5','TP9','CP1','T7','C3','P7','P3','O1'};
+%     
+% chosen_right = {'FC2','FC6','CP6','TP10','CP2','T8','C4','P8','P4','O2'};
+% 
+% mask_channels = zeros(1,length(chosen));
+% for i = 1:length(chosen)
+%     mask_channels(i) = find(strcmp(chan_names, chosen(i)));
+%     
+% end
+% 
+% mask_left = zeros(1,length(chosen_left));
+% for i = 1:length(chosen_left)
+%     mask_left(i) = find(strcmp(chosen, chosen_left(i)));
+%     
+% end
+% 
+% mask_right = zeros(1,length(chosen_right));
+% for i = 1:length(chosen_right)
+%     mask_right(i) = find(strcmp(chosen, chosen_right(i)));
+%     
+% end
+% 
+% data_cur = data_cur(mask_channels,:);
 
 % for fft
 Fs = buf_data.srate;
@@ -71,68 +71,68 @@ idx = mask;
 idx = logical(idx);
 data_cur = data_cur(:,idx);
 states_cur = states(idx);
-
-
-data_cur_1 = data_cur(mask_left,:);
-
-data_1 = data_cur_1(:,states_cur == 1);
-data_2 = data_cur_1(:,states_cur == 2);
-
-C_1 = data_1 * data_1' / size(data_1,2);
-C_2 = data_2 * data_2' / size(data_1,2);
-
-[V_lr d_lr] = eig(C_1,C_2);
-
-M_lr = V_lr;
-
-data_cur_lr = M_lr * data_cur_1;
-
-y_cur_lr_1 = data_cur_lr(:,states_cur == 1)';
-y_cur_lr_2 = data_cur_lr(:,states_cur == 2)';
-
-for i = 1:2
-    
-    figure();
-    freq_range = 1:0.01:30;
-    spectrogram(y_cur_lr_1(:,i),1000,500,freq_range,Fs,'yaxis');
-%         xlim([0 300]);
-%         Xlim = get(gca, 'xlim');
-%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
-%         set(gca, 'XTicklabel', 0:20:300);
-    figure();
-    spectrogram(y_cur_lr_2(:,i),1000,500,freq_range,Fs,'yaxis');
-%         xlim([0 300]);
-%         Xlim = get(gca, 'xlim');
-%         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
-%         set(gca, 'XTicklabel', 0:20:300);
-    figure();
-end
-
+% 
+% 
+% data_cur_1 = data_cur(mask_left,:);
+% 
+% data_1 = data_cur_1(:,states_cur == 1);
+% data_2 = data_cur_1(:,states_cur == 2);
+% 
+% C_1 = data_1 * data_1' / size(data_1,2);
+% C_2 = data_2 * data_2' / size(data_1,2);
+% 
+% [V_lr d_lr] = eig(C_1,C_2);
+% 
+% M_lr = V_lr;
+% 
+% data_cur_lr = M_lr * data_cur_1;
+% 
+% y_cur_lr_1 = data_cur_lr(:,states_cur == 1)';
+% y_cur_lr_2 = data_cur_lr(:,states_cur == 2)';
+% 
+% for i = 1:2
+%     
+%     figure();
+%     freq_range = 1:0.01:30;
+%     spectrogram(y_cur_lr_1(:,i),1000,500,freq_range,Fs,'yaxis');
+% %         xlim([0 300]);
+% %         Xlim = get(gca, 'xlim');
+% %         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+% %         set(gca, 'XTicklabel', 0:20:300);
+%     figure();
+%     spectrogram(y_cur_lr_2(:,i),1000,500,freq_range,Fs,'yaxis');
+% %         xlim([0 300]);
+% %         Xlim = get(gca, 'xlim');
+% %         set(gca, 'XTick', linspace(Xlim(1), Xlim(2), 16));
+% %         set(gca, 'XTicklabel', 0:20:300);
+%     figure();
+% end
+% 
 
 
 % idx1 = find(states_cur == train_params.state1);
 % idx2 = find(states_cur == train_params.state2);
 % 
 
+% 
+% 
+% data_st_left = data_cur(:,states_cur == 1);
+% 
+% data_left = data_cur(mask_left,:);
+% 
+% data_right = data_cur(mask_right,:);
 
-
-data_st_left = data_cur(:,states_cur == 1);
-
-data_left = data_cur(mask_left,:);
-
-data_right = data_cur(mask_right,:);
-
-
-
+% 
+% 
 y = data_cur';
-y_left = data_left';
-y_right = data_right';
-
+% y_left = data_left';
+% y_right = data_right';
+% 
 xdft = fft(y,NFFT)/L;
-
-xdft_left = fft(y_left,NFFT)/L;
-xdft_right = fft(y_right,NFFT)/L;
-
+% 
+% xdft_left = fft(y_left,NFFT)/L;
+% xdft_right = fft(y_right,NFFT)/L;
+% 
 f = Fs/2*linspace(0,1,NFFT/2+1);
 % 
 % for i = 1:length(chosen_left)

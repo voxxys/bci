@@ -16,15 +16,27 @@ function create_expsetup_base_LSL32_first(fpath_expsetup, fpath_chanlocs)
 %    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
 %chan_names = {'Fp1', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
 %    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'Pz', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
-chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3', 'P4', 'P8', 'FT9', 'O1', 'Oz', 'O2',  'FT10'};
+
+% new (no Pz)
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T3', 'C3', 'Cz', 'C4',...
+%     'T4', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'T5', 'P3', 'P4', 'T6',  'O1', 'Oz', 'O2'};
+
+%temp
+chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+
 
 % Mask of channels to visualize at scalp
 %chan_names_vismask = chan_names;
-chan_names_vismask = {'FC5', 'FC1', 'FC2', 'FC6', 'C3', 'Cz', 'C4', 'CP5', 'CP1', 'CP2', 'CP6'};
+% chan_names_vismask = {'FC5', 'FC1', 'FC2', 'FC6', 'C3', 'Cz', 'C4', 'CP5', 'CP1', 'CP2', 'CP6'};
+
+chan_names_vismask = {'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4', 'Cp5', 'Cp1', 'Cp2', 'Cp6'};
         
 % Frequency bands
 %freq_bands = {[11 14], [16 25]};
+% naming_freq_bands = {[7 14], [16 25]};
 freq_bands = {[7 14], [16 25]};
 
 nbands = length(freq_bands);
@@ -92,7 +104,7 @@ expsetup.visualizers(n).params.subplot_info = [2,1,2];
 %expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
 expsetup.visualizers(n).params.line_styles = {'r', 'b', 'g', 'm', 'k', 'y', 'c'};
 expsetup.visualizers(n).params.line_width = 1;
-expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e2;
+expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-2;
 %expsetup.visualizers(n).params.ylim = [-2 5] * 1e5;
 expsetup.visualizers(n).params.flip90 = 0;
 expsetup.visualizers(n).params.centval = 0;
@@ -102,7 +114,9 @@ expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_NOTCH';
 %expsetup.visualizers(n).params.sig_descs{1}.stage_name = '[INPUT]';
 %expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_HIPASS';
 %expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Fp1'};
-expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'FT9', 'FC5', 'FC1', 'FC2', 'FC6', 'FT10', 'T7'};
+% expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'FT9', 'FC5', 'FC1', 'FC2', 'FC6', 'FT10', 'T7'};
+expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7'};
+
 %{'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5'};
 %, {'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4', 'T8'}
 %{'TP9', 'CP5', 'CP1', 'CP2', 'CP6', 'TP10', 'P7', 'P3'}
