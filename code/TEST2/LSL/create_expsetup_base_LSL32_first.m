@@ -50,7 +50,7 @@ expsetup.exp_info.setup_name = 'LSL32_first';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 300;
+expsetup.exp_params.exp_duration_t = 240;
 
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
