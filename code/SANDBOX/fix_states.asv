@@ -1,0 +1,7 @@
+
+
+
+for b = 2:(length(borders)-1)
+        fixed_states(borders(b-1):borders(b)) = mod((b-2)*ones(1,size(fixed_states(borders(b-1):borders(b)),2)),6) + ones(1,size(ddd(borders(b-1):borders(b)),2));
+        
+end

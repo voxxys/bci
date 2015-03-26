@@ -2128,3 +2128,114 @@ BUF_OUT
 [RIEMDIST.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
 [RIEMDIST.TRAINER.STATEPROC_STAGE] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
 [RIEMDIST.TRAINER.STATEPROC_STAGE_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+>>>>> Sign test: correct = 0.529220
+[RIEMDIST] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[RIEMDIST] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[RIEMDIST] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[RIEMDIST] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[RIEMDIST] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+
+=================  RIEMDIST  =================
+
+OBJECT
+	Name: RIEMDIST_OBJ
+	Type: t_statepred_rieman
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 36017 samples
+	Channels: 
+		1 CSP_(7-14)_1_avgpow
+		2 CSP_(7-14)_2_avgpow
+		3 CSP_(7-14)_3_avgpow
+		4 CSP_(7-14)_4_avgpow
+		5 CSP_(7-14)_5_avgpow
+		6 CSP_(7-14)_6_avgpow
+		7 CSP_(16-25)_1_avgpow
+		8 CSP_(16-25)_2_avgpow
+		9 CSP_(16-25)_3_avgpow
+		10 CSP_(16-25)_4_avgpow
+		11 CSP_(16-25)_5_avgpow
+		12 CSP_(16-25)_6_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(7-14)_1_avgpow	(1)
+		2 CSP_(7-14)_2_avgpow	(2)
+		3 CSP_(7-14)_3_avgpow	(3)
+		4 CSP_(7-14)_4_avgpow	(4)
+		5 CSP_(7-14)_5_avgpow	(5)
+		6 CSP_(7-14)_6_avgpow	(6)
+		7 CSP_(16-25)_1_avgpow	(7)
+		8 CSP_(16-25)_2_avgpow	(8)
+		9 CSP_(16-25)_3_avgpow	(9)
+		10 CSP_(16-25)_4_avgpow	(10)
+		11 CSP_(16-25)_5_avgpow	(11)
+		12 CSP_(16-25)_6_avgpow	(12)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: RIEMDIST.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 36017 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[RIEMDIST_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  RIEMDIST  =================
+
+OBJECT
+	Name: RIEMDIST_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 36017 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: RIEMDIST.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 36017 samples
+	Channels: 
+		1 STATE
+
