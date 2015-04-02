@@ -107,13 +107,13 @@ Cz6 = data_6*data_6'/size(data_6,2);
 
 [Vz,Dz] = eig(Cz1 + 0.05*trace(Cz1)/size(Cz1,1)*eye(size(Cz1)),Cz6+ 0.01*trace(Cz6)/size(Cz6,1)*eye(size(Cz6,1)));
 iVz = inv(Vz)';
-W1 = Vz(:,1:3);
-G1 = iVz(:,1:3);
+W1 = Vz(:,[1:4, (end-3):end]);
+G1 = iVz(:,[1:4, (end-3):end]);
 
 [Vz,Dz] = eig(Cz2 + 0.05*trace(Cz2)/size(Cz2,1)*eye(size(Cz2)),Cz6+ 0.01*trace(Cz6)/size(Cz6,1)*eye(size(Cz6,1)));
 iVz = inv(Vz)';
-W2 = Vz(:,1:3);
-G2 = iVz(:,1:3);
+W2 = Vz(:,[1:4, (end-3):end]);
+G2 = iVz(:,[1:4, (end-3):end]);
 
 % measurement errors
 
@@ -123,7 +123,7 @@ Rme_2 = (data_cur-G2*W2'* data_cur)*(data_cur-G2*W2'* data_cur)'/size(data_cur,2
 
 %%
 
-AROrder = 5;
+AROrder = 1;
 Dim = 3;
 
 data_1 = data_cur(:,states_cur == 1);
@@ -150,29 +150,24 @@ Spec_2 = vgxset('ARsolve',AL);
 [EstSpec_2,EstSE,logL,W] = vgxvarx(Spec_2,z_cur_n_fit_2',[],z_cur_n_prev_2');
 
 %% finding Q_1, Q_2
-
-z_pred_q = zeros(size(z_cur_1));
+z_pred_q1 = zeros(size(z_cur_1));
 for t = (AROrder+1):size(z_cur_1,2)
-    z_prev_q = z_cur_1(:,(t-AROrder):(t-1));
-    [Forecast,ForecastCov] = vgxpred(EstSpec_1,1,[],z_prev_q');
-    z_pred_q(:,t) = Forecast';
-    t
+    val = zeros(Dim,1);
+    for k=1:AROrder
+        val = val + EstSpec_1.AR{k}*z_cur_1(:,t-k);
+    end;
+    z_pred_q1(:,t) = val;
 end
-%Q_1 = cov(z_pred_q(:,(AROrder+1):end),z_cur_1(:,(AROrder+1):end));
-
-Q_1 = z_pred_q(:,(AROrder+1):end) * z_cur_1(:,(AROrder+1):end)' / size(z_cur_1(:,(AROrder+1):end),2);
-
-
-z_pred_q = zeros(size(z_cur_2));
+z_pred_q2 = zeros(size(z_cur_2));
 for t = (AROrder+1):size(z_cur_2,2)
-    z_prev_q = z_cur_2(:,(t-AROrder):(t-1));
-    [Forecast,ForecastCov] = vgxpred(EstSpec_2,1,[],z_prev_q');
-    z_pred_q(:,t) = Forecast';
-    t
+    val = zeros(Dim,1);
+    for k=1:AROrder
+        val = val + EstSpec_2.AR{k}*z_cur_2(:,t-k);
+    end;
+    z_pred_q2(:,t) = val;
 end
-%Q_1 = cov(z_pred_q(:,(AROrder+1):end),z_cur_1(:,(AROrder+1):end));
-
-Q_2 = z_pred_q(:,(AROrder+1):end) * z_cur_2(:,(AROrder+1):end)' / size(z_cur_2(:,(AROrder+1):end),2);
+Q_1 = z_pred_q1(:,(AROrder+1):end) * z_cur_1(:,(AROrder+1):end)' / size(z_cur_1(:,(AROrder+1):end),2);
+Q_2 = z_pred_q2(:,(AROrder+1):end) * z_cur_2(:,(AROrder+1):end)' / size(z_cur_2(:,(AROrder+1):end),2);
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             %%
