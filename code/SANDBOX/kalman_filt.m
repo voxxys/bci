@@ -197,24 +197,26 @@ z_pred_2 = zeros(dim,size(data_cur,2));
 P_1 = Q_1;
 P_2 = Q_2;
 
+z_prev_1 = W1' * data_cur(:,1:2:end);
+z_prev_2 = W2' * data_cur(:,1:2:end);
+
 % z_pred_init = zeros(dim,size(data_cur,2));
 
 state_pred = zeros(1,size(data_cur,2));
 
 for t = (R+1):80000%size(data_cur,2)
-% t=R+1;
-    data_prev = data_cur(:,(t-R):(t-1));
     
-    z_prev_1 = W1' * data_prev;
-    z_prev_2 = W2' * data_prev;
-    
-    [Forecast_1,ForecastCov] = vgxpred(EstSpec_1,1,[],z_prev_1');
-    [Forecast_2,ForecastCov] = vgxpred(EstSpec_2,1,[],z_prev_2');
-    
-    z_pred_1(:,t) = Forecast_1';
-    z_pred_2(:,t) = Forecast_2';
-    
-%     z_pred_init(:,t) = Forecast';
+    val = zeros(Dim,1);
+    for k=1:AROrder
+        val = val + EstSpec_1.AR{k}*z_prev_1(:,t-k);
+    end;
+    z_pred_1(:,t) = val;
+
+    val = zeros(Dim,1);
+    for k=1:AROrder
+        val = val + EstSpec_2.AR{k}*z_prev_2(:,t-k);
+    end;
+    z_pred_2(:,t) = val;
     
     P_1 = A1_P * P_1 * A1_P' + Q_1;
     K_1 = P_1*G1'/((G1*P_1*G1')+ Rme_1); 
