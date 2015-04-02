@@ -3,8 +3,7 @@ load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_imag_T2
 
 for s = 1:10
 
-% sdss = 2.2:0.2:4;
-wins = 200:200:2000;
+sdss = 2.2:0.2:4;
 data_cur = data.data;
 states_cur = states.data;
 sample_idx = data.sample_idx;
@@ -33,34 +32,32 @@ data_cur = data_cur(:,1:2:end);
 states_cur = states_cur(1:2:end);
 sample_idx = sample_idx(1:2:end);
 
-sds = 2.8;
+sds = sdss(s);
 
+data_pwr = sqrt(sum((data_cur.^2),1));% 
+% row_mean = mean(data_cur,2);
+% row_std = std(data_cur,0,2);
 
-row_mean = mean(data_cur,2);
-row_std = std(data_cur,0,2);
-
-mask = (abs(data_cur-row_mean(:,ones(1,size(data_cur,2)))) < sds * row_std(:,ones(1,size(data_cur,2))));
-
-idx = ~sum(~mask,1);
-
-idx = find(idx);
-data_cur = data_cur(:,idx);
-states_cur = states_cur(idx);
-sample_idx = sample_idx(idx);
-
-
-% data_pwr = sqrt(sum((data_cur.^2),1));
+% mask = (abs(data_cur-row_mean(:,ones(1,size(data_cur,2)))) < sds * row_std(:,ones(1,size(data_cur,2))));
 % 
-%  for n = 1 : 1
-%     Xmean = mean(data_pwr);
-%     Xstd = std(data_pwr);
-%     mask = (abs(data_pwr-Xmean) < sds * Xstd);
-%     mask = prod(double(mask),1);
-%     idx = find(mask);
-%     data_cur = data_cur(:,idx);
-%     states_cur = states_cur(idx);
-%     data_pwr = data_pwr(:,idx);
-%  end
+% idx = ~sum(~mask,1);
+% 
+% idx = find(idx);
+% data_cur = data_cur(:,idx);
+% states_cur = states_cur(idx);
+% sample_idx = sample_idx(idx);
+
+
+ for n = 1 : 1
+    Xmean = mean(data_pwr);
+    Xstd = std(data_pwr);
+    mask = (abs(data_pwr-Xmean) < 0.2 * Xstd);
+    mask = prod(double(mask),1);
+    idx = find(mask);
+    data_cur = data_cur(:,idx);
+    states_cur = states_cur(idx);
+    data_pwr = data_pwr(:,idx);
+ end
 
 for i = 1:6
     data_state{i} = data_cur(:,states_cur == i);
@@ -156,14 +153,12 @@ for i = 1:size(cartProd,1)
         y_data_test = [Y1_test.^2, Y2_test.^2];
         y_states_test = [ones(1,size(Y1_test,2)), 2*ones(1,size(Y2_test,2))];
         
-        win = wins(s);
-        
         for k=1:size(y_data,1)
-             y_data(k,:) = conv(y_data(k,:),ones(1,win),'same');
+             y_data(k,:) = conv(y_data(k,:),ones(1,50),'same');
         end;
         
         for k=1:size(y_data_test,1)
-             y_data_test(k,:) = conv(y_data_test(k,:),ones(1,win),'same');
+             y_data_test(k,:) = conv(y_data_test(k,:),ones(1,50),'same');
         end;
          
         [C,err,P,logp,coeff] = classify(y_data_test', y_data', y_states, 'linear');
