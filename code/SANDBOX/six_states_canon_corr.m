@@ -5,9 +5,9 @@ int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_fi
 
 %%% external data
 
-ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20_2.mat');
+% ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20_2.mat');
 
-[data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,11,20,5,1);
+% [data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,11,20,5,1);
 
 % for m = 1:10
 %     disp(m);
@@ -15,7 +15,7 @@ ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_fi
 for s = 1:10
 
     
-%             disp(s);
+            disp(s);
             
 %rb = 0.5:0.5:5;
 sdss = 2.2:0.2:4;
@@ -23,7 +23,7 @@ sdss = 2.2:0.2:4;
 
 [data_cur,states_cur,sample_idx] = preprocess(int_data,11,20,sdss(s),2);
 
-state_1 = 1;
+state_1 = 2;
 state_2 = 6;
 
 state_changes = find(diff(states_cur));
@@ -62,11 +62,11 @@ for i = 1:size(cartProd,1)
     data_train = data_cur(:,train_mask);
     states_train = states_cur(train_mask);
    
-%     data_test = data_cur(:,test_mask);
-%     states_test = states_cur(test_mask);
+    data_test = data_cur(:,test_mask);
+    states_test = states_cur(test_mask);
 
-    data_test = data_ext;
-    states_test = states_ext;
+%     data_test = data_ext;
+%     states_test = states_ext;
     
     % % % TODO: test with external data
     
@@ -77,9 +77,11 @@ for i = 1:size(cartProd,1)
     data_1 = data_train(:,states_train == state_1);
     data_2 = data_train(:,states_train == state_2);
     
+
     data_1_test = data_test(:,states_test == state_1);
     data_2_test = data_test(:,states_test == state_2);
     
+   
     C1 = data_1 * data_1' / size(data_1,2);
     C2 = data_2 * data_2' / size(data_2,2);
 
@@ -132,6 +134,12 @@ for i = 1:size(cartProd,1)
         for k=1:size(y_data_test,1)
              y_data_test(k,:) = conv(y_data_test(k,:),ones(1,win),'same');
         end;
+
+        
+        [A11 B11 r11(i) U11 V11] = canoncorr(data_1',data_1_test');
+        [A12 B12 r12(i) U12 V12] = canoncorr(data_2',data_1_test');    
+        [A21 B21 r21(i) U21 V21] = canoncorr(data_1',data_2_test');
+        [A22 B22 r22(i) U22 V22] = canoncorr(data_2',data_2_test');    
          
         [C,err,P,logp,coeff] = classify(y_data_test', y_data', y_states, 'linear');
         A_tr(s,i) = 1-err;
