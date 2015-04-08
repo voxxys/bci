@@ -50,7 +50,7 @@ expsetup.exp_info.setup_name = 'LSL32_first';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 240;
+expsetup.exp_params.exp_duration_t = 160;
 
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
@@ -104,7 +104,7 @@ expsetup.visualizers(n).params.subplot_info = [2,1,2];
 %expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
 expsetup.visualizers(n).params.line_styles = {'r', 'b', 'g', 'm', 'k', 'y', 'c'};
 expsetup.visualizers(n).params.line_width = 1;
-expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-2;
+expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-4;
 %expsetup.visualizers(n).params.ylim = [-2 5] * 1e5;
 expsetup.visualizers(n).params.flip90 = 0;
 expsetup.visualizers(n).params.centval = 0;

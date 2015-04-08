@@ -16,19 +16,33 @@ data_cur = data;
 
 
 
-
+% 
 % Remove outliers
-for n = 1 : 2
-    Xmean = mean(data_cur(:));
-    Xstd = std(data_cur(:));
-    mask = (abs(data_cur-Xmean) < 3 * Xstd);
-    mask = prod(double(mask),1);
-    idx = find(mask);
+% for n = 1 : 2
+%     Xmean = mean(data_cur(:));
+%     Xstd = std(data_cur(:));
+%     mask = (abs(data_cur-Xmean) < 2.2 * Xstd);
+%     mask = prod(double(mask),1);
+%     idx = find(mask);
+%     data_cur = data_cur(:,idx);
+%     states_cur = states(idx);
+% end
+% 
+sds = 3.5;
+
+    row_mean = mean(data_cur,2);
+    row_std = std(data_cur,0,2);
+
+    mask = (abs(data_cur-row_mean(:,ones(1,size(data_cur,2)))) < sds * row_std(:,ones(1,size(data_cur,2))));
+
+    idx = ~sum(~mask,1);
+
+    idx = find(idx);
+
     data_cur = data_cur(:,idx);
     states_cur = states(idx);
-end
 
-  
+
 idx1 = find(states_cur == train_params.state1);
 idx2 = find(states_cur == train_params.state2);
 

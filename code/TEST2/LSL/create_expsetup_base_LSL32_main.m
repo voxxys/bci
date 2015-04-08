@@ -39,7 +39,7 @@ expsetup.exp_info.setup_name = 'LSL32_main';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_main';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 25;
+expsetup.exp_params.exp_duration_t = 80;
 
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
@@ -61,7 +61,7 @@ expsetup.stategen_stage_desc.params.params_base.state_descs(2).label = 1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).name = 'RIGHT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).mark = 1;
 expsetup.stategen_stage_desc.params.params_base.state_id_def = 1;
-expsetup.stategen_stage_desc.params.params_spec.T = 5;
+expsetup.stategen_stage_desc.params.params_spec.T = 20;
 
 % Visualizer parameters (signal)
 n = 1;
