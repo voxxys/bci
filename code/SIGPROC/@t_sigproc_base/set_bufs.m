@@ -21,6 +21,10 @@ function params_out = set_bufs(this, bufs_in, buf_out)
     for inp_num = 1 : length(this.params.inp_descs)
        
         inp_desc_cur = this.params.inp_descs(inp_num);
+        
+        disp(inp_desc_cur.chan_names_in);
+        
+        disp(bufs_in(inp_num).chan_names);
                     
         for chan_num_in = 1 : length(inp_desc_cur.chan_names_in)
             
@@ -32,7 +36,11 @@ function params_out = set_bufs(this, bufs_in, buf_out)
 %                 bufs_in(inp_num).chan_names(i) = strrep(bufs_in(inp_num).chan_names(i), '7-14', '7-9');
 %             end
             
-            chan_id_cur = find(strcmp(chan_name_cur, bufs_in(inp_num).chan_names));
+
+
+
+            
+            chan_id_cur = find(strcmpi(chan_name_cur, bufs_in(inp_num).chan_names));
             if isempty(chan_id_cur)
                 log_write('[%s] t_sigproc_base::set_bufs() -> channel ''%s'' not found in the input buffer %i - ERROR\n', name, chan_name_cur, inp_num);
                 assert(1==0);
