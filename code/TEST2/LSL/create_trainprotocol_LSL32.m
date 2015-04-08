@@ -117,8 +117,8 @@ stage_desc.params.params_spec.freq_bands = freq_bands;
 stage_desc.params.params_spec.naming_freq_bands = naming_freq_bands;
 stage_desc.params.params_spec.filt_order = 5;
 stage_desc.params.params_spec.need_append_channames = 1;
-stage_desc.trainer_type = 't_trainer_SSD';
-stage_desc.train_params.lambda = 0.1;
+% stage_desc.trainer_type = 't_trainer_SSD';
+% stage_desc.train_params.lambda = 0.1;
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
 
