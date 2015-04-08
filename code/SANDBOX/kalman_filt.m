@@ -172,7 +172,7 @@ end
 res_error1 = z_pred_q1(:,(AROrder+1):end) - z_cur_1(:,(AROrder+1):end);
 res_error2 = z_pred_q2(:,(AROrder+1):end) - z_cur_2(:,(AROrder+1):end);
 
-Q_1 =res_error1*res_error1' / size(z_cur_1(:,(AROrder+1):end),2);
+Q_1 = res_error1*res_error1' / size(z_cur_1(:,(AROrder+1):end),2);
 Q_2 = res_error2*res_error2' / size(z_cur_2(:,(AROrder+1):end),2);
 
 %%
@@ -204,8 +204,6 @@ P_2 = Q_2;
 z_prev_1 = W1' * data_cur;
 z_prev_2 = W2' * data_cur;
 
-% z_pred_init = zeros(dim,size(data_cur,2));
-
 state_pred = zeros(1,size(data_cur,2));
 state_pred_pdf = zeros(1,size(data_cur,2));
 state_pred_new = zeros(1,size(data_cur,2));
@@ -215,7 +213,7 @@ er1_sum = zeros(1,size(data_cur,2));
 er2_sum = zeros(1,size(data_cur,2));
 
 
-win = 500;
+win = 50;
 
 for t = (R+1):size(data_cur,2)
     
@@ -239,14 +237,13 @@ for t = (R+1):size(data_cur,2)
     
     z_pred_1(:,t) = z_pred_1(:,t) + K_1 * (data_cur(:,t) - G1*z_pred_1(:,t));
     z_pred_2(:,t) = z_pred_2(:,t) + K_2 * (data_cur(:,t) - G2*z_pred_2(:,t));
-    
-%     t
-    
-    p_1(t) = mvnpdf(W1' * data_cur(:,t),z_pred_1(:,t),P_1);
-    p_2(t) = mvnpdf(W2' * data_cur(:,t),z_pred_2(:,t),P_2);
 
+
+% for state_pred
     er_1(t) = sum((data_cur(:,t) - G1*z_pred_1(:,t)).^2); 
     er_2(t) = sum((data_cur(:,t) - G2*z_pred_2(:,t)).^2);
+    er_1_sum(t) = sum(er_1(max(1,t-win):t));
+    er_2_sum(t) = sum(er_2(max(1,t-win):t));
 
 %     [A11 B11 r11 U11 V11] = canoncorr(data_cur(:,max(1,t-win):t)',(G1*z_pred_1(:,max(1,t-win):t))');
 %     [A12 B12 r12 U12 V12] = canoncorr(data_cur(:,max(1,t-win):t)',(G2*z_pred_2(:,max(1,t-win):t))');
@@ -254,13 +251,15 @@ for t = (R+1):size(data_cur,2)
 %     er_1(t) = 1 - abs(r11(1)); 
 %     er_2(t) = 1 - abs(r12(1));
 %     
-    er_1_sum(t) = sum(er_1(max(1,t-win):t));
-    er_2_sum(t) = sum(er_2(max(1,t-win):t));
-    
+
+% for state_pred_pdf
+    p_1(t) = mvnpdf(W1' * data_cur(:,t),z_pred_1(:,t),P_1);
+    p_2(t) = mvnpdf(W2' * data_cur(:,t),z_pred_2(:,t),P_2);
     pdf_1_sum(t) = sum(p_1(max(1,t-win):t));
     pdf_2_sum(t) = sum(p_2(max(1,t-win):t));
     
     state_pred(t) = (er_2_sum(t) < er_1_sum(t)) + 1;
+    
     state_pred_pdf(t) = (pdf_1_sum(t) < pdf_2_sum(t)) + 1;
     
 end

@@ -34,8 +34,8 @@ classdef t_eeg_recv_manager_lsl < t_eeg_recv_manager_base
             disp('Resolving an EEG stream...');
             result = {};
             while isempty(result)
-%                 result = lsl_resolve_byprop(lib,'type','EEG'); end
-                  result = lsl_resolve_byprop(lib,'type','Data'); end
+                result = lsl_resolve_byprop(lib,'type','EEG'); end
+%                   result = lsl_resolve_byprop(lib,'type','Data'); end
             disp('Opening an inlet...');
             this.inlet = lsl_inlet(result{1});
             disp('Now receiving data...');

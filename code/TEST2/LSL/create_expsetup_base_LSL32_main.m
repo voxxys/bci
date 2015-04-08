@@ -45,6 +45,13 @@ expsetup.exp_params.exp_duration_t = 25;
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
 expsetup.sigsrc_stage_desc.params.params_spec = struct();
 
+
+% Reciever parameters (test)
+% expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_file';
+% expsetup.sigsrc_stage_desc.params.params_spec.fpath_in = 'D:\BCI\EXP_DATA\short_32chan_2.set';
+% expsetup.sigsrc_stage_desc.params.params_spec.mode = 'realtime';
+% expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
+
 % State generator parameters
 expsetup.stategen_stage_desc.obj_type = 't_state_generator_binary';
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).label = -1;
