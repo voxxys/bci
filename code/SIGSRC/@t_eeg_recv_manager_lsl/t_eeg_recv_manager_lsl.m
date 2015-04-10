@@ -66,16 +66,30 @@ classdef t_eeg_recv_manager_lsl < t_eeg_recv_manager_base
         function srate = get_srate(this)
             %srate = this.inf.desc().child_value('nominal_srate');
             srate = this.inf.nominal_srate();
+
         end       
         
         %===================================
+        
+
+
+
+%         function chan_names = get_chan_names_out(this)            
+%             ch = this.inf.desc().child('channels').child('channel');
+%             for k = 1 : this.inf.channel_count()
+%                 chan_names{k} = ch.child_value('label');
+%                 ch = ch.next_sibling();
+%             end            
+%         end       
+%         
         function chan_names = get_chan_names_out(this)            
-            ch = this.inf.desc().child('channels').child('channel');
+          chan_names_temp = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+          'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
             for k = 1 : this.inf.channel_count()
-                chan_names{k} = ch.child_value('label');
-                ch = ch.next_sibling();
+                chan_names{k} = chan_names_temp{k};
             end            
         end       
+        
         
         %===================================
         function chan_names = get_mark_chan_names_out(this)

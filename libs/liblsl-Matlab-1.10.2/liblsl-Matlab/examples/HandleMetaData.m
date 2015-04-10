@@ -26,7 +26,7 @@ outlet = lsl_outlet(info);
 lib = lsl_loadlib();
 result = {};
 while isempty(result)
-    result = lsl_resolve_byprop(lib,'type','EEG'); end
+    result = lsl_resolve_byprop(lib,'type','Data'); end
 inlet = lsl_inlet(result{1});
 % get the full stream info (including custom meta-data) and dissect it
 inf = inlet.info();
@@ -36,7 +36,10 @@ fprintf(['The manufacturer is: ' inf.desc().child_value('manufacturer') '\n']);
 fprintf(['The cap circumference is: ' inf.desc().child('cap').child_value('size') '\n']);
 fprintf('The channel labels are as follows:\n');
 ch = inf.desc().child('channels').child('channel');
+
 for k = 1:inf.channel_count()
+    lib = lsl_loadlib();
     fprintf(['  ' ch.child_value('label') '\n']);
     ch = ch.next_sibling();
 end
+

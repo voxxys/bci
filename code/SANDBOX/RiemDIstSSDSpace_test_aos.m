@@ -32,7 +32,7 @@ for bnd = 1:20
     for b = 2:length(borders)
         range = borders(b-1):borders(b);
         x = data_cur(:,range);
-        st = fix(mean(states(range))+0.01); %?
+        st = fix(mean(states(range))+0.01); 
         Cz1 = Cz1+(x*x'/size(x,2))*(st==2);
         Cz2 = Cz2+(x*x'/size(x,2))*(st==1);
         Nz1 = Nz1+sum(st==1);

@@ -1,14 +1,19 @@
-load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_imag_T20.mat')
+clear
+clc
 
+<<<<<<< HEAD
+load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20.mat')
 
-for s = 1:10
+st1 = 5;
+st2 = 6;
 
-% sdss = 2.2:0.2:4;
-wins = 200:200:2000;
+% for s = 1:10
+
+sdss = 2.2:0.2:4;
+wins = 50:50:500;
 data_cur = data.data;
 states_cur = states.data;
 sample_idx = data.sample_idx;
-
 
 
 Fs = 1000;
@@ -33,22 +38,28 @@ data_cur = data_cur(:,1:2:end);
 states_cur = states_cur(1:2:end);
 sample_idx = sample_idx(1:2:end);
 
-sds = 2.8;
+sds = 2.5;
 
 
 row_mean = mean(data_cur,2);
 row_std = std(data_cur,0,2);
+=======
+int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20.mat');
 
-mask = (abs(data_cur-row_mean(:,ones(1,size(data_cur,2)))) < sds * row_std(:,ones(1,size(data_cur,2))));
+%%% external data
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
 
-idx = ~sum(~mask,1);
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20_2.mat');
 
-idx = find(idx);
-data_cur = data_cur(:,idx);
-states_cur = states_cur(idx);
-sample_idx = sample_idx(idx);
+[data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,11,20,5,1);
 
+% for m = 1:10
+%     disp(m);
+%     
+for s = 1:10
 
+<<<<<<< HEAD
+% 
 % data_pwr = sqrt(sum((data_cur.^2),1));
 % 
 %  for n = 1 : 1
@@ -65,7 +76,19 @@ sample_idx = sample_idx(idx);
 for i = 1:6
     data_state{i} = data_cur(:,states_cur == i);
 end
+=======
+    
+%             disp(s);
+            
+%rb = 0.5:0.5:5;
+sdss = 2.2:0.2:4;
+% wins = 50:50:500;
 
+[data_cur,states_cur,sample_idx] = preprocess(int_data,11,20,sdss(s),2);
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
+
+state_1 = 1;
+state_2 = 6;
 
 state_changes = find(diff(states_cur));
 kfold_delims = [state_changes, floor(state_changes(1)/2), state_changes(1:(end-1))+floor(diff(state_changes)/2)];
@@ -82,14 +105,19 @@ for i = 1:24
    sample_idx_part{i} = sample_idx(part_idx);
 end
 
-parts_1 = find(states_kfold_delims == 1);
-parts_6 = find(states_kfold_delims == 6);
+<<<<<<< HEAD
+parts_1 = find(states_kfold_delims == st1);
+parts_2 = find(states_kfold_delims == st2);
+=======
+parts_1 = find(states_kfold_delims == state_1);
+parts_2 = find(states_kfold_delims == state_2);
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
 
-sets = {parts_1, parts_6};
+sets = {parts_1, parts_2};
 [x, y] = ndgrid(sets{:});
 cartProd = [x(:) y(:)];
 
-nums = [parts_1, parts_6];
+nums = [parts_1, parts_2];
 
 for i = 1:size(cartProd,1)
     on = setdiff(nums,cartProd(i,:));
@@ -103,15 +131,35 @@ for i = 1:size(cartProd,1)
     data_train = data_cur(:,train_mask);
     states_train = states_cur(train_mask);
    
-%     data_test = data_cur(:,test_mask);
-%     states_test = states_cur(test_mask);
+<<<<<<< HEAD
+    data_test = data_cur(:,test_mask);
+    states_test = states_cur(test_mask);
     
          
-    data_1 = data_train(:,states_train == 1);
-    data_2 = data_train(:,states_train == 6);
+    data_1 = data_train(:,states_train == st1);
+    data_2 = data_train(:,states_train == st2);
     
-    data_1_test = data_test(:,states_test == 1);
-    data_2_test = data_test(:,states_test == 6);
+    data_1_test = data_test(:,states_test == st1);
+    data_2_test = data_test(:,states_test == st2);
+=======
+%     data_test = data_cur(:,test_mask);
+%     states_test = states_cur(test_mask);
+
+    data_test = data_ext;
+    states_test = states_ext;
+    
+    % % % TODO: test with external data
+    
+%     data_test_ext = 
+%     states_test_ext = 
+    
+         
+    data_1 = data_train(:,states_train == state_1);
+    data_2 = data_train(:,states_train == state_2);
+    
+    data_1_test = data_test(:,states_test == state_1);
+    data_2_test = data_test(:,states_test == state_2);
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
     
     C1 = data_1 * data_1' / size(data_1,2);
     C2 = data_2 * data_2' / size(data_2,2);
@@ -129,8 +177,8 @@ for i = 1:size(cartProd,1)
         
         Y1_test = M * data_1_test;
         Y2_test = M * data_2_test;
-        
-    
+%         
+%     
 %         figure;
 %         hold on;
 %         plot(Y1(1,:), Y1(end,:), 'b.');
@@ -156,7 +204,11 @@ for i = 1:size(cartProd,1)
         y_data_test = [Y1_test.^2, Y2_test.^2];
         y_states_test = [ones(1,size(Y1_test,2)), 2*ones(1,size(Y2_test,2))];
         
-        win = wins(s);
+<<<<<<< HEAD
+        win = 500;%wins(s);
+=======
+        win = 500;
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
         
         for k=1:size(y_data,1)
              y_data(k,:) = conv(y_data(k,:),ones(1,win),'same');
@@ -167,10 +219,27 @@ for i = 1:size(cartProd,1)
         end;
          
         [C,err,P,logp,coeff] = classify(y_data_test', y_data', y_states, 'linear');
-        A_tr(s,i) = 1-err;
-        A_te(s,i) = sum(y_states_test == C')/size(y_states_test,2);
+        A_tr(i) = 1-err;
+        A_te(i) = sum(y_states_test == C')/size(y_states_test,2);
         
+        disp(i);
+        
+<<<<<<< HEAD
+        A_te(i)
+        
+        svmfit = svmtrain(y_data', y_states,'kernel_function','rbf','rbf_sigma',10);%,'kktviolationlevel',0.05);
+        species = svmclassify(svmfit,y_data_test');
+        A_te_svm(i) = sum(y_states_test == species')/size(y_states_test,2);
+        A_te_svm(i)
     
+=======
+
+%         svmStruct = svmtrain(y_data', y_states,'kernel_function','quadratic','kktviolationlevel',0.05);
+%         svmStruct = svmtrain(y_data', y_states,'kernel_function','rbf', 'rbf_sigma', rbfs2,'kktviolationlevel',0.1);
+%         species = svmclassify(svmStruct,y_data_test');  
+%         A_te_svm(s,i) = sum(y_states_test == species')/size(y_states_test,2);
+
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
 end
 
 % figure;
@@ -179,61 +248,22 @@ end
 % figure;
 % plot(A_te);
 
-end
-
+<<<<<<< HEAD
+% end
 
 %%
-for i = 1:6
-    for j = 1:6
-        disp(i);
-        disp(j);
-
-        
-        data_1 = data_state{i};
-        data_2 = data_state{j};
-        C1 = data_1 * data_1' / size(data_1,2);
-        C2 = data_2 * data_2' / size(data_2,2);
-
-        nchan = size(C1,1);
-        C1 = C1 + 0.05 * trace(C1) * eye(nchan) / size(C1,1);
-        C2 = C2 + 0.05 * trace(C2) * eye(nchan) / size(C2,1);
-
-        [V d] = eig(C1,C2);
-        
-        M = V(:,[1:4, end-3:end])';
-
-        Y1 = M * data_1;
-        Y2 = M * data_2;
-       
-%         figure;
-%         hold on;
-%         plot(Y1(1,:), Y1(end,:), 'b.');
-%         plot(Y2(1,:), Y2(end,:), 'r.');
-%         legend(['State ', num2str(i)],['State ', num2str(j)]);
-%         xlabel('CSP\_1');
-%         ylabel('CSP\_end');
-%         title([num2str(i), ', ', num2str(j)]);
-        
-        y_data = [Y1.^2, Y2.^2];
-        y_states = [ones(1,size(Y1,2)), 2*ones(1,size(Y2,2))];
-        
-        for k=1:size(y_data,1)
-             y_data(k,:) = conv(y_data(k,:),ones(1,50),'same');
-        end;
-         
-        [C,err,P,logp,coeff] = classify(y_data', y_data', y_states, 'linear');
-        A(i,j) = 1-err;
-        fprintf('LDA error: %f\n', err);
-
-%         D = sum(bsxfun(@times, y_data, coeff(1,2).linear)) + coeff(1,2).const;
-%         states_pred = (D < 0) + 1;
-%         pred_ok = mean(y_states == states_pred);
-% 
-%         fprintf('Sign test: correct = %f\n', pred_ok);
-    end
-end
 
 figure
-imagesc(A)
+imagesc(A_tr)
 colorbar
-title('pairwise accuracy')
+
+figure
+imagesc(A_te)
+colorbar
+
+
+=======
+end
+% end
+>>>>>>> 2512f7797ec40915c12065a8c1482dd99c97b590
+

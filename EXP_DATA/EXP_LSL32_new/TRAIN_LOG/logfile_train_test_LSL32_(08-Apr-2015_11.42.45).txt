@@ -1,0 +1,423 @@
+
+
+========== 08-Apr-2015_11.42.45 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+>>>>> SIGNAL_SOURCE.buf_eeg -> FREE BUFFER
+>>>>> STATE_GENERATOR.buf -> FREE BUFFER
+[IIR_HIPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_HIPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_HIPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[IIR_HIPASS] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[IIR_HIPASS] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+
+=================  IIR_HIPASS  =================
+
+OBJECT
+	Name: IIR_HIPASS_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SIGNAL_SOURCE.buf_eeg
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F3
+		4 F4
+		5 C3
+		6 C4
+		7 P3
+		8 P4
+		9 O1
+		10 O2
+		11 F7
+		12 F8
+		13 T7
+		14 T8
+		15 P7
+		16 P8
+		17 Fz
+		18 Cz
+		19 FC1
+		20 FC2
+		21 CP1
+		22 CP2
+		23 FC5
+		24 FC6
+		25 CP5
+		26 CP6
+		27 TP9
+		28 TP10
+		29 FT9
+		30 FT10
+		31 Oz
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F3	(3)
+		4 F4	(4)
+		5 C3	(5)
+		6 C4	(6)
+		7 P3	(7)
+		8 P4	(8)
+		9 O1	(9)
+		10 O2	(10)
+		11 F7	(11)
+		12 F8	(12)
+		13 T7	(13)
+		14 T8	(14)
+		15 P7	(15)
+		16 P8	(16)
+		17 Fz	(17)
+		18 Cz	(18)
+		19 FC1	(19)
+		20 FC2	(20)
+		21 CP1	(21)
+		22 CP2	(22)
+		23 FC5	(23)
+		24 FC6	(24)
+		25 CP5	(25)
+		26 CP6	(26)
+		27 TP9	(27)
+		28 TP10	(28)
+		29 FT9	(29)
+		30 FT10	(30)
+		31 Oz	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F3
+	4 F4
+	5 C3
+	6 C4
+	7 P3
+	8 P4
+	9 O1
+	10 O2
+	11 F7
+	12 F8
+	13 T7
+	14 T8
+	15 P7
+	16 P8
+	17 Fz
+	18 Cz
+	19 FC1
+	20 FC2
+	21 CP1
+	22 CP2
+	23 FC5
+	24 FC6
+	25 CP5
+	26 CP6
+	27 TP9
+	28 TP10
+	29 FT9
+	30 FT10
+	31 Oz
+
+BUF_OUT
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F3
+		4 F4
+		5 C3
+		6 C4
+		7 P3
+		8 P4
+		9 O1
+		10 O2
+		11 F7
+		12 F8
+		13 T7
+		14 T8
+		15 P7
+		16 P8
+		17 Fz
+		18 Cz
+		19 FC1
+		20 FC2
+		21 CP1
+		22 CP2
+		23 FC5
+		24 FC6
+		25 CP5
+		26 CP6
+		27 TP9
+		28 TP10
+		29 FT9
+		30 FT10
+		31 Oz
+
+[IIR_HIPASS_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_HIPASS  =================
+
+OBJECT
+	Name: IIR_HIPASS_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: STATE_GENERATOR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 STATE
+
+>>>>> SIGNAL_SOURCE.buf_eeg -> FREE BUFFER
+>>>>> SIGNAL_SOURCE.buf_mark -> FREE BUFFER
+>>>>> STATE_GENERATOR.buf -> FREE BUFFER
+[IIR_LOWPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_LOWPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_LOWPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[IIR_LOWPASS] t_sigproc_stage::init() -> buf_out_type not specified - will use type of 1-st input buffer
+[IIR_LOWPASS] t_sigproc_stage::init() -> buf_out_len_t not specified - will use length of 1-st input buffer
+
+=================  IIR_LOWPASS  =================
+
+OBJECT
+	Name: IIR_LOWPASS_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F3
+		4 F4
+		5 C3
+		6 C4
+		7 P3
+		8 P4
+		9 O1
+		10 O2
+		11 F7
+		12 F8
+		13 T7
+		14 T8
+		15 P7
+		16 P8
+		17 Fz
+		18 Cz
+		19 FC1
+		20 FC2
+		21 CP1
+		22 CP2
+		23 FC5
+		24 FC6
+		25 CP5
+		26 CP6
+		27 TP9
+		28 TP10
+		29 FT9
+		30 FT10
+		31 Oz
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F3	(3)
+		4 F4	(4)
+		5 C3	(5)
+		6 C4	(6)
+		7 P3	(7)
+		8 P4	(8)
+		9 O1	(9)
+		10 O2	(10)
+		11 F7	(11)
+		12 F8	(12)
+		13 T7	(13)
+		14 T8	(14)
+		15 P7	(15)
+		16 P8	(16)
+		17 Fz	(17)
+		18 Cz	(18)
+		19 FC1	(19)
+		20 FC2	(20)
+		21 CP1	(21)
+		22 CP2	(22)
+		23 FC5	(23)
+		24 FC6	(24)
+		25 CP5	(25)
+		26 CP6	(26)
+		27 TP9	(27)
+		28 TP10	(28)
+		29 FT9	(29)
+		30 FT10	(30)
+		31 Oz	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F3
+	4 F4
+	5 C3
+	6 C4
+	7 P3
+	8 P4
+	9 O1
+	10 O2
+	11 F7
+	12 F8
+	13 T7
+	14 T8
+	15 P7
+	16 P8
+	17 Fz
+	18 Cz
+	19 FC1
+	20 FC2
+	21 CP1
+	22 CP2
+	23 FC5
+	24 FC6
+	25 CP5
+	26 CP6
+	27 TP9
+	28 TP10
+	29 FT9
+	30 FT10
+	31 Oz
+
+BUF_OUT
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F3
+		4 F4
+		5 C3
+		6 C4
+		7 P3
+		8 P4
+		9 O1
+		10 O2
+		11 F7
+		12 F8
+		13 T7
+		14 T8
+		15 P7
+		16 P8
+		17 Fz
+		18 Cz
+		19 FC1
+		20 FC2
+		21 CP1
+		22 CP2
+		23 FC5
+		24 FC6
+		25 CP5
+		26 CP6
+		27 TP9
+		28 TP10
+		29 FT9
+		30 FT10
+		31 Oz
+
+[IIR_LOWPASS_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_LOWPASS  =================
+
+OBJECT
+	Name: IIR_LOWPASS_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 360216 samples
+	Channels: 
+		1 STATE
+

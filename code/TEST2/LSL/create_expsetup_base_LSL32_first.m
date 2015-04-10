@@ -32,7 +32,7 @@ chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', '
 %chan_names_vismask = chan_names;
 % chan_names_vismask = {'FC5', 'FC1', 'FC2', 'FC6', 'C3', 'Cz', 'C4', 'CP5', 'CP1', 'CP2', 'CP6'};
 
-chan_names_vismask = {'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4', 'Cp5', 'Cp1', 'Cp2', 'Cp6'};
+chan_names_vismask = chan_names;%{'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4', 'Cp5', 'Cp1', 'Cp2', 'Cp6'};
         
 % Frequency bands
 %freq_bands = {[11 14], [16 25]};
@@ -50,17 +50,17 @@ expsetup.exp_info.setup_name = 'LSL32_first';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 240;
+expsetup.exp_params.exp_duration_t = 160;
 
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
 expsetup.sigsrc_stage_desc.params.params_spec = struct();
 
 % Reciever parameters (test)
-%expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_file';
-%expsetup.sigsrc_stage_desc.params.params_spec.fpath_in = 'D:\BCI\EXP_DATA\short_32chan_2.set';
-%expsetup.sigsrc_stage_desc.params.params_spec.mode = 'realtime';
-%expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
+% expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_file';
+% expsetup.sigsrc_stage_desc.params.params_spec.fpath_in = 'D:\BCI\EXP_DATA\short_32chan_2.set';
+% expsetup.sigsrc_stage_desc.params.params_spec.mode = 'realtime';
+% expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
 
 % State generator parameters
 expsetup.stategen_stage_desc.obj_type = 't_state_generator_binary';
@@ -104,7 +104,7 @@ expsetup.visualizers(n).params.subplot_info = [2,1,2];
 %expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
 expsetup.visualizers(n).params.line_styles = {'r', 'b', 'g', 'm', 'k', 'y', 'c'};
 expsetup.visualizers(n).params.line_width = 1;
-expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-2;
+expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-4;
 %expsetup.visualizers(n).params.ylim = [-2 5] * 1e5;
 expsetup.visualizers(n).params.flip90 = 0;
 expsetup.visualizers(n).params.centval = 0;
