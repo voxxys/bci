@@ -123,7 +123,7 @@ Rme_2 = (data_cur-G2*W2'* data_cur)*(data_cur-G2*W2'* data_cur)'/size(data_cur,2
 
 %%
 
-AROrder = 1;
+AROrder = 5;
 Dim = 3;
 
 data_1 = data_cur(:,states_cur == 1);
