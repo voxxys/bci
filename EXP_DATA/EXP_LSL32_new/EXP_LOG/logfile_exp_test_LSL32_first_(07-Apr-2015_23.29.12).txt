@@ -1,0 +1,8 @@
+
+
+========== 07-Apr-2015_23.29.12 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+>>>> ERROR: cannot load dataset 'D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20.mat' (( Reference to non-existent field 'setname'. ))
+[SIGNAL_SOURCE_OBJ] t_eeg_recv_manager_file::init_spec() -> cannot load D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20.mat - ERROR

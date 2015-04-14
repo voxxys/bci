@@ -1,3 +1,11 @@
+% load data
+
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_0804_main_imag_T20_2.mat');
+
+[data_ext, sample_idx_data] = ext_data.data.get_data();
+[states_ext, sample_idx_states] = ext_data.states.get_data();
+% assert(all(sample_idx_data == sample_idx_states) == 1);
+
 % instantiate the library
 disp('Loading library...');
 lib = lsl_loadlib();
@@ -26,31 +34,24 @@ k = 1;
 randomwalk = zeros(1,10);
 
 rwstate = 0;
+chunk_size = 50;
 
 while true
-    samp = k:(k+9);
-    
-    randomwalk = rwstate*ones(1,10);
-    
-    for i = 1:10
-        if(rand > 0.5)
-            randomwalk(i:10) = randomwalk(i:10) + 5*ones(1,length(i:10));
-        else
-            randomwalk(i:10) = randomwalk(i:10) - 5*ones(1,length(i:10));
-        end
+
+    if((k+chunk_size-1)<size(data_ext,2))
+        chu = data_ext(:,k:(k+chunk_size-1));
+    else
+        chu = horzcat(data_ext(:,k:end),data_ext(:,1:(k+chunk_size-1-size(data_ext,2))));     
     end
     
-    rwstate = randomwalk(10);
-    
-    samp = samp + randomwalk;
-        
-    chu = repmat(mod(samp,100),32,1);
-    indodd = logical(repmat([1 0],1,16));
-    chu(indodd,:) = -chu(indodd,:);
-%    chu(10,:)
-    
     outlet.push_chunk(chu);
-    k = k + 10;
     
+    k = k + chunk_size;
+    
+    if(k > size(data_ext,2))
+        k = k - size(data_ext,2);
+    end
+
     pause(0.01);
+    
 end

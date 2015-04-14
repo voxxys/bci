@@ -5,7 +5,7 @@ lib = lsl_loadlib();
 
 % make a new stream outlet
 disp('Creating a new streaminfo...');
-info = lsl_streaminfo(lib,'BioSemi','EEG',32,1000,'cf_float32','sdfwerr32432');
+info = lsl_streaminfo(lib,'BioSemi','Data',31,1000,'cf_float32','sdfwerr32432');
 
 chns = info.desc().append_child('channels');
 
