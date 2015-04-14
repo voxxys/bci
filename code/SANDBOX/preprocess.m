@@ -34,7 +34,7 @@ function [data,states,sample_idx] = preprocess(exp_data,high,low,sds,step)
 
     idx = find(idx);
 
-    disp(size(idx,2)/size(data,2));
+%     disp(size(idx,2)/size(data,2));
 
     data = data(:,idx);
     states = states(idx);

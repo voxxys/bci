@@ -12,20 +12,20 @@ st2 = 6;
 
 sdss = 2.2:0.2:4;
 wins = 50:50:500;
-
-sds = 2.5;
-
-
-
-% for s = 1:10
+rbfsigma = 2:2:20;
+    
+    
+sds = 2.2;
 
 
-    %rb = 0.5:0.5:5;
-    s = 2;
-    sdss = 2.2:0.2:4;
-    % wins = 50:50:500;
 
-    [data_cur,states_cur,sample_idx] = preprocess(int_data,11,20,sdss(s),2);
+for s = 5:5:50
+
+    disp(s);
+
+
+
+    [data_cur,states_cur,sample_idx] = preprocess(int_data,11,20,sds,2);
 
     state_changes = find(diff(states_cur));
     kfold_delims = [state_changes, floor(state_changes(1)/2), state_changes(1:(end-1))+floor(diff(state_changes)/2)];
@@ -145,19 +145,21 @@ sds = 2.5;
 
         disp(i);
 
-%         svmfit = svmtrain(y_data', y_states,'kernel_function','rbf','rbf_sigma',10);%,'kktviolationlevel',0.05);
-%         species = svmclassify(svmfit,y_data_test');
-%         A_te_svm(i) = sum(y_states_test == species')/size(y_states_test,2);
-%         A_te_svm(i)
+        svmfit_data = svmtrain(y_data', y_states,'kernel_function','rbf','rbf_sigma',rbfsigma(s));%,'kktviolationlevel',0.05);
+        y_states_svm_data = svmclassify(svmfit_data,y_data_test');
+        A_te_svm_data(s,i) = sum(y_states_test == y_states_svm_data')/size(y_states_test,2);
 
+        svmfit_var = svmtrain(y_data_var', y_states,'kernel_function','rbf','rbf_sigma',rbfsigma(s));%,'kktviolationlevel',0.05);
+        y_states_svm_var = svmclassify(svmfit_var,y_data_test');
+        A_te_svm_var(s,i) = sum(y_states_test == y_states_svm_var')/size(y_states_test,2);
+        
+        
 %         svmStruct = svmtrain(y_data', y_states,'kernel_function','quadratic','kktviolationlevel',0.05);
 %         svmStruct = svmtrain(y_data', y_states,'kernel_function','rbf', 'rbf_sigma', rbfs2,'kktviolationlevel',0.1);
-%         species = svmclassify(svmStruct,y_data_test');  
-%         A_te_svm(s,i) = sum(y_states_test == species')/size(y_states_test,2);
 
     
     end
-% end
+end
 
 
 %%
@@ -186,18 +188,21 @@ end
 
 %%
 
-da = y_data
-[coeff,score] = pca(y_data_test_var');
-scatter(score(y_states_test == 1,1),score(y_states_test == 1,2))
+da = y_data_test_var;
+st = y_states_test;
+
+[coeff,score] = pca(da');
+scatter(score(st == 1,1),score(st == 1,2))
 hold on
-scatter(score(y_states_test == 2,1),score(y_states_test == 2,2),'g')
+scatter(score(st == 2,1),score(st == 2,2),'g')
 
 
 
 %%
-    svmfit = svmtrain(y_data_var', y_states,'kktviolationlevel',0.05);
+
+    svmfit = svmtrain(y_data_var', y_states,'kernel_function','rbf', 'rbf_sigma', 5,'kktviolationlevel',0.1);
     species = svmclassify(svmfit,y_data_test_var');
-    A_te_svm(i) = sum(y_states_test == species')/size(y_states_test,2);
+    sum(y_states_test == species')/size(y_states_test,2);
     A_te_svm(i)
 
     svmStruct = svmtrain(y_data', y_states,'kernel_function','quadratic','kktviolationlevel',0.05);
