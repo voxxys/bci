@@ -43,11 +43,13 @@ classdef t_state_generator_binary < t_state_generator
                 
                 assert((this.state_id_cur==1) || (this.state_id_cur==2));
                 
-                if this.state_id_cur == 1
-                    state_id_cur_new = 2;
-                else
-                    state_id_cur_new = 1;
-                end
+%                 if this.state_id_cur == 1
+%                     state_id_cur_new = 2;
+%                 else
+%                     state_id_cur_new = 1;
+%                 end
+
+                state_id_cur_new = (rand() > 0.5) + 1;
                 
             end
             
