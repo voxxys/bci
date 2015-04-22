@@ -34,7 +34,7 @@ k = 1;
 randomwalk = zeros(1,10);
 
 rwstate = 0;
-chunk_size = 50;
+chunk_size = 10;
 
 while true
 

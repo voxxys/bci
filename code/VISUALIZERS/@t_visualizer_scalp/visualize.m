@@ -63,7 +63,7 @@ for n = 1 : ndescs
 
     % Get current state from state generator
     [state_name, state_label] = this.exp.stategen_stage.proc_obj.get_cur_state();
-
+                    
     % Create title
     title_str = sprintf('%s  [STATE = %s]', desc.name, state_name);
     title(title_str);

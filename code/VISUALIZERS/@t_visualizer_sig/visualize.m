@@ -130,6 +130,7 @@ if this.params.show_legend
     legend(lgnd);
 end
 
+
 %drawnow;    
 
 

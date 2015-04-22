@@ -44,7 +44,7 @@ while true
     
     samp = samp + randomwalk;
         
-    chu = repmat(mod(samp,100),32,1);
+    chu = repmat(mod(samp,100),31,1);
     indodd = logical(repmat([1 0],1,16));
     chu(indodd,:) = -chu(indodd,:);
 %    chu(10,:)

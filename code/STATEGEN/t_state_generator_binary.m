@@ -41,15 +41,22 @@ classdef t_state_generator_binary < t_state_generator
                 
                 this.t_switch = t;
                 
-                assert((this.state_id_cur==1) || (this.state_id_cur==2));
+%                 assert((this.state_id_cur==1) || (this.state_id_cur==2));
                 
 %                 if this.state_id_cur == 1
 %                     state_id_cur_new = 2;
 %                 else
 %                     state_id_cur_new = 1;
 %                 end
-
-                state_id_cur_new = (rand() > 0.5) + 1;
+                
+%                 state_id_cur_new = this.state_id_cur + 1;
+%                 if(state_id_cur_new > 6)
+%                    state_id_cur_new = 1;
+%                 end
+            
+                state_id_cur_new = randi(6);
+                
+%                 state_id_cur_new = (rand() > 0.5) + 1;
                 
             end
             

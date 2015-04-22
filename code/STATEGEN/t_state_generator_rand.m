@@ -26,6 +26,7 @@ classdef t_state_generator_binary < t_state_generator
         %===================================
         % Class-specific initialization (one can reimplement it in child class)
         function init_spec(this)
+
         end
         
         %===================================
@@ -37,12 +38,15 @@ classdef t_state_generator_binary < t_state_generator
             t = toc(this.exp_timer);
             dt = t - this.t_switch;
             
+            
+            
+            
             if isempty(this.t_switch) || (dt > this.params.params_spec.T)
                 
                 this.t_switch = t;
                 
                 assert((this.state_id_cur==1) || (this.state_id_cur==2));
-                
+
                 state_id_cur_new = (rand() > 0.5) + 1;
                 
             end
