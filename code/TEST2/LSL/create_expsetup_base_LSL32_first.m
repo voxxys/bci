@@ -53,8 +53,7 @@ expsetup.exp_info.setup_name = 'LSL32_first';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 20;
-
+expsetup.exp_params.exp_duration_t = 180;
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
 expsetup.sigsrc_stage_desc.params.params_spec = struct();
@@ -74,7 +73,7 @@ expsetup.stategen_stage_desc.params.params_base.state_descs(2).label = 1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).name = 'RIGHT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).mark = 1;
 expsetup.stategen_stage_desc.params.params_base.state_id_def = 1;
-expsetup.stategen_stage_desc.params.params_spec.T = 5;
+expsetup.stategen_stage_desc.params.params_spec.T = 15;
 
 % Visualizer parameters (signal)
 % n = 1;
@@ -104,7 +103,7 @@ n = 1;
 expsetup.visualizers(n).name = 'VISUALIZER_TASK_2';
 expsetup.visualizers(n).type = 't_visualizer_state';
 expsetup.visualizers(n).params.fig_num = 100;
-expsetup.visualizers(n).params.subplot_info = [2,3,2];
+expsetup.visualizers(n).params.subplot_info = [1,1,1];
 expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
 expsetup.visualizers(n).params.line_width = 1;
 expsetup.visualizers(n).params.ylim = [-1.5, 1.5];
@@ -121,27 +120,27 @@ expsetup.visualizers(n).params.sig_descs{1}.need_square = 0;
 expsetup.visualizers(n).params.sig_descs{1}.k = [-3, 2];
 expsetup.visualizers(n).params.sig_descs{1}.spread_channels = 0;
 
-n = 2;
-expsetup.visualizers(n).name = 'VISUALIZER_SIGNAL';
-expsetup.visualizers(n).type = 't_visualizer_sig';
-expsetup.visualizers(n).params.fig_num = 100;
-expsetup.visualizers(n).params.subplot_info = [2,3,5];
-%expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
-expsetup.visualizers(n).params.line_styles = {'r', 'b', 'g', 'm', 'k', 'y', 'c'};
-expsetup.visualizers(n).params.line_width = 1;
+% n = 2;
+% expsetup.visualizers(n).name = 'VISUALIZER_SIGNAL';
+% expsetup.visualizers(n).type = 't_visualizer_sig';
+% expsetup.visualizers(n).params.fig_num = 100;
+% expsetup.visualizers(n).params.subplot_info = [1,1,1];
+% %expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
+% expsetup.visualizers(n).params.line_styles = {'r', 'b', 'g', 'm', 'k', 'y', 'c'};
+% expsetup.visualizers(n).params.line_width = 1;
 % expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e-4;
-expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e2;
-% expsetup.visualizers(n).params.ylim = [-2 5] * 1e5;
-expsetup.visualizers(n).params.flip90 = 0;
-expsetup.visualizers(n).params.centval = 0;
-expsetup.visualizers(n).params.show_legend = 0;
-expsetup.visualizers(n).params.sig_descs{1}.data_type = 'SIGNAL';
-expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_NOTCH';
-%expsetup.visualizers(n).params.sig_descs{1}.stage_name = '[INPUT]';
-%expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_HIPASS';
-%expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Fp1'};
-% expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'FT9', 'FC5', 'FC1', 'FC2', 'FC6', 'FT10', 'T7'};
-expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7'};
+% % expsetup.visualizers(n).params.ylim = [-1 1] * 4 * 1e2;
+% % expsetup.visualizers(n).params.ylim = [-2 5] * 1e5;
+% expsetup.visualizers(n).params.flip90 = 0;
+% expsetup.visualizers(n).params.centval = 0;
+% expsetup.visualizers(n).params.show_legend = 0;
+% expsetup.visualizers(n).params.sig_descs{1}.data_type = 'SIGNAL';
+% expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_NOTCH';
+% %expsetup.visualizers(n).params.sig_descs{1}.stage_name = '[INPUT]';
+% %expsetup.visualizers(n).params.sig_descs{1}.stage_name = 'IIR_HIPASS';
+% %expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Fp1'};
+% % expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'FT9', 'FC5', 'FC1', 'FC2', 'FC6', 'FT10', 'T7'};
+% expsetup.visualizers(n).params.sig_descs{1}.chan_names_data = {'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7'};
 
 %{'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5'};
 %, {'FC1', 'FC2', 'FC6', 'T7', 'C3', 'Cz', 'C4', 'T8'}

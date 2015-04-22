@@ -51,9 +51,9 @@ for n = 1 : ndescs
     sample_idx_vis = sample_idx_vis(smooth_len_max/2+1 : end - smooth_len_max/2);
     data_vis = data_vis(:,smooth_len_max/2+1 : end - smooth_len_max/2);
 
-%     axis vis3d;
-%     set(gcf,'units','normalized','outerposition',[0 0 1 1]);
-%     set(gca,'Position',[0 0 1 1]);
+    axis vis3d;
+    set(gcf,'units','normalized','outerposition',[0 0 1 1]);
+    set(gca,'Position',[0 0 1 1]);
 
     axis off;
     switch data_vis(1,end)
