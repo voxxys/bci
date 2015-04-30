@@ -8,7 +8,7 @@ classdef t_state_generator_binary < t_state_generator
         
         % Time of last state switch
         t_switch = [];
-        states_vec = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
+        states_vec = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6];
         cur_state = 0;
         
     end
@@ -28,7 +28,8 @@ classdef t_state_generator_binary < t_state_generator
         %===================================
         % Class-specific initialization (one can reimplement it in child class)
         function init_spec(this)
-            this.states_vec = [this.states_vec(randperm(12)), this.states_vec(randperm(12))];
+
+            this.states_vec = this.states_vec(randperm(24));
 
         end
         
@@ -58,13 +59,20 @@ classdef t_state_generator_binary < t_state_generator
 %                    state_id_cur_new = 1;
 %                 end
             
-
+% 
+% this.cur_state = 1;
                 this.cur_state = this.cur_state+1;
-                if(this.cur_state > 12)
+                if(this.cur_state > 24)
                     this.cur_state = 1;
                 end
                 
                 state_id_cur_new = this.states_vec(this.cur_state);
+                
+                
+                
+                
+                
+                
                 
 %                 state_id_cur_new = (rand() > 0.5) + 1;
                 
