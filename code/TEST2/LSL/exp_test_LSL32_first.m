@@ -26,7 +26,7 @@ fname_chanlocs ='short_32chan_2.set';
 fpath_chanlocs = fullfile(dirpath_work, fname_chanlocs);
 
 % Path to the output file with experiment result
-fname_expresult ='bci_expresult_LSL32_first_6states_2204_imag_2.mat';
+fname_expresult ='bci_expresult_LSL32_first_6states_3004_laim_6min.mat';
 fpath_expresult = fullfile(dirpath_work, fname_expresult);
 
 
