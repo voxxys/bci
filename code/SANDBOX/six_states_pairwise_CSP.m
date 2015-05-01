@@ -1,14 +1,16 @@
 clear
 clc
 
-int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20.mat');
+int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_2204_real_.mat');
 
 
-ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_2603_first_real_T20_2.mat');
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_2204_real_2.mat');
 [data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,11,20,10,1);
 
-st1 = 2;
-st2 = 6;
+
+
+st1 = 1;
+st2 = 2;
 
 sdss = 2.2:0.2:4;
 wins = 50:50:500;

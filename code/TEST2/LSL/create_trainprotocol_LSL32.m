@@ -43,8 +43,8 @@ chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'C3'
 % chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
 %     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
 
-chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
-    'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
+chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
 chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
 
@@ -72,17 +72,40 @@ protocol.train_info.parent_procname = 'create_trainprotocol_LSL32';
 sigproc_stage_desc_null = struct('stage_name', [], 'obj_type', [], 'params', [], 'trainer_type', [], 'train_params', []);
 protocol.sigproc_stage_descs = repmat(sigproc_stage_desc_null, 0, 0);
 
+
+% Reference
+%%{
+stage_desc = struct();
+stage_desc.stage_name = 'REFERENCE';
+stage_desc.obj_type = 't_sigproc_spatfilt';
+stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
+
+
+%%}
+
 % IIR filter (highpass)
 %%{
 stage_desc = struct();
 stage_desc.stage_name = 'IIR_HIPASS';
 stage_desc.obj_type = 't_sigproc_iir';
-stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
+stage_desc.params.inp_descs(1).inp_stage_name = 'REFERENCE';
 stage_desc.params.params_spec.freq_bands = {[0.5 Inf]};
 stage_desc.params.params_spec.filt_order = 4;
 stage_desc.params.params_spec.need_append_channames = 0;
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 %%}
+
+% % IIR filter (highpass)
+% %%{
+% stage_desc = struct();
+% stage_desc.stage_name = 'IIR_HIPASS';
+% stage_desc.obj_type = 't_sigproc_iir';
+% stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
+% stage_desc.params.params_spec.freq_bands = {[0.5 Inf]};
+% stage_desc.params.params_spec.filt_order = 4;
+% stage_desc.params.params_spec.need_append_channames = 0;
+% protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+% %%}
 
 %%{
 % IIR filter (lowpass)

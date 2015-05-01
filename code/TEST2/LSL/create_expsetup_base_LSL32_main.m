@@ -72,7 +72,7 @@ expsetup.stategen_stage_desc.params.params_spec.T = 20;
 n = 1;
 %%{
 expsetup.visualizers(n).name = 'VISUALIZER_TASK';
-expsetup.visualizers(n).type = 't_visualizer_sig';
+expsetup.visualizers(n).type = 't_visualizer_state';
 expsetup.visualizers(n).params.fig_num = 100;
 expsetup.visualizers(n).params.subplot_info = [2,3,2];
 expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};
@@ -128,29 +128,29 @@ expsetup.visualizers(n).params.sig_descs{2}.k = [0 0.3];
 expsetup.visualizers(n).params.sig_descs{2}.spread_channels = 1;
 %%}
 % Visualizer parameters (power scalp)
-n = 3;
-%%{
-expsetup.visualizers(n).name = 'VISUALIZER_SCALP';
-expsetup.visualizers(n).type = 't_visualizer_scalp';
-expsetup.visualizers(n).params.fpath_chanlocs = fpath_chanlocs;
-expsetup.visualizers(n).params.fig_num = 100;
-vis_plot_num = [1 3];
-for m = 1 : 2
-    fmin = freq_bands{m}(1);
-    fmax = freq_bands{m}(2);
-    expsetup.visualizers(n).params.scalpdata_descs{m}.name = sprintf('POWER (%i-%i Hz)', fmin, fmax);
-    expsetup.visualizers(n).params.scalpdata_descs{m}.data_type = 'SIGNAL';
-    expsetup.visualizers(n).params.scalpdata_descs{m}.stage_name = 'WINPOW_VIS';
-    expsetup.visualizers(n).params.scalpdata_descs{m}.chan_names_data = {};%...
-    %    cellfun(@(s)sprintf('%s_(%i-%i)_avgpow', s, fmin, fmax), chan_names, 'UniformOutput', false);
-    expsetup.visualizers(n).params.scalpdata_descs{m}.chan_names_chanlocs = chan_names;
-    expsetup.visualizers(n).params.scalpdata_descs{m}.subplot_info = [2,3,vis_plot_num(m)];
-    %expsetup.visualizers(n).params.scalpdata_descs{m}.maplimits = [0.1; 1] * [-0.3, 0.3] * 10^3;     % "brightness"
-    expsetup.visualizers(n).params.scalpdata_descs{m}.maplimits = [1 15]' * [-1 1] * 10^5;     % "brightness"
-    expsetup.visualizers(n).params.scalpdata_descs{m}.chan_mask = {};%... 
-    %   cellfun(@(s)sprintf('%s_(%i-%i)_avgpow', s, fmin, fmax), chan_names_vismask, 'UniformOutput', false);
-end
-%%}
+% n = 3;
+% %%{
+% expsetup.visualizers(n).name = 'VISUALIZER_SCALP';
+% expsetup.visualizers(n).type = 't_visualizer_scalp';
+% expsetup.visualizers(n).params.fpath_chanlocs = fpath_chanlocs;
+% expsetup.visualizers(n).params.fig_num = 100;
+% vis_plot_num = [1 3];
+% for m = 1 : 2
+%     fmin = freq_bands{m}(1);
+%     fmax = freq_bands{m}(2);
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.name = sprintf('POWER (%i-%i Hz)', fmin, fmax);
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.data_type = 'SIGNAL';
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.stage_name = 'WINPOW_VIS';
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.chan_names_data = {};%...
+%     %    cellfun(@(s)sprintf('%s_(%i-%i)_avgpow', s, fmin, fmax), chan_names, 'UniformOutput', false);
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.chan_names_chanlocs = chan_names;
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.subplot_info = [2,3,vis_plot_num(m)];
+%     %expsetup.visualizers(n).params.scalpdata_descs{m}.maplimits = [0.1; 1] * [-0.3, 0.3] * 10^3;     % "brightness"
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.maplimits = [1 15]' * [-1 1] * 10^5;     % "brightness"
+%     expsetup.visualizers(n).params.scalpdata_descs{m}.chan_mask = {};%... 
+%     %   cellfun(@(s)sprintf('%s_(%i-%i)_avgpow', s, fmin, fmax), chan_names_vismask, 'UniformOutput', false);
+% end
+% %%}
 
 % Save setup
 save(fpath_expsetup, 'expsetup');
