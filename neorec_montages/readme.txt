@@ -1,0 +1,1 @@
+copy the files to C:\Users\ %username% \AppData\Local\MCS\NeoRec

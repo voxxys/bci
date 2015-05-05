@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<neorec version="1.0">
+	<device model="nvx136" configuration="FullChannels">
+		<Samplerate>1 000 Hz</Samplerate>
+		<DataStreamLatency>High</DataStreamLatency>
+	</device>
+	<montage include="../../../../../../Program Files/MCS/NeoRec/defaultProfiles/montages/MCScap-128" />
+	<transmission>
+		<creferences>
+			<creference id="86D793B7-DB5B-45D1-9ED0-1529360A604E">
+				<name>ears</name>
+				<input ref="EC90D389-B92E-48F6-B69B-7BF9CD1B5BD5" />
+				<input ref="A3D202F3-06FF-412B-A682-7CABA70712DC" />
+			</creference>
+		</creferences>
+		<clogicals>
+			<clogical id="E6A88774-E6A7-4B47-A1EF-AA17D914963A">
+				<name>Fp1</name>
+				<positive ref="9F70551A-DEB3-47FC-9B03-4C6ACD8E696C" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="E29BC72C-DCEE-4BDE-A324-218F86C94987">
+				<name>Fp2</name>
+				<positive ref="8C7BDBFA-AE4C-4BC2-9DAE-23E105A7F894" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="C6790D38-1853-442E-BAD8-23DB4EE7A34D">
+				<name>F7</name>
+				<positive ref="86C5FC1F-72EC-46EA-8FFA-73C007A8FA56" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="B0CB3543-40CE-4AAB-B200-78C04C7ADDEC">
+				<name>F3</name>
+				<positive ref="9B4B2B4B-8EA9-40C2-BB9A-C6A3768C1477" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="9C85DE12-4E44-4508-8CA6-E587BFC4DB36">
+				<name>Fz</name>
+				<positive ref="A3A04149-0AD6-4415-AB5A-ADA71B7751C9" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="FC5738CB-112D-411A-8356-E3AA2878D1DC">
+				<name>F4</name>
+				<positive ref="5DF309D8-DA1F-4535-8D89-699AF7C00D7F" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="C870DA89-A3C7-40C2-845A-5BF84D41173C">
+				<name>F8</name>
+				<positive ref="8604C079-3BEF-49E4-A403-BBAB5500C5A1" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="9DA86154-2F50-4FEE-A9C3-17E502517B3A">
+				<name>Ft9</name>
+				<positive ref="A0BC01E5-59C9-4F52-84ED-D0B696E9C182" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="338AFE07-B5CB-4EC4-BAAA-817055367D28">
+				<name>Fc5</name>
+				<positive ref="0696DCB3-87C2-43A9-AF7C-5B0506863AF8" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="D798D03A-5FFB-4599-8F7E-9F8BE498F6D7">
+				<name>Fc1</name>
+				<positive ref="4DD5B4D3-D24F-4B67-B4CD-1C32E120B3B7" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="AB387E21-6C61-4BA6-B40B-A51405A48C3D">
+				<name>Fc2</name>
+				<positive ref="FEA98C84-9F29-4A0C-BFB4-CB56EE95E1C4" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="C300F554-499E-4DD4-B363-CDD03613A573">
+				<name>Fc6</name>
+				<positive ref="82F5CBD9-61A4-4479-8A69-6A0463909012" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="8A354212-C82F-4221-A374-B3473C95ABDD">
+				<name>Ft10</name>
+				<positive ref="28464E96-CC18-4E20-84B3-33358B6B99F0" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="0F497C0D-32E6-421D-A2AE-F5B55F6D2AA2">
+				<name>T7</name>
+				<positive ref="1EEEEA0A-424E-49CA-8BC2-7905515C2823" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="DDBDD12C-34A6-4A14-8904-4ED11404494F">
+				<name>C3</name>
+				<positive ref="4B8F8721-2B56-4CFA-9501-F04193122C10" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="39DA98D5-41A5-4B90-9226-EBFDB3CBC1D1">
+				<name>Cz</name>
+				<positive ref="6FAA6315-9967-4996-B4DC-31A236CC59B5" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="69610ED7-016B-477E-ACB7-7488E003374B">
+				<name>C4</name>
+				<positive ref="AE95201D-C087-4711-9B45-55752BA42EA7" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="EF6003A5-3B3E-4C50-9FE1-8494639DE9E0">
+				<name>T8</name>
+				<positive ref="9AC2200B-22CB-4993-8E28-0BC218E77B24" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="66AE6A98-9DEC-4AB5-98DB-F93E98A2EC69">
+				<name>Tp9</name>
+				<positive ref="32E6CB0B-F393-4F5B-8E42-3B7FD220758D" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="B8D11D11-69CA-419A-9C92-238EA4B882F5">
+				<name>Cp5</name>
+				<positive ref="3B9F441D-E885-412D-9987-5CB719FFB97E" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="868D6211-5F20-4CAA-A523-4A9E97942500">
+				<name>Cp1</name>
+				<positive ref="6DD9665F-E5BA-42DF-83BE-CB1E893B93A8" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="88DFB09F-29C0-482E-B622-1C9DDCA5673A">
+				<name>Cp2</name>
+				<positive ref="9B4649E4-501A-477E-961D-5A6A874A428E" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="4800CB1E-6B86-4D02-9FFA-5DE9A80830B5">
+				<name>Cp6</name>
+				<positive ref="8CF375DD-305B-4350-98DD-FBD0DD03DF30" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="CAC26CCA-82B1-459B-8C75-1FEC60285659">
+				<name>Tp10</name>
+				<positive ref="F564907E-A78D-4639-A7D1-FE145606C132" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="06DC24AD-046C-4093-B02C-C72A7D872EAF">
+				<name>P7</name>
+				<positive ref="12130A9E-91A5-4BE5-9895-AE26084AD470" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="2A82FA3E-615A-4ABB-A134-7E83D19560D9">
+				<name>P3</name>
+				<positive ref="471D9915-B2FE-4385-AB11-8312CC5CD33C" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="2FBEBE72-5EB5-2A41-B61F-53331E09531C">
+				<name>Pz</name>
+				<positive ref="9A126506-CDE0-43EB-9178-62302E969F6D" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+			</clogical>
+			<clogical id="A18181B3-E896-4E1F-A084-4975E03DB15C">
+				<name>P4</name>
+				<positive ref="B0E5E1D2-5132-4291-8D14-1C1CD61A97B8" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="B96B0304-C069-45CC-A6D9-07BA9181E8ED">
+				<name>P8</name>
+				<positive ref="A13CD0D0-D260-4232-BA1B-D24A4AA36E0F" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="DCEF4B28-5CA3-4500-AEE7-DBA46AB10B16">
+				<name>O1</name>
+				<positive ref="CCE390F6-B354-4F5B-8A79-3681E05EA56F" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="498D8456-FAAE-4589-88A3-396FE3BACA78">
+				<name>Oz</name>
+				<positive ref="590D9308-7DD3-45F2-8825-D1615BE7CAC8" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+			<clogical id="4D49CAF1-988D-48F4-B507-3F090F8D15B9">
+				<name>O2</name>
+				<positive ref="C94951AB-C3D4-4CBE-8CEB-30245B4D37ED" />
+				<negative ref="86D793B7-DB5B-45D1-9ED0-1529360A604E" />
+				<lpf>70.000000</lpf>
+				<hpf>0.500000</hpf>
+			</clogical>
+		</clogicals>
+	</transmission>
+	<plotter>
+		<groups>
+			<group id="548A7762-728A-4224-9375-2E37CBDEE4FC">
+				<name>Ch 1..32</name>
+				<curves>
+					<curve ref="E6A88774-E6A7-4B47-A1EF-AA17D914963A">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="E29BC72C-DCEE-4BDE-A324-218F86C94987" />
+					<curve ref="C6790D38-1853-442E-BAD8-23DB4EE7A34D">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="B0CB3543-40CE-4AAB-B200-78C04C7ADDEC">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="9C85DE12-4E44-4508-8CA6-E587BFC4DB36">
+						<color>#d8d394</color>
+					</curve>
+					<curve ref="FC5738CB-112D-411A-8356-E3AA2878D1DC" />
+					<curve ref="C870DA89-A3C7-40C2-845A-5BF84D41173C" />
+					<curve ref="9DA86154-2F50-4FEE-A9C3-17E502517B3A">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="338AFE07-B5CB-4EC4-BAAA-817055367D28">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="D798D03A-5FFB-4599-8F7E-9F8BE498F6D7">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="AB387E21-6C61-4BA6-B40B-A51405A48C3D" />
+					<curve ref="C300F554-499E-4DD4-B363-CDD03613A573" />
+					<curve ref="8A354212-C82F-4221-A374-B3473C95ABDD" />
+					<curve ref="0F497C0D-32E6-421D-A2AE-F5B55F6D2AA2">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="DDBDD12C-34A6-4A14-8904-4ED11404494F">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="39DA98D5-41A5-4B90-9226-EBFDB3CBC1D1">
+						<color>#d8d394</color>
+					</curve>
+					<curve ref="69610ED7-016B-477E-ACB7-7488E003374B" />
+					<curve ref="EF6003A5-3B3E-4C50-9FE1-8494639DE9E0" />
+					<curve ref="66AE6A98-9DEC-4AB5-98DB-F93E98A2EC69">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="B8D11D11-69CA-419A-9C92-238EA4B882F5">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="868D6211-5F20-4CAA-A523-4A9E97942500">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="88DFB09F-29C0-482E-B622-1C9DDCA5673A" />
+					<curve ref="4800CB1E-6B86-4D02-9FFA-5DE9A80830B5" />
+					<curve ref="CAC26CCA-82B1-459B-8C75-1FEC60285659" />
+					<curve ref="06DC24AD-046C-4093-B02C-C72A7D872EAF">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="2A82FA3E-615A-4ABB-A134-7E83D19560D9">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="2FBEBE72-5EB5-2A41-B61F-53331E09531C" />
+					<curve ref="A18181B3-E896-4E1F-A084-4975E03DB15C" />
+					<curve ref="B96B0304-C069-45CC-A6D9-07BA9181E8ED" />
+					<curve ref="DCEF4B28-5CA3-4500-AEE7-DBA46AB10B16">
+						<color>#00aa00</color>
+					</curve>
+					<curve ref="498D8456-FAAE-4589-88A3-396FE3BACA78">
+						<color>#d8d394</color>
+					</curve>
+					<curve ref="4D49CAF1-988D-48F4-B507-3F090F8D15B9" />
+				</curves>
+			</group>
+		</groups>
+		<eventlabels>
+			<eventlabel text="Record">
+				<color>#ff5500</color>
+			</eventlabel>
+			<eventlabel text="Stop" />
+			<eventlabel text="Pause" />
+			<eventlabel text="Resume">
+				<color>#ff5500</color>
+			</eventlabel>
+			<eventlabel text="Key Space">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 0">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 1">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 2">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 3">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 4">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 5">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 6">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="In\ 7">
+				<color>#55aa7f</color>
+			</eventlabel>
+			<eventlabel text="PS">
+				<color>yellow</color>
+			</eventlabel>
+		</eventlabels>
+	</plotter>
+	<eventfilter>
+		<events>
+			<event>
+				<type>State</type>
+				<text>Record</text>
+			</event>
+			<event>
+				<type>State</type>
+				<text>Stop</text>
+				<sender>stop</sender>
+			</event>
+			<event>
+				<type>State</type>
+				<text>Pause</text>
+				<sender>pause</sender>
+			</event>
+			<event>
+				<type>State</type>
+				<text>Resume</text>
+				<sender>resume</sender>
+			</event>
+			<event>
+				<text>Key Space</text>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 0</text>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 1</text>
+				<sender>1</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 2</text>
+				<sender>2</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 3</text>
+				<sender>3</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 4</text>
+				<sender>4</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 5</text>
+				<sender>5</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 6</text>
+				<sender>6</sender>
+			</event>
+			<event>
+				<type>TriggerIn\</type>
+				<text>In\ 7</text>
+				<sender>7</sender>
+			</event>
+			<event>
+				<type>PhoticStimulation</type>
+				<text>PS</text>
+			</event>
+		</events>
+	</eventfilter>
+	<stimulation>
+		<photo>
+			<stages>
+				<stage>
+					<duration>60.000000</duration>
+					<frequency>2.000000</frequency>
+				</stage>
+				<stage>
+					<duration>60.000000</duration>
+					<frequency>10.000000</frequency>
+				</stage>
+			</stages>
+		</photo>
+	</stimulation>
+</neorec>
