@@ -1,4 +1,4 @@
-classdef t_state_generator_binary < t_state_generator
+classdef t_state_generator_binary_rand < t_state_generator
 % Generate binary sequence of labels, switch label periodically
     
     properties (SetAccess=private, GetAccess=public)
@@ -8,8 +8,6 @@ classdef t_state_generator_binary < t_state_generator
         
         % Time of last state switch
         t_switch = [];
-        states_vec = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6];
-        cur_state = 0;
         
     end
     
@@ -17,7 +15,7 @@ classdef t_state_generator_binary < t_state_generator
         
         %===================================
         % Constructor
-        function this = t_state_generator_binary(name)
+        function this = t_state_generator_binary_rand(name)
             this = this@t_state_generator(name);
         end
         
@@ -28,8 +26,6 @@ classdef t_state_generator_binary < t_state_generator
         %===================================
         % Class-specific initialization (one can reimplement it in child class)
         function init_spec(this)
-
-            this.states_vec = this.states_vec(randperm(24));
 
         end
         
@@ -42,19 +38,15 @@ classdef t_state_generator_binary < t_state_generator
             t = toc(this.exp_timer);
             dt = t - this.t_switch;
             
+
             if isempty(this.t_switch) || (dt > this.params.params_spec.T)
                 
                 this.t_switch = t;
                 
                 assert((this.state_id_cur==1) || (this.state_id_cur==2));
-                
-                if this.state_id_cur == 1
-                    state_id_cur_new = 2;
-                else
-                    state_id_cur_new = 1;
-                end
-                
 
+                state_id_cur_new = (rand() > 0.5) + 1;
+                
             end
             
             % Create output data

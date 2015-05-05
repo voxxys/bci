@@ -26,6 +26,7 @@ delete(findall(gcf,'Tag','toDelete2'));
 
 aggr = [0,0,0,0,0];
 
+
 for n = 1:ndescs
 
     % Descriptor of current visualization
@@ -55,7 +56,6 @@ for n = 1:ndescs
     sample_idx_vis = sample_idx_vis(smooth_len_max/2+1 : end - smooth_len_max/2);
     data_vis = data_vis(:,smooth_len_max/2+1 : end - smooth_len_max/2);
 
-%     axis square;
     axis vis3d;
     set(gcf,'units','normalized','outerposition',[0 0 1 1]);
     set(gca,'Position',[0 0 1 1]);
@@ -107,21 +107,35 @@ for n = 1:ndescs
             case 1
                 delete(findall(gcf,'Tag','toDelete'));
                 image(this.im_le_ha);
-                res_vect_x = this.xvect{1}*aggr(1);
-                res_vect_y = this.yvect{1}*aggr(1);
-                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
-                set(this.an2,'Color','blue')
+                if(ndescs == 2)
+                    res_vect_x = this.xvect{1}*aggr(1);
+                    res_vect_y = this.yvect{1}*aggr(1);
+                    this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                    set(this.an2,'Color','blue')
+                    
+                else
+                    res_vect_x = this.xvect{1}*aggr(1);
+                    res_vect_y = this.yvect{1}*aggr(1);
+                    this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                    set(this.an2,'Color','blue')
+                end
                 
                 this.an = annotation('arrow',this.xvect{1}+0.5,this.yvect{1}+0.5,'Tag','toDelete');
            
             case 2
                 delete(findall(gcf,'Tag','toDelete'));
                 image(this.im_ri_ha);
-                res_vect_x = this.xvect{2}*aggr(2);
-                res_vect_y = this.yvect{2}*aggr(2);
-                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
-                set(this.an2,'Color','blue')
-                
+                if(ndescs == 2)
+                    res_vect_x = this.xvect{2}*(1-aggr(1));
+                    res_vect_y = this.yvect{2}*(1-aggr(1));
+                    this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                    set(this.an2,'Color','blue')
+                else
+                    res_vect_x = this.xvect{2}*aggr(2);
+                    res_vect_y = this.yvect{2}*aggr(2);
+                    this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                    set(this.an2,'Color','blue')
+                end
                 this.an = annotation('arrow',this.xvect{2}+0.5,this.yvect{2}+0.5,'Tag','toDelete');
             case 3
                 delete(findall(gcf,'Tag','toDelete'));

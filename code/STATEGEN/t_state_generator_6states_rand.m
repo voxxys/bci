@@ -1,4 +1,4 @@
-classdef t_state_generator_binary < t_state_generator
+classdef t_state_generator_6states_rand < t_state_generator
 % Generate binary sequence of labels, switch label periodically
     
     properties (SetAccess=private, GetAccess=public)
@@ -17,7 +17,7 @@ classdef t_state_generator_binary < t_state_generator
         
         %===================================
         % Constructor
-        function this = t_state_generator_binary(name)
+        function this = t_state_generator_6states_rand(name)
             this = this@t_state_generator(name);
         end
         
@@ -46,15 +46,14 @@ classdef t_state_generator_binary < t_state_generator
                 
                 this.t_switch = t;
                 
-                assert((this.state_id_cur==1) || (this.state_id_cur==2));
-                
-                if this.state_id_cur == 1
-                    state_id_cur_new = 2;
-                else
-                    state_id_cur_new = 1;
+                this.cur_state = this.cur_state+1;
+                if(this.cur_state > 24)
+                    this.cur_state = 1;
                 end
                 
-
+                state_id_cur_new = this.states_vec(this.cur_state);
+                
+                
             end
             
             % Create output data
