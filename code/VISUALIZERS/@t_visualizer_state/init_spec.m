@@ -21,10 +21,34 @@ for n = 1 : length(this.params.sig_descs)
     % Get input buffer
     this.bufs_in(n) = this.get_exp_buf(data_type, stage_name, buf_name);
     
-
-
+    this.time = 0;
 
 end
+
+    angle_rad = {pi/2 + 2*pi/5, -2*pi/5+pi/2, pi/2 + 4*pi/5 + pi/10 - pi/40, pi/2 + 6*pi/5 - pi/10 + pi/40, pi/2};
+
+    for i = 1:5
+        v{i} = [cos(angle_rad{i}),sin(angle_rad{i})];
+        this.xvect{i} = [0,0.5*v{i}(1)];
+        this.yvect{i} = [0,0.5*v{i}(2)];
+%         this.xvect{i} = this.xvect{i}+0.5;
+%         this.yvect{i} = this.xvect{i}+0.5;
+
+    end
+    
+% % % % % % % % % % % % % % % % % % % % % % % % %     
+    this.xvect{1} = 0.2*this.xvect{1};
+    this.xvect{2} = 0.2*this.xvect{2};
+    this.xvect{3} = 0.35*this.xvect{3};
+    this.xvect{4} = 0.35*this.xvect{4};
+    this.xvect{5} = 0.3*this.xvect{5};
+    
+    this.yvect{1} = 0.2*this.yvect{1};
+    this.yvect{2} = 0.2*this.yvect{2};
+    this.yvect{3} = 0.35*this.yvect{3};
+    this.yvect{4} = 0.35*this.yvect{4};
+    this.yvect{5} = 0.3*this.yvect{5};
+% % % % % % % % % % % % % % % % % % % % % % % % %     
 
     this.im_to = flipud(imread('to.jpg'));
     this.im_ri_fo = flipud(imread('ri_fo.jpg'));

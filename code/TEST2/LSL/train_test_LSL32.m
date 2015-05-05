@@ -15,7 +15,7 @@ fname_trainprotocol = 'train_protocol_LSL32.mat';
 fpath_trainprotocol = fullfile(dirpath_work, fname_trainprotocol);
 
 % Path to the recorded result of previous experiment
-fname_expresult_old = 'bci_expresult_LSL32_first_6states_2204_real_.mat';
+fname_expresult_old = 'firsttest.mat';
 fpath_expresult_old = fullfile(dirpath_work, fname_expresult_old);
 
 % Path to the paradigm file

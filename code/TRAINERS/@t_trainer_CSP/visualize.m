@@ -61,7 +61,8 @@ Y2 = M * X2;
 figure; clf; hold on;
 plot(Y1(1,:), Y1(end,:), 'b.');
 plot(Y2(1,:), Y2(end,:), 'r.');
-legend('State 1', 'State 2');
+
+legend(['State ', num2str(train_params.state1)],['State ', num2str(train_params.state2)]);
 xlabel('CSP\_1');
 ylabel('CSP\_end');
 title(sprintf('First and last pattern activations (%s)', strrep(this.name,'_','\_')));

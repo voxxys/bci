@@ -1,6 +1,6 @@
 % load data
 
-ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_2204_real_2.mat');
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_3004_laim_6min.mat');
 
 [data_ext, sample_idx_data] = ext_data.data.get_data();
 [states_ext, sample_idx_states] = ext_data.states.get_data();

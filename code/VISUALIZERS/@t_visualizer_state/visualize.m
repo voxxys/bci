@@ -8,12 +8,12 @@ figure(this.params.fig_num);
 
 % Create subplot
 subplot(this.params.subplot_info(1), this.params.subplot_info(2), this.params.subplot_info(3)); cla; hold on;
-
-lgnd = {};
-plot_num = 1;
-
-vmin = Inf;
-vmax = -Inf;
+% 
+% lgnd = {};
+% plot_num = 1;
+% 
+% vmin = Inf;
+% vmax = -Inf;
 
 % Get max smooth_len
 smooth_len_max = 0;
@@ -22,7 +22,11 @@ for n = 1 : ndescs
     smooth_len_max = max(smooth_len_max, desc.smooth_len_t * this.bufs_in(n).srate);
 end
 
-for n = 1 : ndescs
+delete(findall(gcf,'Tag','toDelete2'));
+
+aggr = [0,0,0,0,0];
+
+for n = 1:ndescs
 
     % Descriptor of current visualization
     desc = this.params.sig_descs{n};
@@ -51,26 +55,126 @@ for n = 1 : ndescs
     sample_idx_vis = sample_idx_vis(smooth_len_max/2+1 : end - smooth_len_max/2);
     data_vis = data_vis(:,smooth_len_max/2+1 : end - smooth_len_max/2);
 
+%     axis square;
     axis vis3d;
     set(gcf,'units','normalized','outerposition',[0 0 1 1]);
     set(gca,'Position',[0 0 1 1]);
 
     axis off;
-    switch data_vis(1,end)
-        case 1
-            image(this.im_le_ha);
-        case 2
-            image(this.im_ri_ha);
-        case 3
-            image(this.im_le_fo);
-        case 4
-            image(this.im_ri_fo);
-        case 5
-            image(this.im_to);
-        case 6
-            image(this.im_rest);
-    end
     
+    
+    
+    if(n < ndescs)
+        aggr(n) = mean(data_vis);
+
+    end
+    if(n == ndescs)
+        
+%     res_vect_x = this.xvect{1}*aggr(1);
+%     res_vect_y = this.yvect{1}*aggr(1);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+%     res_vect_x = this.xvect{2}*aggr(2);
+%     res_vect_y = this.yvect{2}*aggr(2);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+%     res_vect_x = this.xvect{3}*aggr(3);
+%     res_vect_y = this.yvect{3}*aggr(3);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+%     res_vect_x = this.xvect{4}*aggr(4);
+%     res_vect_y = this.yvect{4}*aggr(4);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+%     res_vect_x = this.xvect{5}*aggr(5);
+%     res_vect_y = this.yvect{5}*aggr(5);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+    
+%     res_vect_x = this.xvect{1}*aggr(1) + this.xvect{2}*aggr(2) +  this.xvect{3}*aggr(3) +  this.xvect{4}*aggr(4) +  this.xvect{5}*aggr(5);
+%     res_vect_y = this.yvect{1}*aggr(1) + this.yvect{2}*aggr(2) +  this.yvect{3}*aggr(3) +  this.yvect{4}*aggr(4) +  this.yvect{5}*aggr(5);
+%     res_vect_x = 0.2 * res_vect_x;
+%     res_vect_y = 0.2 * res_vect_y;
+%     this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an2,'Color','blue')
+
+
+        switch data_vis(1,end)
+            case 1
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_le_ha);
+                res_vect_x = this.xvect{1}*aggr(1);
+                res_vect_y = this.yvect{1}*aggr(1);
+                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                set(this.an2,'Color','blue')
+                
+                this.an = annotation('arrow',this.xvect{1}+0.5,this.yvect{1}+0.5,'Tag','toDelete');
+           
+            case 2
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_ri_ha);
+                res_vect_x = this.xvect{2}*aggr(2);
+                res_vect_y = this.yvect{2}*aggr(2);
+                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                set(this.an2,'Color','blue')
+                
+                this.an = annotation('arrow',this.xvect{2}+0.5,this.yvect{2}+0.5,'Tag','toDelete');
+            case 3
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_le_fo);
+                res_vect_x = this.xvect{3}*aggr(3);
+                res_vect_y = this.yvect{3}*aggr(3);
+                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                set(this.an2,'Color','blue')
+                
+                this.an = annotation('arrow',this.xvect{3}+0.5,this.yvect{3}+0.5,'Tag','toDelete');
+            case 4
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_ri_fo);
+                res_vect_x = this.xvect{4}*aggr(4);
+                res_vect_y = this.yvect{4}*aggr(4);
+                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                set(this.an2,'Color','blue')
+                
+                this.an = annotation('arrow',this.xvect{4}+0.5,this.yvect{4}+0.5,'Tag','toDelete');
+            case 5
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_to);
+                res_vect_x = this.xvect{5}*aggr(5);
+                res_vect_y = this.yvect{5}*aggr(5);
+                this.an2 = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+                set(this.an2,'Color','blue')
+                
+                this.an = annotation('arrow',this.xvect{5}+0.5,this.yvect{5}+0.5,'Tag','toDelete');
+            case 6
+                delete(findall(gcf,'Tag','toDelete'));
+                image(this.im_rest);
+                
+        end
+        
+        if(this.params.hidetaskarrow == 1)
+            delete(findall(gcf,'Tag','toDelete'));
+        end
+        
+        if(this.params.hidepredictionarrow == 1)
+            delete(findall(gcf,'Tag','toDelete2'));
+        end
+    
+    
+    end
+   
+end
+%     delete(findall(gcf,'Tag','toDelete'));
+
+%     this.time = this.time + 0.1;
+%     x_coord = 0.5 + 0.5*sin(this.time);
+%     
+%     this.an = annotation('arrow',[0.5,x_coord],[0.5,0.5],'Tag','toDelete');
+
     % Plot data
 %     for m = 1 : nchan
 %         style_num = mod(plot_num, length(this.params.line_styles)) + 1;

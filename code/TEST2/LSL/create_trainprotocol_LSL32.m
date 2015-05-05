@@ -54,8 +54,8 @@ chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3'
 
 % Frequency bands
 %freq_bands = {[11 14], [16 25]};
-freq_bands = {[7 14], [16 25]};
-naming_freq_bands = {[7 14], [16 25]};
+freq_bands = {[11 20]};
+% naming_freq_bands = {[7 14], [16 25]};
 nbands = length(freq_bands);
 
 nCSP = 3;
@@ -73,39 +73,17 @@ sigproc_stage_desc_null = struct('stage_name', [], 'obj_type', [], 'params', [],
 protocol.sigproc_stage_descs = repmat(sigproc_stage_desc_null, 0, 0);
 
 
-% Reference
-%%{
-stage_desc = struct();
-stage_desc.stage_name = 'REFERENCE';
-stage_desc.obj_type = 't_sigproc_spatfilt';
-stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
-
-
-%%}
-
 % IIR filter (highpass)
 %%{
 stage_desc = struct();
 stage_desc.stage_name = 'IIR_HIPASS';
 stage_desc.obj_type = 't_sigproc_iir';
-stage_desc.params.inp_descs(1).inp_stage_name = 'REFERENCE';
+stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
 stage_desc.params.params_spec.freq_bands = {[0.5 Inf]};
 stage_desc.params.params_spec.filt_order = 4;
 stage_desc.params.params_spec.need_append_channames = 0;
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 %%}
-
-% % IIR filter (highpass)
-% %%{
-% stage_desc = struct();
-% stage_desc.stage_name = 'IIR_HIPASS';
-% stage_desc.obj_type = 't_sigproc_iir';
-% stage_desc.params.inp_descs(1).inp_stage_name = '[INPUT]';
-% stage_desc.params.params_spec.freq_bands = {[0.5 Inf]};
-% stage_desc.params.params_spec.filt_order = 4;
-% stage_desc.params.params_spec.need_append_channames = 0;
-% protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
-% %%}
 
 %%{
 % IIR filter (lowpass)
@@ -142,9 +120,8 @@ stage_desc.stage_name = 'IIR';
 stage_desc.obj_type = 't_sigproc_iir';
 stage_desc.params.inp_descs(1).inp_stage_name = 'EOGREJ';
 stage_desc.params.params_spec.freq_bands = freq_bands;
-stage_desc.params.params_spec.naming_freq_bands = naming_freq_bands;
 stage_desc.params.params_spec.filt_order = 5;
-stage_desc.params.params_spec.need_append_channames = 1;
+stage_desc.params.params_spec.need_append_channames = 0;
 % stage_desc.trainer_type = 't_trainer_SSD';
 % stage_desc.train_params.lambda = 0.1;
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
@@ -154,7 +131,7 @@ protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_sta
 stage_desc = struct();
 stage_desc.stage_name = 'SUBSAMPLE_1';
 stage_desc.obj_type = 't_sigproc_base';
-stage_desc.params.inp_descs(1).inp_stage_name = 'IIR';
+stage_desc.params.inp_descs(1).inp_stage_name = 'EOGREJ';
 stage_desc.params.params_base.srate_out = 100;
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
@@ -167,25 +144,52 @@ stage_desc.params.params_base.timewin_prev = 1;      % sec
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
 % CSP (for each band)
-for band_num = 1 : 2
+% for band_num = 1 : 2
+%     
+%     fmin = freq_bands{band_num}(1);
+%     fmax = freq_bands{band_num}(2);
+%     
+%     stage_desc = struct();
+%     stage_desc.stage_name = sprintf('CSP_%i_%i', fmin, fmax);
+%     stage_desc.obj_type = 't_sigproc_spatfilt';
+%     stage_desc.params.inp_descs(1).inp_stage_name = 'SUBSAMPLE_1';    
+%     stage_desc.params.inp_descs(1).chan_names_in =...
+%         cellfun(@(s)sprintf('%s_(%i-%i)', s, fmin, fmax), chan_names_CSP, 'UniformOutput', false);
+%     stage_desc.trainer_type = 't_trainer_CSP';
+%     stage_desc.train_params.state1 = 1;
+%     stage_desc.train_params.state2 = 2;
+%     stage_desc.train_params.lambda = 0.1;
+%     stage_desc.train_params.nCSP = nCSP;
+%     stage_desc.train_params.fpath_chanlocs = fpath_chanlocs;
+%     stage_desc.train_params.filtnames_base =...
+%         sprintf('CSP_(%i-%i)', fmin, fmax);
+%     stage_desc.train_params.chan_names_chanlocs = chan_names_CSP;
+%     %stage_desc.train_params.vis_type = 'none';
+%     %stage_desc.train_params.vis_type = 'filters';
+%     stage_desc.train_params.vis_type = 'patterns';
+%     protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+%     
+% end
+
+% CSP (for each band)
+for state_num = 1 : 5
     
-    fmin = freq_bands{band_num}(1);
-    fmax = freq_bands{band_num}(2);
+    fmin = 11;
+    fmax = 20;
     
     stage_desc = struct();
-    stage_desc.stage_name = sprintf('CSP_%i_%i', fmin, fmax);
+    stage_desc.stage_name = sprintf('CSP_%i', state_num);
     stage_desc.obj_type = 't_sigproc_spatfilt';
     stage_desc.params.inp_descs(1).inp_stage_name = 'SUBSAMPLE_1';    
-    stage_desc.params.inp_descs(1).chan_names_in =...
-        cellfun(@(s)sprintf('%s_(%i-%i)', s, fmin, fmax), chan_names_CSP, 'UniformOutput', false);
+    stage_desc.params.inp_descs(1).chan_names_in = chan_names_CSP;
     stage_desc.trainer_type = 't_trainer_CSP';
-    stage_desc.train_params.state1 = 1;
-    stage_desc.train_params.state2 = 2;
+    stage_desc.train_params.state1 = state_num;
+    stage_desc.train_params.state2 = 6;
     stage_desc.train_params.lambda = 0.1;
     stage_desc.train_params.nCSP = nCSP;
     stage_desc.train_params.fpath_chanlocs = fpath_chanlocs;
     stage_desc.train_params.filtnames_base =...
-        sprintf('CSP_(%i-%i)', fmin, fmax);
+        sprintf('CSP_(%i)', state_num);
     stage_desc.train_params.chan_names_chanlocs = chan_names_CSP;
     %stage_desc.train_params.vis_type = 'none';
     %stage_desc.train_params.vis_type = 'filters';
@@ -194,28 +198,31 @@ for band_num = 1 : 2
     
 end
 
+
 % Average window power
+
 stage_desc = struct();
 stage_desc.stage_name = 'WINPOW';
 stage_desc.obj_type = 't_sigproc_winpow';
-for band_num = 1 : 2
-    fmin = freq_bands{band_num}(1);
-    fmax = freq_bands{band_num}(2);
-    stage_desc.params.inp_descs(band_num).inp_stage_name = sprintf('CSP_%i_%i', fmin, fmax);
+for state_num = 1 : 5
+    stage_desc.params.inp_descs(state_num).inp_stage_name = sprintf('CSP_%i', state_num);
 end
 
 stage_desc.params.params_base.timewin_prev = 2;      % sec
 protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
 % Prediction with LDA
-stage_desc = struct();
-stage_desc.stage_name = 'LDA';
-stage_desc.obj_type = 't_statepred_LDA';
-stage_desc.params.inp_descs(1).inp_stage_name = 'WINPOW'; 
-stage_desc.trainer_type = 't_trainer_LDA';
-stage_desc.train_params.state1 = 1;
-stage_desc.train_params.state2 = 2;
-protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+
+for state_num = 1 : 5
+    stage_desc = struct();
+    stage_desc.stage_name = sprintf('LDA_%i', state_num);
+    stage_desc.obj_type = 't_statepred_LDA';
+    stage_desc.params.inp_descs(1).inp_stage_name = 'WINPOW'; 
+    stage_desc.trainer_type = 't_trainer_LDA';
+    stage_desc.train_params.state1 = state_num;
+    stage_desc.train_params.state2 = 6;
+    protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+end
 
 % % Prediction with Rieman distance
 % stage_desc = struct();

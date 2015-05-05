@@ -26,7 +26,7 @@ fname_chanlocs ='short_32chan_2.set';
 fpath_chanlocs = fullfile(dirpath_work, fname_chanlocs);
 
 % Path to the output file with experiment result
-fname_expresult ='bci_expresult_LSL32_first_6states_3004_laim_6min.mat';
+fname_expresult ='firsttest.mat';
 fpath_expresult = fullfile(dirpath_work, fname_expresult);
 
 
@@ -88,5 +88,6 @@ save(fpath_expresult, 'data', 'states');
 % Close logfile
 log_close;
 
-
+disp('Experiment finished, data saved');
+close all;
 

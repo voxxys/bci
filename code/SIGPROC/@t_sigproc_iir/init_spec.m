@@ -63,9 +63,8 @@ for inp_num = 1 : length(this.params.inp_descs)
        for m = 1 : length(chan_names_in)
 
             if this.params.params_spec.need_append_channames
-                naming_freq_bands = this.params.params_spec.naming_freq_bands;
                 chan_names_out{chan_id_cur} = sprintf('%s_%s(%i-%i)', chan_names_in{m},...
-                   chan_out_postfix, naming_freq_bands{n}(1), naming_freq_bands{n}(2));
+                   chan_out_postfix, freq_bands{n}(1), freq_bands{n}(2));
             else
                 assert(length(freq_bands) == 1);
                 chan_names_out{chan_id_cur} = chan_names_in{m};

@@ -1,9 +1,9 @@
 clear
 clc
 
-int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_2204_imag_2.mat');
+int_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_3004_laim_6min.mat');
 
-ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_2204_imag_.mat');
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_3004_imag_6min.mat');
 
 %%
 
@@ -48,9 +48,9 @@ ext_data.data.data = data_ext;
 
 %%
 
-[data_cur,states_cur,sample_idx] = preprocess(int_data,8,30,2.3,1);
+[data_cur,states_cur,sample_idx] = preprocess(int_data,11,20,3,1);
 
-[data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,8,30,200,1);
+[data_ext,states_ext,sample_idx_ext] = preprocess(ext_data,11,20,200,1);
 
 
 %%
@@ -80,7 +80,7 @@ end
 
 for i = 1:6
     
-    data_state_test{i} = data_ext(:,states_cur == i);
+    data_state_test{i} = data_ext(:,states_ext == i);
 end
 
 
@@ -141,11 +141,11 @@ for i = 1:6
 
     [C,err,P,logp,coeff] = classify(y_data_test', y_data', y_states, 'linear');
     A_tr(i) = 1-err;
-    A_te(i) = sum(y_states_test == C')/size(y_states_test,2);
+%     A_te(i) = sum(y_states_test == C')/size(y_states_test,2);
     
 %     svmStruct = svmtrain(y_data', y_states,'kernel_function','quadratic','kktviolationlevel',0.05);
-    svmStruct = svmtrain(y_data', y_states,'kernel_function','rbf', 'rbf_sigma', rbfs2,'kktviolationlevel',0.1);
-    species = svmclassify(svmStruct,y_data_test');  
+%     svmStruct = svmtrain(y_data', y_states,'kernel_function','rbf', 'rbf_sigma', rbfs2,'kktviolationlevel',0.1);
+%     species = svmclassify(svmStruct,y_data_test');  
 %     A_te_svm(i) = sum(y_states_test == species')/size(y_states_test,2);
 
     disp(i);

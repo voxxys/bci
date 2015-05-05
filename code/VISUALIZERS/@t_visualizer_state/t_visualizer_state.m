@@ -26,6 +26,12 @@ classdef t_visualizer_state < t_visualizer
         im_ri_fo;
         im_to;
         im_rest;
+        an;
+        an2;
+        xvect;
+        yvect;
+
+        time;
         
     end
     

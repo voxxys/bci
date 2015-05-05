@@ -1,0 +1,7 @@
+
+
+========== 03-May-2015_20.02.35 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[SIGPROC_GRAPH] t_procstage_graph::get_inp_stage_idx() -> input stage CSP_7_14 for stage WINPOW not found
