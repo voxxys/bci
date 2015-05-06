@@ -11,7 +11,14 @@ function params = train_spec(this, buf_data, buf_states, params, train_params)
 [states, sample_idx_states] = buf_states.get_data();
 assert(all(sample_idx_data == sample_idx_states) == 1);
 
+
+[correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,train_params.state1,train_params.state2);
+
+
+
 data_cur = data;
+
+
 
 
 

@@ -28,7 +28,7 @@ classdef t_trainer_CSP < t_trainer_base
         %===================================
         % Visualize training results
         visualize(this, data1_cur, data2_cur, params, train_params);
-        
+
     end
     
 end
