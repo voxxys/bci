@@ -66,6 +66,7 @@ for n = 1:ndescs
     
     if(n < ndescs)
         aggr(n) = mean(data_vis);
+        aggr(n) = 1 - aggr(n);
 
     end
     if(n == ndescs)
