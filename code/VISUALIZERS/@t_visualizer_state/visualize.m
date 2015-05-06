@@ -181,8 +181,11 @@ for n = 1:ndescs
     
     
     end
+    
    
 end
+
+pause(0.01);
 %     delete(findall(gcf,'Tag','toDelete'));
 
 %     this.time = this.time + 0.1;
