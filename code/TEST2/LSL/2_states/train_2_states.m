@@ -15,7 +15,7 @@ fname_trainprotocol = 'train_protocol_2_states.mat';
 fpath_trainprotocol = fullfile(dirpath_work, fname_trainprotocol);
 
 % Path to the recorded result of previous experiment
-fname_expresult_old = 'firsttest.mat';
+fname_expresult_old = '0805_xenia_re_first_2s';
 fpath_expresult_old = fullfile(dirpath_work, fname_expresult_old);
 
 % Path to the paradigm file

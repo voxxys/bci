@@ -12,7 +12,7 @@ function params = train_spec(this, buf_data, buf_states, params, train_params)
 assert(all(sample_idx_data == sample_idx_states) == 1);
 
 
-[correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,train_params.state1,train_params.state2);
+% [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,train_params.state1,train_params.state2);
 
 
 
@@ -35,6 +35,9 @@ data_cur = data;
 %     states_cur = states(idx);
 % end
 % 
+
+
+
 sds = 3.5;
 
     row_mean = mean(data_cur,2);
@@ -72,10 +75,12 @@ d = diag(d);
 
 % Store filter matrix for given number of components
 N = train_params.nCSP;
+M_N = V(:, [1:N, end-N+1:end])';
 params.params_spec.M = V(:, [1:N, end-N+1:end])';
 
 % Store pattern matrix for given number of components
 Vinv = inv(V');
+Minv_N = Vinv(:,[1:N, end-N+1:end]);
 params.params_spec.Minv = Vinv(:,[1:N, end-N+1:end]);
 
 % Names of filters

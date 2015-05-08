@@ -13,7 +13,7 @@ lib = lsl_loadlib();
 
 % make a new stream outlet
 disp('Creating a new streaminfo...');
-info = lsl_streaminfo(lib,'BioSemi','Data',32,1000,'cf_float32','sdfwerr32432');
+info = lsl_streaminfo(lib,'BioSemi','Data',31,1000,'cf_float32','sdfwerr32432');
 
 chns = info.desc().append_child('channels');
 for label = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
@@ -39,7 +39,7 @@ chunk_size = 10;
 while true
 
     if((k+chunk_size-1)<size(data_ext,2))
-        chu = data_ext(:,k:(k+chunk_size-1));
+        chu = data_ext(1:31,k:(k+chunk_size-1));
     else
         chu = horzcat(data_ext(:,k:end),data_ext(:,1:(k+chunk_size-1-size(data_ext,2))));     
     end

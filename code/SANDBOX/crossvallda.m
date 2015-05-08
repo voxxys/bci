@@ -1,8 +1,13 @@
-function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1,st2)
+function [correct_tr,correct_te,M,Minv] = crossvallda(data, states, sample_idx_data,st1,st2,lambda)
+
+load('chlocs.mat');
 
     sample_idx = sample_idx_data;
     states_cur = states;
     data_cur = data;
+    
+    
+    sds = 2.3;
     
     
     state_changes = find(diff(states_cur));
@@ -40,6 +45,26 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
 
         data_train = data_cur(:,train_mask);
         states_train = states_cur(train_mask);
+            
+        
+        
+        row_mean = mean(data_train,2);
+        row_std = std(data_train,0,2);
+
+        mask = (abs(data_train-row_mean(:,ones(1,size(data_train,2)))) < sds * row_std(:,ones(1,size(data_train,2))));
+
+        idxs = ~sum(~mask,1);
+
+        idxs = find(idxs);
+
+    %     disp(size(idx,2)/size(data,2));
+
+        data_train = data_train(:,idxs);
+        states_train = states_train(idxs);
+  
+    
+    
+    
 
         data_test = data_cur(:,test_mask);
         states_test = states_cur(test_mask);
@@ -56,12 +81,56 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
         C2 = data_2 * data_2' / size(data_2,2);
 
         nchan = size(C1,1);
-        C1 = C1 + 0.05 * trace(C1) * eye(nchan) / size(C1,1);
-        C2 = C2 + 0.05 * trace(C2) * eye(nchan) / size(C2,1);
+        C1 = C1 + lambda * trace(C1) * eye(nchan) / size(C1,1);
+        C2 = C2 + lambda * trace(C2) * eye(nchan) / size(C2,1);
 
         [V d] = eig(C1,C2);
 
-        M = V(:,[1:4, (end-3):end])';
+        N = 4;
+        M = V(:, [1:N, end-N+1:end])';
+
+        Vinv = inv(V');
+        Minv = Vinv(:,[1:N, end-N+1:end]);
+        
+        
+        
+
+%        
+% nfilt = size(M,1);
+% 
+% figure; clf;
+% set(gcf, 'units', 'normalized', 'outerposition', [0 0.05 1 0.95]);
+% 
+
+
+
+
+% nx = 5;
+% ny = 2;
+
+
+% for m = 1 : nfilt
+% 
+%     V = Minv(:,m);
+% 
+%     subplot(ny,nx,m);
+%     topoplot(V, chanlocs_vis);
+% 
+% end
+% 
+% order = inputdlg('Patterns ranking:');
+% order_num = str2num(char(order));
+% 
+% Minv = Minv(:,order_num);
+
+% figure();
+% for m = 1 : nfilt
+
+%     V = Minv(:,1:m);
+%     V_plot = Minv(:,m);
+%     subplot(ny,nx,m);
+%     topoplot(V_plot, chanlocs_vis);
+%     title(sprintf('%s  %s(%i)', strrep(this.name,'_','\_'), train_params.vis_type, m));
 
         Y1 = M * data_1;
         Y2 = M * data_2;
@@ -77,11 +146,6 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
         y_states_test = [ones(1,size(Y1_test,2)), 2*ones(1,size(Y2_test,2))];
 
 
-                
-        y_data_1_var = var(y_data(:,y_states == 1),[],2);
-        y_data_2_var = var(y_data(:,y_states == 2),[],2);
-        
-        
         win = 500;%wins(s);        
 
         for k=1:size(y_data,1)
@@ -97,6 +161,10 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
         A_tr(i) = 1-err;
         A_te(i) = sum(y_states_test == C')/size(y_states_test,2);
 
+        
+%     end    
+        
+        
         
     end
     

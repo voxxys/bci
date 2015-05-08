@@ -1,0 +1,9546 @@
+
+
+========== 08-May-2015_18.12.14 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[IIR_HIPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_HIPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_HIPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_HIPASS  =================
+
+OBJECT
+	Name: IIR_HIPASS_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SIGNAL_SOURCE.buf_eeg
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_LOWPASS] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_LOWPASS] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_LOWPASS] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_LOWPASS  =================
+
+OBJECT
+	Name: IIR_LOWPASS_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[EOGREJ] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[EOGREJ] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[EOGREJ_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  EOGREJ  =================
+
+OBJECT
+	Name: EOGREJ_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_1_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_1_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_1_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_1_2  =================
+
+OBJECT
+	Name: IIR_1_2_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_1_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_1_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_1_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_1_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_1_5  =================
+
+OBJECT
+	Name: IIR_1_5_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_1_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_1_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_1_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_1_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_1_6  =================
+
+OBJECT
+	Name: IIR_1_6_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_1_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_2_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_2_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_2_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_2_1  =================
+
+OBJECT
+	Name: IIR_2_1_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_2_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_2_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_2_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_2_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_2_5  =================
+
+OBJECT
+	Name: IIR_2_5_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_2_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_2_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_2_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_2_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_2_6  =================
+
+OBJECT
+	Name: IIR_2_6_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_2_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_5_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_5_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_5_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_5_1  =================
+
+OBJECT
+	Name: IIR_5_1_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_5_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_5_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_5_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_5_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_5_2  =================
+
+OBJECT
+	Name: IIR_5_2_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_5_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_5_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_5_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_5_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_5_6  =================
+
+OBJECT
+	Name: IIR_5_6_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_5_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_6_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_6_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_6_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_6_1  =================
+
+OBJECT
+	Name: IIR_6_1_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_6_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_6_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_6_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_6_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_6_2  =================
+
+OBJECT
+	Name: IIR_6_2_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_6_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[IIR_6_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[IIR_6_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[IIR_6_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  IIR_6_5  =================
+
+OBJECT
+	Name: IIR_6_5_OBJ
+	Type: t_sigproc_iir
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: IIR_6_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_1_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_1_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_1_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_1_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_1_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_1_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_2_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_2_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_2_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_2_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_2_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_2_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_5_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_5_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_5_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_5_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_5_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_5_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_6_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_6_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_6_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_6_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[SUBSAMPLE_6_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[SUBSAMPLE_6_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+[SUBSAMPLE_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 Fp1
+	2 Fp2
+	3 F7
+	4 F3
+	5 Fz
+	6 F4
+	7 F8
+	8 Ft9
+	9 Fc5
+	10 Fc1
+	11 Fc2
+	12 Fc6
+	13 Ft10
+	14 T7
+	15 C3
+	16 Cz
+	17 C4
+	18 T8
+	19 Tp9
+	20 Cp5
+	21 Cp1
+	22 Cp2
+	23 Cp6
+	24 Tp10
+	25 P7
+	26 P3
+	27 P4
+	28 P8
+	29 O1
+	30 Oz
+	31 O2
+
+BUF_OUT
+	Name: SUBSAMPLE_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+[CSP_1_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_1_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_1_2  =================
+
+OBJECT
+	Name: CSP_1_2_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_2)_1
+	2 CSP_(1_2)_2
+	3 CSP_(1_2)_3
+	4 CSP_(1_2)_4
+
+BUF_OUT
+	Name: CSP_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_2)_1
+		2 CSP_(1_2)_2
+		3 CSP_(1_2)_3
+		4 CSP_(1_2)_4
+
+[CSP_1_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_1_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_1_5  =================
+
+OBJECT
+	Name: CSP_1_5_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_5)_1
+	2 CSP_(1_5)_2
+	3 CSP_(1_5)_3
+	4 CSP_(1_5)_4
+
+BUF_OUT
+	Name: CSP_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_5)_1
+		2 CSP_(1_5)_2
+		3 CSP_(1_5)_3
+		4 CSP_(1_5)_4
+
+[CSP_1_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_1_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_1_6  =================
+
+OBJECT
+	Name: CSP_1_6_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_6)_1
+	2 CSP_(1_6)_2
+	3 CSP_(1_6)_3
+	4 CSP_(1_6)_4
+
+BUF_OUT
+	Name: CSP_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_6)_1
+		2 CSP_(1_6)_2
+		3 CSP_(1_6)_3
+		4 CSP_(1_6)_4
+
+[CSP_2_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_2_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_2_1  =================
+
+OBJECT
+	Name: CSP_2_1_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_1)_1
+	2 CSP_(2_1)_2
+	3 CSP_(2_1)_3
+	4 CSP_(2_1)_4
+
+BUF_OUT
+	Name: CSP_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_1)_1
+		2 CSP_(2_1)_2
+		3 CSP_(2_1)_3
+		4 CSP_(2_1)_4
+
+[CSP_2_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_2_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_2_5  =================
+
+OBJECT
+	Name: CSP_2_5_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_5)_1
+	2 CSP_(2_5)_2
+	3 CSP_(2_5)_3
+	4 CSP_(2_5)_4
+
+BUF_OUT
+	Name: CSP_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_5)_1
+		2 CSP_(2_5)_2
+		3 CSP_(2_5)_3
+		4 CSP_(2_5)_4
+
+[CSP_2_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_2_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_2_6  =================
+
+OBJECT
+	Name: CSP_2_6_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_6)_1
+	2 CSP_(2_6)_2
+	3 CSP_(2_6)_3
+	4 CSP_(2_6)_4
+
+BUF_OUT
+	Name: CSP_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_6)_1
+		2 CSP_(2_6)_2
+		3 CSP_(2_6)_3
+		4 CSP_(2_6)_4
+
+[CSP_5_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_5_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_5_1  =================
+
+OBJECT
+	Name: CSP_5_1_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_1)_1
+	2 CSP_(5_1)_2
+	3 CSP_(5_1)_3
+	4 CSP_(5_1)_4
+
+BUF_OUT
+	Name: CSP_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_1)_1
+		2 CSP_(5_1)_2
+		3 CSP_(5_1)_3
+		4 CSP_(5_1)_4
+
+[CSP_5_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_5_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_5_2  =================
+
+OBJECT
+	Name: CSP_5_2_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_2)_1
+	2 CSP_(5_2)_2
+	3 CSP_(5_2)_3
+	4 CSP_(5_2)_4
+
+BUF_OUT
+	Name: CSP_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_2)_1
+		2 CSP_(5_2)_2
+		3 CSP_(5_2)_3
+		4 CSP_(5_2)_4
+
+[CSP_5_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_5_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_5_6  =================
+
+OBJECT
+	Name: CSP_5_6_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_6)_1
+	2 CSP_(5_6)_2
+	3 CSP_(5_6)_3
+	4 CSP_(5_6)_4
+
+BUF_OUT
+	Name: CSP_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_6)_1
+		2 CSP_(5_6)_2
+		3 CSP_(5_6)_3
+		4 CSP_(5_6)_4
+
+[CSP_6_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_6_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_6_1  =================
+
+OBJECT
+	Name: CSP_6_1_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_1)_1
+	2 CSP_(6_1)_2
+	3 CSP_(6_1)_3
+	4 CSP_(6_1)_4
+
+BUF_OUT
+	Name: CSP_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_1)_1
+		2 CSP_(6_1)_2
+		3 CSP_(6_1)_3
+		4 CSP_(6_1)_4
+
+[CSP_6_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_6_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_6_2  =================
+
+OBJECT
+	Name: CSP_6_2_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_2)_1
+	2 CSP_(6_2)_2
+	3 CSP_(6_2)_3
+	4 CSP_(6_2)_4
+
+BUF_OUT
+	Name: CSP_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_2)_1
+		2 CSP_(6_2)_2
+		3 CSP_(6_2)_3
+		4 CSP_(6_2)_4
+
+[CSP_6_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[CSP_6_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+
+=================  CSP_6_5  =================
+
+OBJECT
+	Name: CSP_6_5_OBJ
+	Type: t_sigproc_spatfilt
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 Fp1
+		2 Fp2
+		3 F7
+		4 F3
+		5 Fz
+		6 F4
+		7 F8
+		8 Ft9
+		9 Fc5
+		10 Fc1
+		11 Fc2
+		12 Fc6
+		13 Ft10
+		14 T7
+		15 C3
+		16 Cz
+		17 C4
+		18 T8
+		19 Tp9
+		20 Cp5
+		21 Cp1
+		22 Cp2
+		23 Cp6
+		24 Tp10
+		25 P7
+		26 P3
+		27 P4
+		28 P8
+		29 O1
+		30 Oz
+		31 O2
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 Fp1	(1)
+		2 Fp2	(2)
+		3 F7	(3)
+		4 F3	(4)
+		5 Fz	(5)
+		6 F4	(6)
+		7 F8	(7)
+		8 Ft9	(8)
+		9 Fc5	(9)
+		10 Fc1	(10)
+		11 Fc2	(11)
+		12 Fc6	(12)
+		13 Ft10	(13)
+		14 T7	(14)
+		15 C3	(15)
+		16 Cz	(16)
+		17 C4	(17)
+		18 T8	(18)
+		19 Tp9	(19)
+		20 Cp5	(20)
+		21 Cp1	(21)
+		22 Cp2	(22)
+		23 Cp6	(23)
+		24 Tp10	(24)
+		25 P7	(25)
+		26 P3	(26)
+		27 P4	(27)
+		28 P8	(28)
+		29 O1	(29)
+		30 Oz	(30)
+		31 O2	(31)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_5)_1
+	2 CSP_(6_5)_2
+	3 CSP_(6_5)_3
+	4 CSP_(6_5)_4
+
+BUF_OUT
+	Name: CSP_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_5)_1
+		2 CSP_(6_5)_2
+		3 CSP_(6_5)_3
+		4 CSP_(6_5)_4
+
+[WINPOW_1_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_1_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_1_2  =================
+
+OBJECT
+	Name: WINPOW_1_2_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_2)_1
+		2 CSP_(1_2)_2
+		3 CSP_(1_2)_3
+		4 CSP_(1_2)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(1_2)_1	(1)
+		2 CSP_(1_2)_2	(2)
+		3 CSP_(1_2)_3	(3)
+		4 CSP_(1_2)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_2)_1_avgpow
+	2 CSP_(1_2)_2_avgpow
+	3 CSP_(1_2)_3_avgpow
+	4 CSP_(1_2)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_2)_1_avgpow
+		2 CSP_(1_2)_2_avgpow
+		3 CSP_(1_2)_3_avgpow
+		4 CSP_(1_2)_4_avgpow
+
+[WINPOW_1_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_1_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_1_5  =================
+
+OBJECT
+	Name: WINPOW_1_5_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_5)_1
+		2 CSP_(1_5)_2
+		3 CSP_(1_5)_3
+		4 CSP_(1_5)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(1_5)_1	(1)
+		2 CSP_(1_5)_2	(2)
+		3 CSP_(1_5)_3	(3)
+		4 CSP_(1_5)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_5)_1_avgpow
+	2 CSP_(1_5)_2_avgpow
+	3 CSP_(1_5)_3_avgpow
+	4 CSP_(1_5)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_5)_1_avgpow
+		2 CSP_(1_5)_2_avgpow
+		3 CSP_(1_5)_3_avgpow
+		4 CSP_(1_5)_4_avgpow
+
+[WINPOW_1_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_1_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_1_6  =================
+
+OBJECT
+	Name: WINPOW_1_6_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_6)_1
+		2 CSP_(1_6)_2
+		3 CSP_(1_6)_3
+		4 CSP_(1_6)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(1_6)_1	(1)
+		2 CSP_(1_6)_2	(2)
+		3 CSP_(1_6)_3	(3)
+		4 CSP_(1_6)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(1_6)_1_avgpow
+	2 CSP_(1_6)_2_avgpow
+	3 CSP_(1_6)_3_avgpow
+	4 CSP_(1_6)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_6)_1_avgpow
+		2 CSP_(1_6)_2_avgpow
+		3 CSP_(1_6)_3_avgpow
+		4 CSP_(1_6)_4_avgpow
+
+[WINPOW_2_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_2_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_2_1  =================
+
+OBJECT
+	Name: WINPOW_2_1_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_1)_1
+		2 CSP_(2_1)_2
+		3 CSP_(2_1)_3
+		4 CSP_(2_1)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(2_1)_1	(1)
+		2 CSP_(2_1)_2	(2)
+		3 CSP_(2_1)_3	(3)
+		4 CSP_(2_1)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_1)_1_avgpow
+	2 CSP_(2_1)_2_avgpow
+	3 CSP_(2_1)_3_avgpow
+	4 CSP_(2_1)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_1)_1_avgpow
+		2 CSP_(2_1)_2_avgpow
+		3 CSP_(2_1)_3_avgpow
+		4 CSP_(2_1)_4_avgpow
+
+[WINPOW_2_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_2_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_2_5  =================
+
+OBJECT
+	Name: WINPOW_2_5_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_5)_1
+		2 CSP_(2_5)_2
+		3 CSP_(2_5)_3
+		4 CSP_(2_5)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(2_5)_1	(1)
+		2 CSP_(2_5)_2	(2)
+		3 CSP_(2_5)_3	(3)
+		4 CSP_(2_5)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_5)_1_avgpow
+	2 CSP_(2_5)_2_avgpow
+	3 CSP_(2_5)_3_avgpow
+	4 CSP_(2_5)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_5)_1_avgpow
+		2 CSP_(2_5)_2_avgpow
+		3 CSP_(2_5)_3_avgpow
+		4 CSP_(2_5)_4_avgpow
+
+[WINPOW_2_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_2_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_2_6  =================
+
+OBJECT
+	Name: WINPOW_2_6_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_6)_1
+		2 CSP_(2_6)_2
+		3 CSP_(2_6)_3
+		4 CSP_(2_6)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(2_6)_1	(1)
+		2 CSP_(2_6)_2	(2)
+		3 CSP_(2_6)_3	(3)
+		4 CSP_(2_6)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(2_6)_1_avgpow
+	2 CSP_(2_6)_2_avgpow
+	3 CSP_(2_6)_3_avgpow
+	4 CSP_(2_6)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_6)_1_avgpow
+		2 CSP_(2_6)_2_avgpow
+		3 CSP_(2_6)_3_avgpow
+		4 CSP_(2_6)_4_avgpow
+
+[WINPOW_5_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_5_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_5_1  =================
+
+OBJECT
+	Name: WINPOW_5_1_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_1)_1
+		2 CSP_(5_1)_2
+		3 CSP_(5_1)_3
+		4 CSP_(5_1)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(5_1)_1	(1)
+		2 CSP_(5_1)_2	(2)
+		3 CSP_(5_1)_3	(3)
+		4 CSP_(5_1)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_1)_1_avgpow
+	2 CSP_(5_1)_2_avgpow
+	3 CSP_(5_1)_3_avgpow
+	4 CSP_(5_1)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_1)_1_avgpow
+		2 CSP_(5_1)_2_avgpow
+		3 CSP_(5_1)_3_avgpow
+		4 CSP_(5_1)_4_avgpow
+
+[WINPOW_5_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_5_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_5_2  =================
+
+OBJECT
+	Name: WINPOW_5_2_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_2)_1
+		2 CSP_(5_2)_2
+		3 CSP_(5_2)_3
+		4 CSP_(5_2)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(5_2)_1	(1)
+		2 CSP_(5_2)_2	(2)
+		3 CSP_(5_2)_3	(3)
+		4 CSP_(5_2)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_2)_1_avgpow
+	2 CSP_(5_2)_2_avgpow
+	3 CSP_(5_2)_3_avgpow
+	4 CSP_(5_2)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_2)_1_avgpow
+		2 CSP_(5_2)_2_avgpow
+		3 CSP_(5_2)_3_avgpow
+		4 CSP_(5_2)_4_avgpow
+
+[WINPOW_5_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_5_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_5_6  =================
+
+OBJECT
+	Name: WINPOW_5_6_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_6)_1
+		2 CSP_(5_6)_2
+		3 CSP_(5_6)_3
+		4 CSP_(5_6)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(5_6)_1	(1)
+		2 CSP_(5_6)_2	(2)
+		3 CSP_(5_6)_3	(3)
+		4 CSP_(5_6)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(5_6)_1_avgpow
+	2 CSP_(5_6)_2_avgpow
+	3 CSP_(5_6)_3_avgpow
+	4 CSP_(5_6)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_6)_1_avgpow
+		2 CSP_(5_6)_2_avgpow
+		3 CSP_(5_6)_3_avgpow
+		4 CSP_(5_6)_4_avgpow
+
+[WINPOW_6_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_6_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_6_1  =================
+
+OBJECT
+	Name: WINPOW_6_1_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_1)_1
+		2 CSP_(6_1)_2
+		3 CSP_(6_1)_3
+		4 CSP_(6_1)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(6_1)_1	(1)
+		2 CSP_(6_1)_2	(2)
+		3 CSP_(6_1)_3	(3)
+		4 CSP_(6_1)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_1)_1_avgpow
+	2 CSP_(6_1)_2_avgpow
+	3 CSP_(6_1)_3_avgpow
+	4 CSP_(6_1)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_1)_1_avgpow
+		2 CSP_(6_1)_2_avgpow
+		3 CSP_(6_1)_3_avgpow
+		4 CSP_(6_1)_4_avgpow
+
+[WINPOW_6_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_6_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_6_2  =================
+
+OBJECT
+	Name: WINPOW_6_2_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_2)_1
+		2 CSP_(6_2)_2
+		3 CSP_(6_2)_3
+		4 CSP_(6_2)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(6_2)_1	(1)
+		2 CSP_(6_2)_2	(2)
+		3 CSP_(6_2)_3	(3)
+		4 CSP_(6_2)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_2)_1_avgpow
+	2 CSP_(6_2)_2_avgpow
+	3 CSP_(6_2)_3_avgpow
+	4 CSP_(6_2)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_2)_1_avgpow
+		2 CSP_(6_2)_2_avgpow
+		3 CSP_(6_2)_3_avgpow
+		4 CSP_(6_2)_4_avgpow
+
+[WINPOW_6_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[WINPOW_6_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  WINPOW_6_5  =================
+
+OBJECT
+	Name: WINPOW_6_5_OBJ
+	Type: t_sigproc_winpow
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_5)_1
+		2 CSP_(6_5)_2
+		3 CSP_(6_5)_3
+		4 CSP_(6_5)_4
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 CSP_(6_5)_1	(1)
+		2 CSP_(6_5)_2	(2)
+		3 CSP_(6_5)_3	(3)
+		4 CSP_(6_5)_4	(4)
+
+OUTPUT CHANNELS: 
+	1 CSP_(6_5)_1_avgpow
+	2 CSP_(6_5)_2_avgpow
+	3 CSP_(6_5)_3_avgpow
+	4 CSP_(6_5)_4_avgpow
+
+BUF_OUT
+	Name: WINPOW_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_5)_1_avgpow
+		2 CSP_(6_5)_2_avgpow
+		3 CSP_(6_5)_3_avgpow
+		4 CSP_(6_5)_4_avgpow
+
+[LDA_1_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_1_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_1_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_1_2  =================
+
+OBJECT
+	Name: LDA_1_2_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_2)_1_avgpow
+		2 CSP_(1_2)_2_avgpow
+		3 CSP_(1_2)_3_avgpow
+		4 CSP_(1_2)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(1_2)_1_avgpow	(1)
+		2 CSP_(1_2)_2_avgpow	(2)
+		3 CSP_(1_2)_3_avgpow	(3)
+		4 CSP_(1_2)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_1_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_1_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_1_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_1_5  =================
+
+OBJECT
+	Name: LDA_1_5_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_5)_1_avgpow
+		2 CSP_(1_5)_2_avgpow
+		3 CSP_(1_5)_3_avgpow
+		4 CSP_(1_5)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(1_5)_1_avgpow	(1)
+		2 CSP_(1_5)_2_avgpow	(2)
+		3 CSP_(1_5)_3_avgpow	(3)
+		4 CSP_(1_5)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_1_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_1_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_1_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_1_6  =================
+
+OBJECT
+	Name: LDA_1_6_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(1_6)_1_avgpow
+		2 CSP_(1_6)_2_avgpow
+		3 CSP_(1_6)_3_avgpow
+		4 CSP_(1_6)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(1_6)_1_avgpow	(1)
+		2 CSP_(1_6)_2_avgpow	(2)
+		3 CSP_(1_6)_3_avgpow	(3)
+		4 CSP_(1_6)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_2_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_2_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_2_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_2_1  =================
+
+OBJECT
+	Name: LDA_2_1_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_1)_1_avgpow
+		2 CSP_(2_1)_2_avgpow
+		3 CSP_(2_1)_3_avgpow
+		4 CSP_(2_1)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(2_1)_1_avgpow	(1)
+		2 CSP_(2_1)_2_avgpow	(2)
+		3 CSP_(2_1)_3_avgpow	(3)
+		4 CSP_(2_1)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_2_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_2_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_2_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_2_5  =================
+
+OBJECT
+	Name: LDA_2_5_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_5)_1_avgpow
+		2 CSP_(2_5)_2_avgpow
+		3 CSP_(2_5)_3_avgpow
+		4 CSP_(2_5)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(2_5)_1_avgpow	(1)
+		2 CSP_(2_5)_2_avgpow	(2)
+		3 CSP_(2_5)_3_avgpow	(3)
+		4 CSP_(2_5)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_2_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_2_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_2_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_2_6  =================
+
+OBJECT
+	Name: LDA_2_6_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(2_6)_1_avgpow
+		2 CSP_(2_6)_2_avgpow
+		3 CSP_(2_6)_3_avgpow
+		4 CSP_(2_6)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(2_6)_1_avgpow	(1)
+		2 CSP_(2_6)_2_avgpow	(2)
+		3 CSP_(2_6)_3_avgpow	(3)
+		4 CSP_(2_6)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_5_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_5_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_5_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_5_1  =================
+
+OBJECT
+	Name: LDA_5_1_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_1)_1_avgpow
+		2 CSP_(5_1)_2_avgpow
+		3 CSP_(5_1)_3_avgpow
+		4 CSP_(5_1)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(5_1)_1_avgpow	(1)
+		2 CSP_(5_1)_2_avgpow	(2)
+		3 CSP_(5_1)_3_avgpow	(3)
+		4 CSP_(5_1)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_5_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_5_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_5_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_5_2  =================
+
+OBJECT
+	Name: LDA_5_2_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_2)_1_avgpow
+		2 CSP_(5_2)_2_avgpow
+		3 CSP_(5_2)_3_avgpow
+		4 CSP_(5_2)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(5_2)_1_avgpow	(1)
+		2 CSP_(5_2)_2_avgpow	(2)
+		3 CSP_(5_2)_3_avgpow	(3)
+		4 CSP_(5_2)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_5_6] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_5_6] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_5_6] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_5_6  =================
+
+OBJECT
+	Name: LDA_5_6_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(5_6)_1_avgpow
+		2 CSP_(5_6)_2_avgpow
+		3 CSP_(5_6)_3_avgpow
+		4 CSP_(5_6)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(5_6)_1_avgpow	(1)
+		2 CSP_(5_6)_2_avgpow	(2)
+		3 CSP_(5_6)_3_avgpow	(3)
+		4 CSP_(5_6)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_6_1] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_6_1] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_6_1] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_6_1  =================
+
+OBJECT
+	Name: LDA_6_1_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_1)_1_avgpow
+		2 CSP_(6_1)_2_avgpow
+		3 CSP_(6_1)_3_avgpow
+		4 CSP_(6_1)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(6_1)_1_avgpow	(1)
+		2 CSP_(6_1)_2_avgpow	(2)
+		3 CSP_(6_1)_3_avgpow	(3)
+		4 CSP_(6_1)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_6_2] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_6_2] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_6_2] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_6_2  =================
+
+OBJECT
+	Name: LDA_6_2_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_2)_1_avgpow
+		2 CSP_(6_2)_2_avgpow
+		3 CSP_(6_2)_3_avgpow
+		4 CSP_(6_2)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(6_2)_1_avgpow	(1)
+		2 CSP_(6_2)_2_avgpow	(2)
+		3 CSP_(6_2)_3_avgpow	(3)
+		4 CSP_(6_2)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[LDA_6_5] t_sigproc_stage::init() -> srate_out not specified - will use srate of first input
+[LDA_6_5] t_sigproc_stage::init() -> timewin_prev not specified - will use 0
+[LDA_6_5] t_sigproc_stage::init() -> inp_descs(1).chan_names_in not specified - will use all channels
+
+=================  LDA_6_5  =================
+
+OBJECT
+	Name: LDA_6_5_OBJ
+	Type: t_statepred_LDA
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 CSP_(6_5)_1_avgpow
+		2 CSP_(6_5)_2_avgpow
+		3 CSP_(6_5)_3_avgpow
+		4 CSP_(6_5)_4_avgpow
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 CSP_(6_5)_1_avgpow	(1)
+		2 CSP_(6_5)_2_avgpow	(2)
+		3 CSP_(6_5)_3_avgpow	(3)
+		4 CSP_(6_5)_4_avgpow	(4)
+
+OUTPUT CHANNELS: 
+	1 pred
+	2 pred_smooth
+
+BUF_OUT
+	Name: LDA_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 pred
+		2 pred_smooth
+
+[IIR_HIPASS_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_HIPASS  =================
+
+OBJECT
+	Name: IIR_HIPASS_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: STATE_GENERATOR.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_LOWPASS_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_LOWPASS  =================
+
+OBJECT
+	Name: IIR_LOWPASS_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_HIPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[EOGREJ_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  EOGREJ  =================
+
+OBJECT
+	Name: EOGREJ_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_LOWPASS.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_1_2  =================
+
+OBJECT
+	Name: IIR_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_1_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_1_5  =================
+
+OBJECT
+	Name: IIR_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_1_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_1_6  =================
+
+OBJECT
+	Name: IIR_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_1_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_2_1  =================
+
+OBJECT
+	Name: IIR_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_2_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_2_5  =================
+
+OBJECT
+	Name: IIR_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_2_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_2_6  =================
+
+OBJECT
+	Name: IIR_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_2_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_5_1  =================
+
+OBJECT
+	Name: IIR_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_5_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_5_2  =================
+
+OBJECT
+	Name: IIR_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_5_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_5_6  =================
+
+OBJECT
+	Name: IIR_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_5_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_6_1  =================
+
+OBJECT
+	Name: IIR_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_6_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_6_2  =================
+
+OBJECT
+	Name: IIR_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_6_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[IIR_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  IIR_6_5  =================
+
+OBJECT
+	Name: IIR_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 1000
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: EOGREJ.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: IIR_6_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_1_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_1_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_2_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_2_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_5_6  =================
+
+OBJECT
+	Name: SUBSAMPLE_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_5_6.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_1  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_1.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_2  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_2.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[SUBSAMPLE_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  SUBSAMPLE_6_5  =================
+
+OBJECT
+	Name: SUBSAMPLE_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: IIR_6_5.buf
+	Sampling rate: 1000
+	Type: linear
+	Length: 720000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 1000
+	Downsampling coeff: 10
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: SUBSAMPLE_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_1_2  =================
+
+OBJECT
+	Name: CSP_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_1_5  =================
+
+OBJECT
+	Name: CSP_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_1_6  =================
+
+OBJECT
+	Name: CSP_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_2_1  =================
+
+OBJECT
+	Name: CSP_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_2_5  =================
+
+OBJECT
+	Name: CSP_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_2_6  =================
+
+OBJECT
+	Name: CSP_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_5_1  =================
+
+OBJECT
+	Name: CSP_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_5_2  =================
+
+OBJECT
+	Name: CSP_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_5_6  =================
+
+OBJECT
+	Name: CSP_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_6_1  =================
+
+OBJECT
+	Name: CSP_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_6_2  =================
+
+OBJECT
+	Name: CSP_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[CSP_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  CSP_6_5  =================
+
+OBJECT
+	Name: CSP_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: SUBSAMPLE_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: CSP_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_1_2  =================
+
+OBJECT
+	Name: WINPOW_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_1_5  =================
+
+OBJECT
+	Name: WINPOW_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_1_6  =================
+
+OBJECT
+	Name: WINPOW_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_2_1  =================
+
+OBJECT
+	Name: WINPOW_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_2_5  =================
+
+OBJECT
+	Name: WINPOW_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_2_6  =================
+
+OBJECT
+	Name: WINPOW_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_5_1  =================
+
+OBJECT
+	Name: WINPOW_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_5_2  =================
+
+OBJECT
+	Name: WINPOW_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_5_6  =================
+
+OBJECT
+	Name: WINPOW_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_6_1  =================
+
+OBJECT
+	Name: WINPOW_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_6_2  =================
+
+OBJECT
+	Name: WINPOW_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[WINPOW_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  WINPOW_6_5  =================
+
+OBJECT
+	Name: WINPOW_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 1
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: CSP_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 100
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: WINPOW_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_1_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_1_2  =================
+
+OBJECT
+	Name: LDA_1_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_1_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_1_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_1_5  =================
+
+OBJECT
+	Name: LDA_1_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_1_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_1_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_1_6  =================
+
+OBJECT
+	Name: LDA_1_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_1_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_2_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_2_1  =================
+
+OBJECT
+	Name: LDA_2_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_2_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_2_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_2_5  =================
+
+OBJECT
+	Name: LDA_2_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_2_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_2_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_2_6  =================
+
+OBJECT
+	Name: LDA_2_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_2_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_5_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_5_1  =================
+
+OBJECT
+	Name: LDA_5_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_5_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_5_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_5_2  =================
+
+OBJECT
+	Name: LDA_5_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_5_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_5_6_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_5_6  =================
+
+OBJECT
+	Name: LDA_5_6_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_5_6.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_6_1_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_6_1  =================
+
+OBJECT
+	Name: LDA_6_1_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_6_1.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_6_2_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_6_2  =================
+
+OBJECT
+	Name: LDA_6_2_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_6_2.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+[LDA_6_5_OBJ] t_sigproc_base::init() -> chan_names_out not specified - will use names of input channels
+
+=================  LDA_6_5  =================
+
+OBJECT
+	Name: LDA_6_5_OBJ
+	Type: t_sigproc_base
+
+PARAMS
+	srate_out: 100
+	timewin_prev: 0
+	downsamp_type: thin
+	upsamp_type: repeat
+
+BUF_IN [1]
+	Name: WINPOW_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
+INPUT [1]
+	Sampling_rate: 100
+	Downsampling coeff: 1
+	Upsampling coeff: 1
+	No. of preceding samlpes: 0
+	Channels (IN): 
+		1 STATE	(1)
+
+OUTPUT CHANNELS: 
+	1 STATE
+
+BUF_OUT
+	Name: LDA_6_5.buf
+	Sampling rate: 100
+	Type: linear
+	Length: 72000 samples
+	Channels: 
+		1 STATE
+
