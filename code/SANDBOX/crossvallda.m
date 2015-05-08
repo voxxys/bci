@@ -1,8 +1,11 @@
-function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1,st2)
+function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1,st2,lambda,numpat)
 
     sample_idx = sample_idx_data;
     states_cur = states;
     data_cur = data;
+    
+    
+    sds = 2.3;
     
     
     state_changes = find(diff(states_cur));
@@ -40,6 +43,27 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
 
         data_train = data_cur(:,train_mask);
         states_train = states_cur(train_mask);
+        
+        
+        
+        
+        row_mean = mean(data_train,2);
+        row_std = std(data_train,0,2);
+
+        mask = (abs(data_train-row_mean(:,ones(1,size(data_train,2)))) < sds * row_std(:,ones(1,size(data_train,2))));
+
+        idxs = ~sum(~mask,1);
+
+        idxs = find(idxs);
+
+    %     disp(size(idx,2)/size(data,2));
+
+        data_train = data_train(:,idxs);
+        states_train = states_train(idxs);
+  
+    
+    
+    
 
         data_test = data_cur(:,test_mask);
         states_test = states_cur(test_mask);
@@ -56,12 +80,43 @@ function [correct_tr,correct_te] = crossvallda(data, states, sample_idx_data,st1
         C2 = data_2 * data_2' / size(data_2,2);
 
         nchan = size(C1,1);
-        C1 = C1 + 0.05 * trace(C1) * eye(nchan) / size(C1,1);
-        C2 = C2 + 0.05 * trace(C2) * eye(nchan) / size(C2,1);
+        C1 = C1 + lambda * trace(C1) * eye(nchan) / size(C1,1);
+        C2 = C2 + lambda * trace(C2) * eye(nchan) / size(C2,1);
 
         [V d] = eig(C1,C2);
 
-        M = V(:,[1:4, (end-3):end])';
+        N = numpat;
+        M = V(:, [1:N, end-N+1:end])';
+        
+        
+        
+
+       
+nfilt = size(M,1);
+
+figure; clf;
+set(gcf, 'units', 'normalized', 'outerposition', [0 0.05 1 0.95]);
+
+% Visualize filters or patterns
+for m = 1 : nfilt
+
+    % What to visualize
+    if vis_patterns
+        V = Minv(:,m);
+    else
+        V = M(m,:);
+    end
+
+    % Channel locations
+    chan_idx_chanlocs = find_str_idx(lower({chanlocs.labels}), lower(train_params.chan_names_chanlocs));
+    chanlocs_vis = chanlocs(chan_idx_chanlocs);
+
+    % Visualization
+    subplot(ny,nx,m);
+    topoplot(V, chanlocs_vis);
+    title(sprintf('%s  %s(%i)', strrep(this.name,'_','\_'), train_params.vis_type, m));
+
+end
 
         Y1 = M * data_1;
         Y2 = M * data_2;

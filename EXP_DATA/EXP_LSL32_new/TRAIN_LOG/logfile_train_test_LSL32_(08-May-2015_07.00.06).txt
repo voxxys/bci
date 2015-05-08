@@ -1,0 +1,7 @@
+
+
+========== 08-May-2015_07.00.06 ==========
+MATLAB: 8.3.0.532 (R2014a)
+EEGLAB: eeglab12_0_2_5b 
+
+[SIGPROC_GRAPH] t_procstage_graph::get_inp_stage_idx() -> input stage SUBSAMPLE_1 for stage CSP_1_2 not found
