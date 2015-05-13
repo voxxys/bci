@@ -38,17 +38,20 @@ chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'C3'
 %     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'T5', 'P3', 'P4', 'T6', 'O1', 'Oz', 'O2'};
 
 %temp
-chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
-chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
-    'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
-
 % chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
-%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
-% 
+%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
 % chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
 %     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
-% 
+
+chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+
+% chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
+%     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
+
+chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+
 
 % Path to some eeglab dataset with loaded channel locations
 %fpath_chanlocs = 'C:\WORK\BCI\EXP_NEW\dataset_short.set';

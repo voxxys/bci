@@ -53,9 +53,9 @@ params.params_spec.filt_names =...
     arrayfun(@(x)sprintf('%s_%i', train_params.filtnames_base, x), [1:2*N], 'UniformOutput', false);
 
 % Visualize filters/patterns
-if ~strcmp(train_params.vis_type, 'none')
-    this.visualize(data1_cur, data2_cur, params, train_params);
-end
+% if ~strcmp(train_params.vis_type, 'none')
+%     this.visualize(data1_cur, data2_cur, params, train_params);
+% end
 
 
 end

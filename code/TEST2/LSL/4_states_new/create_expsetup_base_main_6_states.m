@@ -44,7 +44,7 @@ expsetup.exp_info.setup_name = 'LSL32_main';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_main';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 600;
+expsetup.exp_params.exp_duration_t = 360;
 
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
@@ -58,7 +58,7 @@ expsetup.sigsrc_stage_desc.params.params_spec = struct();
 % expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
 
 % State generator parameters
-expsetup.stategen_stage_desc.obj_type = 't_state_generator_4states_rand';
+expsetup.stategen_stage_desc.obj_type = 't_state_generator_6states_rand';
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).label = -1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).name = 'LEFT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).mark = -1;
@@ -66,13 +66,13 @@ expsetup.stategen_stage_desc.params.params_base.state_descs(2).label = 1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).name = 'RIGHT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).mark = 1;
 expsetup.stategen_stage_desc.params.params_base.state_id_def = 1;
-expsetup.stategen_stage_desc.params.params_spec.T = 10;
+expsetup.stategen_stage_desc.params.params_spec.T = 15;
 
 % Visualizer parameters (signal)
 n = 1;
 %%{
 expsetup.visualizers(n).name = 'VISUALIZER_TASK';
-expsetup.visualizers(n).type = 't_visualizer_state';
+expsetup.visualizers(n).type = 't_visualizer_state_2';
 expsetup.visualizers(n).params.fig_num = 100;
 expsetup.visualizers(n).params.subplot_info = [2,3,2];
 expsetup.visualizers(n).params.line_styles = {'r-', 'b-', 'r--', 'b--', 'k-'};

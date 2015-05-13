@@ -1,7 +1,7 @@
-function [correct_tr,correct_te,M,Minv] = crossvallda(data, states, sample_idx_data,st1,st2,lambda)
+function [correct_tr,correct_te,sample_idx_data_f] = crossvallda(data, states, sample_idx_data,st1,st2,lambda,numpat)
 
-load('chlocs.mat');
-
+    sample_idx_data_f = zeros(size(sample_idx_data));
+    
     sample_idx = sample_idx_data;
     states_cur = states;
     data_cur = data;
@@ -45,7 +45,8 @@ load('chlocs.mat');
 
         data_train = data_cur(:,train_mask);
         states_train = states_cur(train_mask);
-            
+        
+        
         
         
         row_mean = mean(data_train,2);
@@ -61,10 +62,7 @@ load('chlocs.mat');
 
         data_train = data_train(:,idxs);
         states_train = states_train(idxs);
-  
-    
-    
-    
+        
 
         data_test = data_cur(:,test_mask);
         states_test = states_cur(test_mask);
@@ -86,51 +84,8 @@ load('chlocs.mat');
 
         [V d] = eig(C1,C2);
 
-        N = 4;
+        N = numpat;
         M = V(:, [1:N, end-N+1:end])';
-
-        Vinv = inv(V');
-        Minv = Vinv(:,[1:N, end-N+1:end]);
-        
-        
-        
-
-%        
-% nfilt = size(M,1);
-% 
-% figure; clf;
-% set(gcf, 'units', 'normalized', 'outerposition', [0 0.05 1 0.95]);
-% 
-
-
-
-
-% nx = 5;
-% ny = 2;
-
-
-% for m = 1 : nfilt
-% 
-%     V = Minv(:,m);
-% 
-%     subplot(ny,nx,m);
-%     topoplot(V, chanlocs_vis);
-% 
-% end
-% 
-% order = inputdlg('Patterns ranking:');
-% order_num = str2num(char(order));
-% 
-% Minv = Minv(:,order_num);
-
-% figure();
-% for m = 1 : nfilt
-
-%     V = Minv(:,1:m);
-%     V_plot = Minv(:,m);
-%     subplot(ny,nx,m);
-%     topoplot(V_plot, chanlocs_vis);
-%     title(sprintf('%s  %s(%i)', strrep(this.name,'_','\_'), train_params.vis_type, m));
 
         Y1 = M * data_1;
         Y2 = M * data_2;
@@ -145,8 +100,12 @@ load('chlocs.mat');
         y_data_test = [Y1_test.^2, Y2_test.^2];
         y_states_test = [ones(1,size(Y1_test,2)), 2*ones(1,size(Y2_test,2))];
 
-
-        win = 500;%wins(s);        
+                
+        y_data_1_var = var(y_data(:,y_states == 1),[],2);
+        y_data_2_var = var(y_data(:,y_states == 2),[],2);
+        
+        
+        win = 100;%wins(s);        
 
         for k=1:size(y_data,1)
              y_data(k,:) = conv(y_data(k,:),ones(1,win),'same');
@@ -162,9 +121,14 @@ load('chlocs.mat');
         A_te(i) = sum(y_states_test == C')/size(y_states_test,2);
 
         
-%     end    
         
-        
+    end
+    
+    
+    for i = 1:size(parts_for_testing,1)
+        test_idx = horzcat(sample_idx_part{parts_for_testing(i,:)});
+        test_idx_s_d = ismember(sample_idx_data,test_idx);
+        sample_idx_data_f(test_idx_s_d) = sample_idx_data_f(test_idx_s_d)+A_te(i);
         
     end
     

@@ -26,7 +26,7 @@ fname_chanlocs ='short_32chan_2.set';
 fpath_chanlocs = fullfile(dirpath_work, fname_chanlocs);
 
 % Path to the output file with experiment result
-fname_expresult ='0805_xenia_im_first_4s';
+fname_expresult ='1305_lisa_re_first_int.mat';
 fpath_expresult = fullfile(dirpath_work, fname_expresult);
 
 

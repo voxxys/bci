@@ -38,16 +38,20 @@ chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'C3'
 %     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'T5', 'P3', 'P4', 'T6', 'O1', 'Oz', 'O2'};
 
 %temp
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+% chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
+%     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
+
+% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+% chan_names_CSP = {'F7', 'F3', 'Fz', 'F4', 'F8', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'C3', 'Cz', 'C4',...
+%     'Cp5', 'Cp1', 'Cp2', 'Cp6', 'P7', 'P3', 'P4', 'P8', 'O1', 'Oz', 'O2'};
+
 chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
 chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
-
-% chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
-%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
-% chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
-%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
-
 
 
 % Path to some eeglab dataset with loaded channel locations
@@ -113,7 +117,7 @@ stage_desc.stage_name = 'EOGREJ';
 stage_desc.obj_type = 't_sigproc_spatfilt';
 stage_desc.params.inp_descs(1).inp_stage_name = 'IIR_LOWPASS';
 stage_desc.params.inp_descs(1).chan_names_in = chan_names;      % process only EEG channels
-stage_desc.trainer_type = 't_trainer_EOGrej';
+stage_desc.trainer_type = 't_trainer_EOGrej_set';
 stage_desc.train_params.eog_chan_name = 'Fp1';
 stage_desc.train_params.eog_sigma_mult = 2;
 stage_desc.train_params.ncomps_eog = 3;
@@ -169,12 +173,12 @@ for state_num_i = 1 : size(state_ids,2)
             stage_desc.stage_name = sprintf('CSP_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
             stage_desc.obj_type = 't_sigproc_spatfilt';
             stage_desc.params.inp_descs(1).inp_stage_name = sprintf('SUBSAMPLE_%i_%i', state_ids(state_num_i), state_ids(state_num_j));    
-            stage_desc.params.inp_descs(1).chan_names_in = chan_names_CSP;
+%             stage_desc.params.inp_descs(1).chan_names_in = chan_names_CSP;
             stage_desc.trainer_type = 't_trainer_CSP_set';
             stage_desc.train_params.state1 = state_ids(state_num_i);
             stage_desc.train_params.state2 = state_ids(state_num_j);
-            stage_desc.train_params.lambda = 0.1;
-            stage_desc.train_params.nCSP = nCSP;
+%             stage_desc.train_params.lambda = 0.1;
+%             stage_desc.train_params.nCSP = nCSP;
             stage_desc.train_params.fpath_chanlocs = fpath_chanlocs;
             stage_desc.train_params.filtnames_base =...
                 sprintf('CSP_(%i_%i)', state_ids(state_num_i), state_ids(state_num_j));
@@ -210,6 +214,7 @@ end
 
 % Prediction with LDA
 
+numlda = 1;
 for state_num_i = 1 : size(state_ids,2)
     for state_num_j = 1 : size(state_ids,2)
         if(state_num_i ~= state_num_j)
@@ -217,10 +222,12 @@ for state_num_i = 1 : size(state_ids,2)
             stage_desc.stage_name = sprintf('LDA_%i_%i',state_ids(state_num_i), state_ids(state_num_j));
             stage_desc.obj_type = 't_statepred_LDA';
             stage_desc.params.inp_descs(1).inp_stage_name = sprintf('WINPOW_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
-            stage_desc.trainer_type = 't_trainer_LDA';
+            stage_desc.trainer_type = 't_trainer_LDA_set';
+            stage_desc.params.numi = numlda;
             stage_desc.train_params.state1 = state_ids(state_num_i);
             stage_desc.train_params.state2 = state_ids(state_num_j);
             protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+            numlda = numlda + 1;
         end
     end
 end
