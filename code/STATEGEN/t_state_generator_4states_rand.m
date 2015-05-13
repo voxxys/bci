@@ -29,9 +29,12 @@ classdef t_state_generator_4states_rand < t_state_generator
         %===================================
         % Class-specific initialization (one can reimplement it in child class)
         function init_spec(this)
-            st2 = [this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12))];
+%
 
-            this.states_vec = st2;
+%st2 = [this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12)),this.states_vec(randperm(12))];
+% st2 = [2     1     5     1     6     5     6     5     2     1     2     6     5     1     5     2     1     6     2     6     1     6     2     5     1     5     2     5     1     5     1     2     6     2     6     2     6     2     1     5     6     2     6     1     5     6     1     5     2     5     1     2     6     5     6     1     6     1     2     5];
+st2 = [     1     5     2     6     2     5     1     6     2     6     1     5     2     1     2     5     6     1     5     1     6     5     2     6];            
+this.states_vec = st2;
 
         end
         

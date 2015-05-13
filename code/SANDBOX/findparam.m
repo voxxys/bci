@@ -15,9 +15,9 @@ chanlocs_vis = chanlocs(chan_idx_chanlocs);
 % Fc_highs = 8 %2:3:11 %5:7;
 % Bws = 20 %3:3:9 %5:6;
 
-lambdas = 0.05:0.1:0.5;
-Fc_highs = 2:2:11;
-Bws = 3:2:8;
+lambdas = 0.1:0.1:0.5;
+Fc_highs = 2:2:15;
+Bws = 3:3:9;
 
 % sample_idx_data_cur = sample_idx_data(1:10:end);
 sample_idx_data_f_aggr = zeros(size(sample_idx_data(1:10:end)));
@@ -98,7 +98,7 @@ fmax = Fc_highs(i1) + Bws(i2); % return value of fmax
    
         score_mean = mean(sample_idx_data_f_aggr_u);
         score_std = std(sample_idx_data_f_aggr_u);
-        mask = (score_mean - sample_idx_data_f_aggr < 0.5*score_std);
+        mask = (score_mean - sample_idx_data_f_aggr < 1.5*score_std);
         idx = find(mask);
         sample_idx_data_f_aggr_i = sample_idx_data_f_aggr(idx);
         sample_idx_data_i = sample_idx_data(idx);

@@ -29,7 +29,9 @@ function create_expsetup_base_first_6_states(fpath_expsetup, fpath_chanlocs)
 
 %temp + Pz
 chan_names = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
-    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'Pz', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+    'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
+% chan_names_CSP = {'Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'Ft9', 'Fc5', 'Fc1', 'Fc2', 'Fc6', 'Ft10', 'T7', 'C3', 'Cz', 'C4',...
+%     'T8', 'Tp9', 'Cp5', 'Cp1', 'Cp2', 'Cp6', 'Tp10', 'P7', 'P3', 'P4', 'P8',  'O1', 'Oz', 'O2'};
 
 % Mask of channels to visualize at scalp
 %chan_names_vismask = chan_names;
@@ -53,7 +55,7 @@ expsetup.exp_info.setup_name = 'LSL32_first';
 expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
-expsetup.exp_params.exp_duration_t = 440;
+expsetup.exp_params.exp_duration_t = 180;
 % Reciever parameters
 expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
 expsetup.sigsrc_stage_desc.params.params_spec = struct();
@@ -65,7 +67,7 @@ expsetup.sigsrc_stage_desc.params.params_spec = struct();
 % expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
 
 % State generator parameters
-expsetup.stategen_stage_desc.obj_type = 't_state_generator_6states_rand_3';
+expsetup.stategen_stage_desc.obj_type = 't_state_generator_binary_rand';
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).label = -1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).name = 'LEFT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(1).mark = -1;
@@ -73,7 +75,7 @@ expsetup.stategen_stage_desc.params.params_base.state_descs(2).label = 1;
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).name = 'RIGHT';
 expsetup.stategen_stage_desc.params.params_base.state_descs(2).mark = 1;
 expsetup.stategen_stage_desc.params.params_base.state_id_def = 1;
-expsetup.stategen_stage_desc.params.params_spec.T = 4;
+expsetup.stategen_stage_desc.params.params_spec.T = 10;
 
 % Visualizer parameters (signal)
 % n = 1;

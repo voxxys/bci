@@ -95,6 +95,44 @@ for n = 1:ndescs
 %     res_vect_y = this.yvect{5}*aggr(5);
 %     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
 %     set(this.an,'Color','red')
+
+
+
+    res_vect_x = this.xvect{1}*aggr(1);
+    res_vect_y = this.yvect{1}*aggr(1);
+    this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+    set(this.an,'Color',[0.5 0.5 0.5])
+    
+    res_vect_x = this.xvect{2}*aggr(2);
+    res_vect_y = this.yvect{2}*aggr(2);
+    this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+    set(this.an,'Color',[0.5 0.5 0.5])
+%     
+%     res_vect_x = this.xvect{3}*aggr(3);
+%     res_vect_y = this.yvect{3}*aggr(3);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+%     res_vect_x = this.xvect{4}*aggr(4);
+%     res_vect_y = this.yvect{4}*aggr(4);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color','red')
+%     
+
+
+% % % % % % % 
+
+%     res_vect_x = this.xvect{5}*aggr(5);
+%     res_vect_y = this.yvect{5}*aggr(5);
+%     this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+%     set(this.an,'Color',[0.5 0.5 0.5])
+    
+    res_vect_x = this.xvect{5}*aggr(3);
+    res_vect_y = this.yvect{5}*aggr(3);
+    this.an = annotation('arrow',res_vect_x + 0.5,res_vect_y + 0.5,'Tag','toDelete2');
+    set(this.an,'Color',[0.5 0.5 0.5])
+
+
 %     
 %     res_vect_x = this.xvect{1}*aggr(1) + this.xvect{2}*aggr(2) +  this.xvect{3}*aggr(3) +  this.xvect{4}*aggr(4) +  this.xvect{5}*aggr(5);
 %     res_vect_y = this.yvect{1}*aggr(1) + this.yvect{2}*aggr(2) +  this.yvect{3}*aggr(3) +  this.yvect{4}*aggr(4) +  this.yvect{5}*aggr(5);

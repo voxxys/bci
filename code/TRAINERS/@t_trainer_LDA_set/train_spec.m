@@ -17,11 +17,11 @@ states = states(pos_vec);
 
 
 
-load('LDA_coeffs.mat');
+LDA_c = load('LDA_coeffs.mat');
 
 i = params.numi;
 
-params.params_spec.LDA_coeffs = LDA_coeffs{i};
+params.params_spec.LDA_coeffs = LDA_c.LDA_coeffs{i};
 
 params.params_spec.state_labels = [train_params.state1, train_params.state2];
 
