@@ -1,7 +1,7 @@
 clear
 clc
 
-load('D:\bci\EXP_DATA\EXP_LSL32_new\1305_alex2_re_first.mat');
+load('D:\bci\EXP_DATA\EXP_LSL32_new\1305_lisa_re_first.mat');
 
 
 %
@@ -70,8 +70,7 @@ M_eog = U;
 
 data_cur = M_eog*data_cur;
 
-
-
+%%
 
 
 
