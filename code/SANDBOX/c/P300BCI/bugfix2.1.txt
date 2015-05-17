@@ -1,0 +1,4 @@
+Bug fixed in version 2.1
+
+17.01.2014 In mean2.m removed an extra for cycle, removed two useless computation of Cholesky factorization, fixed the indenting.
+06.02.2014 In karcher.m changed log1 to log1p. Fix indent in karcher.m.

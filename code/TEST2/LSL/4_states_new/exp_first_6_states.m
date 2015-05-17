@@ -26,7 +26,7 @@ fname_chanlocs ='short_32chan_2.set';
 fpath_chanlocs = fullfile(dirpath_work, fname_chanlocs);
 
 % Path to the output file with experiment result
-fname_expresult ='1305_alex2_bonus_track_2.mat';
+fname_expresult ='test.mat';
 fpath_expresult = fullfile(dirpath_work, fname_expresult);
 
 
@@ -83,6 +83,8 @@ exp_performer.perform_exp(expsetup);
 data = exp_performer.sigsrc_stage.buf_eeg;
 states = exp_performer.stategen_stage.buf_out;
 save(fpath_expresult, 'data', 'states');
+
+
 
 
 % Close logfile

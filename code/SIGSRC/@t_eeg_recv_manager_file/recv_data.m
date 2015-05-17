@@ -12,7 +12,7 @@ tcur = toc(this.timer);
 
 % Get size of data to output
 if strcmp(this.params.params_spec.mode, 'block')
-    nsamples_recv = this.params.out_block_sz;        % fixed size
+    nsamples_recv = this.params.params_spec.out_block_sz;        % fixed size
 elseif strcmp(this.params.params_spec.mode, 'realtime')                
     dt = (tcur - this.last_req_time);   % * this.params.time_mult;  -- commented because multiplier is included in srate now
     srate = this.params.params_base.srate_out;

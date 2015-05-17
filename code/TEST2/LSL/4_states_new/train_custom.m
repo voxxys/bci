@@ -78,13 +78,17 @@ numfile = 1;
 for state_num_i = 1 : size(states_ids,2)
     for state_num_j = 1 : size(states_ids,2)
         if(state_num_i ~= state_num_j)        
-            [fmin,fmax,M_N,Minv_N,LDA_coeff] = findparam(data_cur,states_cur,sample_idx_data,chan_names,states_ids(state_num_i),states_ids(state_num_j));
+            [fmin,fmax,M_N,Minv_N,LDA_coeff,W12,Q12] = findparam(data_cur,states_cur,sample_idx_data,chan_names,states_ids(state_num_i),states_ids(state_num_j));
             name = sprintf('CSP_mat_%i_%i.mat',states_ids(state_num_i),states_ids(state_num_j));
             
             save(name,'M_N','Minv_N');
             freq{numfile} = [fmin,fmax];
-            LDA_coeffs{numfile} = LDA_coeff;            
-            numfile = numfile + 1;
+            LDA_coeffs{numfile} = LDA_coeff;
+
+            WW{numfile} = W12;
+            QQ(numfile,:) = Q12;
+
+        numfile = numfile + 1;        
 
         end
     end
@@ -93,3 +97,58 @@ end
 save('freq.mat','freq');
 save('LDA_coeffs.mat','LDA_coeffs');
 save('M_eog.mat','M_eog');
+save('WW.mat','WW');
+
+%%
+
+states_cur = states_cur(1:10:end);
+%%
+indTr = 1:fix(length(states_cur)/2);
+
+states_cur_train = states_cur(indTr);
+
+QQ_train = QQ(:,indTr);
+
+
+
+% states_cur_train = states_cur;
+% QQ_train = QQ;
+
+
+
+
+Nc = length(states_ids);
+target = zeros(Nc,size(states_cur,2));
+for c = 1:Nc
+    target(c,find(states_cur==states_ids(c)))=1;
+end;
+
+target_train = target(:,indTr);
+
+% target_train = target;
+
+
+
+clear net2;
+net2 = patternnet(15);
+% net2.divideFcn = 'divideind';
+% net2.divideParam.trainInd = indTr(1:2:end);
+% net2.divideParam.valInd = indTr(2:2:end);
+% net2.divideParam.testInd = indTr(end)+1:size(QQ,2);
+
+net2.trainParam.min_grad = 1e-7;
+net2.trainParam.max_fail = 30;
+net2.trainParam.epochs = 5000;
+[net1,tr] = train(net2,QQ,target);
+
+save('net','net1');
+Ztrain = net1(QQ);
+
+[val,ind] = max(Ztrain);
+
+states_pred = states_ids(ind);
+
+%%
+load('net');
+Ztest = net1(QQ);
+

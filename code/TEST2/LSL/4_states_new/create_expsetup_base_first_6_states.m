@@ -8,7 +8,7 @@ function create_expsetup_base_first_6_states(fpath_expsetup, fpath_chanlocs)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Names of channels (NVX)
-%chan_names = {'Fp1', 'Fp2', 'F3', 'Fz', 'F4', 'Fc3', 'Fcz', 'Fc4', 'T3', 'C3', 'Cz', 'C4',...
+% chan_names = {'Fp1', 'Fp2', 'F3', 'Fz', 'F4', 'Fc3', 'Fcz', 'Fc4', 'T3', 'C3', 'Cz', 'C4',...
 %    'T4', 'Cp3', 'Cpz', 'Cp4', 'P3', 'Pz', 'P4', 'O1', 'O2', 'C1', 'C2', 'C5', 'C6', 'Cp1', 'Fc5', 'Cp5', 'Cp2', 'Fc6', 'Cp6'};
 
 % BrainAmps
@@ -56,15 +56,19 @@ expsetup.exp_info.parent_procname = 'create_expsetup_base_LSL32_first';
 
 % Duration of experiment in seconds
 expsetup.exp_params.exp_duration_t = 180;
-% Reciever parameters
-expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
-expsetup.sigsrc_stage_desc.params.params_spec = struct();
 
-% Reciever parameters (test)
-% expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_file';
+% Receiver parameters
+% expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_lsl';
+% expsetup.sigsrc_stage_desc.params.params_spec = struct();
+
+% Receiver parameters (test)
+expsetup.sigsrc_stage_desc.obj_type = 't_eeg_recv_manager_matlab_file';
+expsetup.sigsrc_stage_desc.params.params_spec.fpath_in = 'D:\BCI\EXP_DATA\EXP_LSL32_new\1305_xenia_im_first.mat';
 % expsetup.sigsrc_stage_desc.params.params_spec.fpath_in = 'D:\BCI\EXP_DATA\short_32chan_2.set';
-% expsetup.sigsrc_stage_desc.params.params_spec.mode = 'realtime';
-% expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
+expsetup.sigsrc_stage_desc.params.params_spec.mode = 'realtime';
+% expsetup.sigsrc_stage_desc.params.params_spec.mode = 'block';
+% expsetup.sigsrc_stage_desc.params.params_spec.out_block_sz = 2000;
+expsetup.sigsrc_stage_desc.params.params_spec.time_mult = 1;
 
 % State generator parameters
 expsetup.stategen_stage_desc.obj_type = 't_state_generator_binary_rand';

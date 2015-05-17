@@ -26,7 +26,7 @@ fname_chanlocs ='short_32chan_2.set';
 fpath_chanlocs = fullfile(dirpath_work, fname_chanlocs);
 
 % Path to the output file with experiment result
-fname_expresult ='0605_lisa_im_main_2.mat';
+fname_expresult ='test2.mat';
 fpath_expresult = fullfile(dirpath_work, fname_expresult);
 
 
@@ -76,7 +76,8 @@ exp_performer.perform_exp(expsetup);
 % Save result
 data = exp_performer.sigsrc_stage.buf_eeg;
 states = exp_performer.stategen_stage.buf_out;
-save(fpath_expresult, 'data', 'states');
+states_pred = exp_performer.sigproc_graph.stages(exp_performer.sigproc_graph.stage_order(length(exp_performer.sigproc_graph.stage_order))).buf_out.data(1,:);
+save(fpath_expresult, 'data', 'states','states_pred');
 
 
 % Close logfile

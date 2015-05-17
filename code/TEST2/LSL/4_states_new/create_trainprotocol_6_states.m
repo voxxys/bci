@@ -202,7 +202,7 @@ for state_num_i = 1 : size(state_ids,2)
             stage_desc.stage_name = sprintf('WINPOW_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
             stage_desc.obj_type = 't_sigproc_winpow';
             stage_desc.params.inp_descs(1).inp_stage_name = sprintf('CSP_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
-            stage_desc.params.params_base.timewin_prev = 1;      % sec
+            stage_desc.params.params_base.timewin_prev = 3;      % sec
             protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
 
         
@@ -213,16 +213,35 @@ end
 
 
 % Prediction with LDA
+% 
+% numlda = 1;
+% for state_num_i = 1 : size(state_ids,2)
+%     for state_num_j = 1 : size(state_ids,2)
+%         if(state_num_i ~= state_num_j)
+%             stage_desc = struct();
+%             stage_desc.stage_name = sprintf('LDA_%i_%i',state_ids(state_num_i), state_ids(state_num_j));
+%             stage_desc.obj_type = 't_statepred_LDA';
+%             stage_desc.params.inp_descs(1).inp_stage_name = sprintf('WINPOW_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
+%             stage_desc.trainer_type = 't_trainer_LDA_set';
+%             stage_desc.params.numi = numlda;
+%             stage_desc.train_params.state1 = state_ids(state_num_i);
+%             stage_desc.train_params.state2 = state_ids(state_num_j);
+%             protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+%             numlda = numlda + 1;
+%         end
+%     end
+% end
 
+% Shrinkage
 numlda = 1;
 for state_num_i = 1 : size(state_ids,2)
     for state_num_j = 1 : size(state_ids,2)
         if(state_num_i ~= state_num_j)
             stage_desc = struct();
-            stage_desc.stage_name = sprintf('LDA_%i_%i',state_ids(state_num_i), state_ids(state_num_j));
-            stage_desc.obj_type = 't_statepred_LDA';
+            stage_desc.stage_name = sprintf('SHRINKAGE_%i_%i',state_ids(state_num_i), state_ids(state_num_j));
+            stage_desc.obj_type = 't_statepred_shrinkage';
             stage_desc.params.inp_descs(1).inp_stage_name = sprintf('WINPOW_%i_%i', state_ids(state_num_i), state_ids(state_num_j));
-            stage_desc.trainer_type = 't_trainer_LDA_set';
+            stage_desc.trainer_type = 't_trainer_shrinkage_set';
             stage_desc.params.numi = numlda;
             stage_desc.train_params.state1 = state_ids(state_num_i);
             stage_desc.train_params.state2 = state_ids(state_num_j);
@@ -231,6 +250,47 @@ for state_num_i = 1 : size(state_ids,2)
         end
     end
 end
+
+
+% stage_desc = struct();
+% stage_desc.stage_name = 'LDA_final'
+% stage_desc.obj_type = 't_statepred_LDA_6';
+% 
+% numlda_f = 1;
+% for state_num_i = 1 : size(state_ids,2)
+%     for state_num_j = 1 : size(state_ids,2)
+%         if(state_num_i ~= state_num_j)
+%             
+%             stage_desc.params.inp_descs(numlda_f).inp_stage_name = sprintf('LDA_%i_%i', state_ids(state_num_i), state_ids(state_num_j));    
+%             numlda_f = numlda_f + 1;
+%             
+%         end
+%     end
+% end
+% stage_desc.params.params_spec.state_ids = state_ids;
+% protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+
+
+% Perceptron
+stage_desc = struct();
+stage_desc.stage_name = 'PERCEPTRON';
+stage_desc.obj_type = 't_statepred_perc';
+stage_desc.trainer_type = 't_trainer_perc_set';
+
+numlda_f = 1;
+for state_num_i = 1 : size(state_ids,2)
+    for state_num_j = 1 : size(state_ids,2)
+        if(state_num_i ~= state_num_j)
+            
+            stage_desc.params.inp_descs(numlda_f).inp_stage_name = sprintf('SHRINKAGE_%i_%i', state_ids(state_num_i), state_ids(state_num_j));    
+            numlda_f = numlda_f + 1;
+            
+        end
+    end
+end
+stage_desc.params.params_spec.state_ids = state_ids;
+protocol.sigproc_stage_descs(end+1) = copy_struct_fields(stage_desc, sigproc_stage_desc_null);
+           
 
 % % Prediction with Rieman distance
 % stage_desc = struct();
