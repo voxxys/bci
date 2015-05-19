@@ -120,7 +120,7 @@ QQ_train = QQ(:,indTr);
 Nc = length(states_ids);
 target = zeros(Nc,size(states_cur,2));
 for c = 1:Nc
-    target(c,find(states_cur==states_ids(c)))=1;
+    target(c,find(states_cur_train==states_ids(c)))=1;
 end;
 
 target_train = target(:,indTr);
@@ -131,15 +131,15 @@ target_train = target(:,indTr);
 
 clear net2;
 net2 = patternnet(15);
-% net2.divideFcn = 'divideind';
-% net2.divideParam.trainInd = indTr(1:2:end);
-% net2.divideParam.valInd = indTr(2:2:end);
-% net2.divideParam.testInd = indTr(end)+1:size(QQ,2);
+net2.divideFcn = 'divideind';
+net2.divideParam.trainInd = indTr(1:2:end);
+net2.divideParam.valInd = indTr(2:2:end);
+net2.divideParam.testInd = indTr(end)+1:size(QQ,2);
 
 net2.trainParam.min_grad = 1e-7;
 net2.trainParam.max_fail = 30;
 net2.trainParam.epochs = 5000;
-[net1,tr] = train(net2,QQ,target);
+[net1,tr] = train(net2,QQ,target_train);
 
 save('net','net1');
 Ztrain = net1(QQ);
@@ -148,7 +148,15 @@ Ztrain = net1(QQ);
 
 states_pred = states_ids(ind);
 
+sum(states_cur == states_pred)/size(states_cur,2)
+
 %%
 load('net');
 Ztest = net1(QQ);
 
+
+%%
+
+save('QQs','QQ');
+
+save('states','states_cur');

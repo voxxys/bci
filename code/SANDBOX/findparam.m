@@ -24,7 +24,11 @@ sample_idx_data_f_aggr = zeros(size(sample_idx_data(1:10:end)));
 
 Fs = 1000;
 numpat = 3;
-win = 100;
+win = 300;
+order = 5;
+
+a_ma = 1;
+b_ma = ones(1,win);
 
 res_te = zeros(size(Fc_highs,2),size(Bws,2),size(lambdas,2));
 res_te_sh = zeros(size(Fc_highs,2),size(Bws,2),size(lambdas,2));
@@ -38,15 +42,16 @@ for fh = 1:size(Fc_highs,2);
         Bw = Bws(fl);
         
         Fc_low = Fc_high+Bw;
-        [z_high,p_high,k_high] = butter(3, Fc_high/(Fs/2), 'high');
+        [z_high,p_high,k_high] = butter(order, Fc_high/(Fs/2), 'high');
         [b_high,a_high] = zp2tf(z_high,p_high,k_high);
 
-        [z_low,p_low,k_low] = butter(3, Fc_low/(Fs/2), 'low');
+        [z_low,p_low,k_low] = butter(order, Fc_low/(Fs/2), 'low');
         [b_low,a_low] = zp2tf(z_low,p_low,k_low);
         
         % filter
-        data_cur_h = filtfilt(b_high, a_high, data')'; % data is original untouched data
-        data_cur_hl = filtfilt(b_low, a_low, data_cur_h')'; 
+        data_cur_h = filter(b_high, a_high, data,[],2); % data is original untouched data
+        data_cur_hl = filter(b_low, a_low, data_cur_h,[],2); 
+        
         
         data_cur = resample(data_cur_hl',1,10)';
         states_cur = states(1:10:end);
@@ -98,14 +103,17 @@ fmax = Fc_highs(i1sh) + Bws(i2sh); % return value of fmax for shrinkage
 
 Fc_high = fmin;
 Fc_low = fmax;
-[z_high,p_high,k_high] = butter(3, Fc_high/(Fs/2), 'high');
+[z_high,p_high,k_high] = butter(order, Fc_high/(Fs/2), 'high');
 [b_high,a_high] = zp2tf(z_high,p_high,k_high);
 
-[z_low,p_low,k_low] = butter(3, Fc_low/(Fs/2), 'low');
+[z_low,p_low,k_low] = butter(order, Fc_low/(Fs/2), 'low');
 [b_low,a_low] = zp2tf(z_low,p_low,k_low);
 
-data_cur_h = filtfilt(b_high, a_high, data')'; % data is original untouched data
-data_cur_hl = filtfilt(b_low, a_low, data_cur_h')'; 
+% data_cur_h = filtfilt(b_high, a_high, data')'; % data is original untouched data
+% data_cur_hl = filtfilt(b_low, a_low, data_cur_h')'; 
+
+data_cur_h = filter(b_high, a_high, data,[],2); % data is original untouched data
+data_cur_hl = filter(b_low, a_low, data_cur_h,[],2); 
 
 % resampling
 
@@ -228,10 +236,8 @@ for ntop = size(M,1):size(M,1)  %1:size(M,1) %%%%%%!!!!!!!!!!!!!!!!
     y_data = [Y1.^2, Y2.^2];
     y_states = [ones(1,size(Y1,2)), 2*ones(1,size(Y2,2))];
 
-    for k=1:size(y_data,1)
-         y_data(k,:) = conv(y_data(k,:),ones(1,win),'same');
-    end;
-    
+      
+    y_data = filter(b_ma, a_ma, y_data, [], 2);
 % 
 %     [C,err,P,logp,coeff{ntop}] = classify(y_data', y_data', y_states, 'linear');
 %     A_tr_ntop(ntop) = 1-err;
@@ -283,12 +289,7 @@ Y_all = M * data_cur;
 
 Y_all = Y_all.^2;
 
-y_states = [ones(1,size(Y1,2)), 2*ones(1,size(Y2,2))];
-
-
-    for k=1:size(Y_all,1)
-         Y_all(k,:) = conv(Y_all(k,:),ones(1,win),'same');
-    end;
+Y_all = filter(b_ma, a_ma, Y_all, [], 2);
     
     
 Q12_final = W12_final'*Y_all; % return value of Q12_final

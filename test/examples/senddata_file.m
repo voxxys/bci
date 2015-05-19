@@ -1,6 +1,6 @@
 % load data
 
-ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\1305_lisa_re_first.mat');
+ext_data = load('D:\bci\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_6states_3004_laim_6min.mat');
 
 [data_ext, sample_idx_data] = ext_data.data.get_data();
 [states_ext, sample_idx_states] = ext_data.states.get_data();
@@ -31,9 +31,10 @@ outlet = lsl_outlet(info);
 disp('Now transmitting chunked data...');
 samp = 1:10;
 k = 1;
+randomwalk = zeros(1,10);
 
 rwstate = 0;
-chunk_size = 1000;
+chunk_size = 10;
 
 while true
 
@@ -51,6 +52,6 @@ while true
         k = k - size(data_ext,2);
     end
 
-    pause(1);
+    pause(0.01);
     
 end

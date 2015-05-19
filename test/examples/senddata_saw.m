@@ -25,12 +25,11 @@ outlet = lsl_outlet(info);
 
 % send data into the outlet
 disp('Now transmitting chunked data...');
-
+samp = 1:10;
 k = 1;
 while true
     samp = k:(k+9);
-    samp = samp*1e-5;
-    outlet.push_chunk(repmat(mod(samp,100),31,1));
+    outlet.push_chunk(repmat(mod(samp,100),32,1));
     k = k + 10;
     
     pause(0.01);
